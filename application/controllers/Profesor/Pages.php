@@ -14,7 +14,7 @@ class Pages extends CI_Controller {
 
       $idProf = $this->input->post('idProf');
       $userProf = $this->input->post('usuarioProf');
-      $passProf = $this->input->post('contrasenaProf');
+      $passProf = $this->input->post('contrasenaProf');      
 
       $data['profesor'] = $this->profesor_model->get_profesor();
       $dataModel['usuario'] = $this->profesor_model->get_profesor($idProf, $userProf, $passProf);

@@ -7,6 +7,12 @@
     overflow: hidden;
     padding: 4.5px 0px 0px 0px;
 }
+#header{
+  height: 25%;
+  width: 100%;
+  position: absolute; top:0; left:0;
+  background-color: #f0f0f0;
+}
 #imgHeaderEst{
     text-align: center;
 }
@@ -18,8 +24,11 @@
     vertical-align:middle;
     margin-right: 20px;
 }
-#pageEst{
-    overflow: hidden;
+#links:link, visited, active{
+    text-decoration: none;
+}
+#links:hover{
+    color: #fff;
 }
 #logADMIN{
     width: 100%;
@@ -30,6 +39,16 @@
     font-weight: bold;
     font-size: 15px;
     style: normal;
+}
+#menu{
+  width: 100%;
+  height :25%;
+  padding: auto;
+  position: absolute; left:0; top: 135px;
+  background-color:#f9875c;
+}
+#pageEst{
+    overflow: hidden;
 }
 #pageProf{
     position: absolute; top: 0; left: 0;
@@ -49,18 +68,14 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
 }
+
 p{
     vertical-align: middle;
     overflow: hidden;
     padding: 6px;
     margin: auto;
 }
-#links:link, visited, active{
-    text-decoration: none;
-}
-#links:hover{
-    color: #fff;
-}
+
 .box{
     display: inline-block;
     border-radius: 6px;
@@ -84,8 +99,26 @@ p{
   border-radius: 4px;
   border-color: rgba(0,0,0,0);
 }
-div.a{
-    text-align: center;
+li{
+  display: inline-block;
+  vertical-align: middle;
+  margin: auto;
+}
+li.left{
+  vertical-align: middle;
+  position: absolute; left:0;
+  margin-left: 20px;
+}
+.nav li a{
+    background-color:#f9875c;
+    color:#00004d;
+    text-decoration: none;
+    padding: 0px 15px;
+    width:450px;
+}
+
+.nav > li {
+    float:right;
 }
 div.boton{
     text-align: center;

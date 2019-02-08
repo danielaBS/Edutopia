@@ -48,9 +48,10 @@ window.onload = function changeView() {
     }
 
     botLogEst.onclick = function loginEst() {
-      var idIngEst = parseInt(idEst.value);
+      var idIngEst = idEst.value;
       var usuarioIngEst = userEst.value;
       var passIngEst = contraseñaEst.value;
+      var hash = CryptoJS.AES.encrypt(passIngEst, "!55frRe34");
       obj = {
         "idEst": idIngEst,
         "usuarioEst": usuarioIngEst,
@@ -80,7 +81,7 @@ window.onload = function changeView() {
         }
     }
     botLogProf.onclick = function loginProf() {
-      var idIngProf = parseInt(idProf.value);
+      var idIngProf = idProf.value;
       var usuarioIngProf = userProf.value;
       var passIngProf = contraseñaProf.value;
 
@@ -111,7 +112,7 @@ window.onload = function changeView() {
               }
           });
         } else {
-          alert("Ingrese su usuario y contraseña")
+          alert("Ingrese todos los datos")
         }
     }
 }
