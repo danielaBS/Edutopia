@@ -1,0 +1,102 @@
+#footer{
+    background-color:#8CC0E7;
+    color: #00004D;
+    position: absolute; top: screen.height; left: 0;
+    height: 5%;
+    width: 100%;
+    overflow: hidden;
+    padding: 4.5px 0px 0px 0px;
+}
+#imgHeaderEst{
+    text-align: center;
+}
+#imgHeaderProf{
+    text-align: center;
+    margin-top: 27px;
+}
+#icono{
+    vertical-align:middle;
+    margin-right: 20px;
+}
+#pageEst{
+    overflow: hidden;
+}
+#logADMIN{
+    width: 100%;
+    height: 100%;
+    background-color: #8CC0E7;
+    border: 0;
+    color: #00004D;
+    font-weight: bold;
+    font-size: 15px;
+    style: normal;
+}
+#pageProf{
+    position: absolute; top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F9875C;
+    overflow: hidden;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    background-position: center center;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+p{
+    vertical-align: middle;
+    overflow: hidden;
+    padding: 6px;
+    margin: auto;
+}
+#links:link, visited, active{
+    text-decoration: none;
+}
+#links:hover{
+    color: #fff;
+}
+.box{
+    display: inline-block;
+    border-radius: 6px;
+    padding: 5px;
+}
+.iniciarsesionEst{
+    width: 150px;
+    font-weight: 300;
+    font-size: 20px;
+    color: #00004d;
+    background-color: #f9875c;
+    border-radius: 4px;
+    border-color: rgba(0,0,0,0);
+}
+.iniciarsesionProf{
+  background-color: #8CC0E7;
+  width: 150px;
+  font-weight: 300;
+  font-size: 20px;
+  color: #00004d;
+  border-radius: 4px;
+  border-color: rgba(0,0,0,0);
+}
+div.a{
+    text-align: center;
+}
+div.boton{
+    text-align: center;
+    margin: 2% 0;
+}
+div.id{
+  margin-top: 2%;
+}
+div.mensaje{
+  margin-top: 2%;
+}
+div.candado{
+  margin-top: 2%;
+}
