@@ -16,7 +16,7 @@
     <body>
       <div id= "pageEst">
         <div id="imgHeaderEst">
-          <img src="https://i.imgur.com/fbVfWl9.png">
+          <img src="https://i.imgur.com/yyRuMzt.png">
         </div>
         <div class="imagenCara">
           <img style="width:180px"src="https://i.imgur.com/jl8Ye11.png">
@@ -36,7 +36,7 @@
       </div>
       <div id = "pageProf">
         <div id="imgHeaderProf">
-          <img src="https://i.imgur.com/NaDH6Tc.png">
+          <img src="https://i.imgur.com/98VHRTH.png">
         </div>
         <div class="imagenCara">
           <img style="width:180px"src="https://i.imgur.com/t5qdoy2.png">

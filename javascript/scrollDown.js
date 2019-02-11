@@ -19,9 +19,10 @@ window.onload = function changeView() {
 
     var isPressed = 1;
 
-    bod.style.backgroundImage = "url('https://i.imgur.com/qShVdVp.png')";
+    bod.style.backgroundImage = "url('https://i.imgur.com/Po4JpNc.png')";
     pagEst.style.height = screen.height - screen.height / 4.1;
-    pagProf.style.backgroundImage = "url('https://i.imgur.com/6u1akYP.png')";
+    console.log(screen.width);
+    pagProf.style.backgroundImage = "url('https://i.imgur.com/CRJa2Vc.png')";
     pagProf.style.display = "none";
     footer.style.backgroundColor = "#8CC0E7";
 
