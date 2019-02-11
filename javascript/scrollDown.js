@@ -103,10 +103,10 @@ window.onload = function changeView() {
                     // Returns successful data submission message when the entered information is stored in database.
                   if (string === "1true")
                   {
-                    window.location = "http://localhost/edutopia/profesor/pages/index/homeAdmin";
+                    window.location = "http://localhost/edutopia/administrador/pages/index/home_admin";
                   }
                   else if (string === "2true"){
-                    window.location = "http://localhost/edutopia/profesor/pages/index/homeProf";
+                    window.location = "http://localhost/edutopia/profesor/pages/index/home_prof";
                   }else{
                     alert("Datos incorrectos")
                   }

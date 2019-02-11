@@ -18,14 +18,15 @@
         <div id="imgHeaderEst">
           <img src="https://i.imgur.com/yyRuMzt.png">
         </div>
+        <div id="containerForm">
         <div class="imagenCara">
           <img style="width:180px"src="https://i.imgur.com/jl8Ye11.png">
         </div>
         <div class="id">
-          <img id="icono" src="https://i.imgur.com/CIKGU9h.png" ><input id="identifEst" type="text" class="box" name="identificacion" maxlength="30" size="40" placeholder="No. Identificación">
+          <img id="icono" src="https://i.imgur.com/bkpJfBm.png" ><input id="identifEst" type="text" class="box" name="identificacion" maxlength="30" size="40" placeholder="No. Identificación">
         </div>
         <div class="mensaje">
-          <img id="icono" src="https://i.imgur.com/BjCAwRM.png"><input id="userEst" type="text" class="box" name="usuario" maxlength="30" size="40" placeholder="Usuario">
+          <img id="icono" src="https://i.imgur.com/JPQBdJi.png"><input id="userEst" type="text" class="box" name="usuario" maxlength="30" size="40" placeholder="Usuario">
         </div>
         <div class="candado">
           <img id="icono" src="https://i.imgur.com/CIKGU9h.png" ><input id="contrasenaEst" type="password" class="box" name="contrasena" maxlength="30" size="40" placeholder="Contraseña">
@@ -34,18 +35,20 @@
           <button id="botloginEst" style="font-family: 'Roboto', sans-serif;" class= "iniciarsesionEst" type="button"> Iniciar sesión </button>
         </div>
       </div>
+    </div>
       <div id = "pageProf">
         <div id="imgHeaderProf">
           <img src="https://i.imgur.com/98VHRTH.png">
         </div>
+        <div id="containerForm">
         <div class="imagenCara">
           <img style="width:180px"src="https://i.imgur.com/t5qdoy2.png">
         </div>
         <div class="id">
-          <img id="icono" src="https://i.imgur.com/CIKGU9h.png" ><input id="identifProf" type="text" class="box" name="identificacion" maxlength="30" size="40" placeholder="No. Identificación">
+          <img id="icono" src="https://i.imgur.com/bkpJfBm.png" ><input id="identifProf" type="text" class="box" name="identificacion" maxlength="30" size="40" placeholder="No. Identificación">
         </div>
         <div class="mensaje">
-          <img id="icono" src="https://i.imgur.com/BjCAwRM.png"><input id="userProf" type="text" class="box" name="usuario" maxlength="30" size="40" placeholder="Usuario">
+          <img id="icono" src="https://i.imgur.com/JPQBdJi.png"><input id="userProf" type="text" class="box" name="usuario" maxlength="30" size="40" placeholder="Usuario">
         </div>
         <div class="candado">
           <img id="icono" src="https://i.imgur.com/CIKGU9h.png" ><input id="contrasenaProf" type="password" class="box" name="contrasena" maxlength="30" size="40" placeholder="Contraseña">
@@ -53,6 +56,7 @@
         <div class="boton" >
           <button id="botloginProf" style="font-family: 'Roboto', sans-serif;" class= "iniciarsesionProf" type="button"> Iniciar sesión </button>
         </div>
+      </div>
       </div>
     </body>
     <div id="footer">

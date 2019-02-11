@@ -25,10 +25,12 @@
           <div class="dropdown-content">
             <a href="#">Profesores</a>
             <a href="#">Estudiantes</a>
+            <a class="btnIcon" href="http://localhost/edutopia/administrador/pages/index/registro_users">Agregar Usuarios</a>
           </div>
         </div>
-        <a class= "left" href="https://www.w3schools.com">
+        <a class= "left" href="#">
           <img border="0" alt="W3Schools" src="https://i.imgur.com/sqyTsRk.png" width="25">
+        <a class="current"> Registro de usuarios </a>
       </div>
       <div>
       </div>
