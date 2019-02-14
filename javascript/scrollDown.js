@@ -21,7 +21,6 @@ window.onload = function changeView() {
 
     bod.style.backgroundImage = "url('https://i.imgur.com/Po4JpNc.png')";
     pagEst.style.height = screen.height - screen.height / 4.1;
-    console.log(screen.width);
     pagProf.style.backgroundImage = "url('https://i.imgur.com/CRJa2Vc.png')";
     pagProf.style.display = "none";
     footer.style.backgroundColor = "#8CC0E7";
@@ -67,7 +66,6 @@ window.onload = function changeView() {
               success: function (res) {
                   var len = res.length;
                   var string = res.slice(0, 4);
-                  console.log(string);
                     // Returns successful data submission message when the entered information is stored in database.
                   if (string === "true")
                   {

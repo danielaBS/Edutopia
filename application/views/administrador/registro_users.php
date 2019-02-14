@@ -10,7 +10,6 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/style.css">
         <script type="text/javascript" src="<?php echo base_url() . '/javascript/admin.js'; ?>" ></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     </head>
     <body>
       <div class="header" id="header">
@@ -28,10 +27,24 @@
             <a class="btnIcon" href="http://localhost/edutopia/administrador/pages/index/registro_users">Agregar Usuarios</a>
           </div>
         </div>
-        <a class= "left" href="#">
+        <a class= "left" href="http://localhost/edutopia/administrador/pages/index/home_admin">
           <img border="0" alt="W3Schools" src="https://i.imgur.com/sqyTsRk.png" width="25">
         <a class="current"> Registro de usuarios </a>
       </div>
-      <div>
+      <div class="formRegister">
+        <form name= "formRegistro" action="http://localhost/edutopia/administrador/pages/registroUsuarios" onsubmit="return validateForm()" method="post">
+          Perfil:
+          <input type="radio" name="perfil" id="profesor" value="profesor" checked>Profesor
+          <input type="radio" name="perfil" id="estudiante" value="estudiante">Estudiante<br>
+          Nombres:
+          <input type="text" name="nombres" ><br>
+          Apellidos:
+          <input type="text" name="apellidos" ><br>
+          No. de Identificación:
+          <input type="text" name="identificacion" ><br>
+          <a id ="optionChecked">Grado:</a>
+          <input type="number" name="grado" id ="grado" min="1" max="5" ><br>
+          <input type="submit" value="Registrar">
+        </form>
       </div>
     </body>

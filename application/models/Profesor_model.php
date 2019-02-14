@@ -17,5 +17,12 @@ Class Profesor_model extends CI_Model {
             }
         }
     }
+    public function registerUser($profile, $id, $firstName, $middleName, $apellidoUno, $apellidoDos, $grado){
+
+    }
+
+    private function generateUsername($firstName, $middleName, $lastName){
+
+    }
 
 }

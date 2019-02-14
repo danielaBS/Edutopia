@@ -6,7 +6,7 @@
 #footer{
   background-color:#8CC0E7;
   color: #00004D;
-  position: absolute; top: screen.height; left: 0; bottom:0;
+  position: absolute; left: 0; bottom:0;
   height: 5%;
   width: 100%;
   overflow: hidden;
@@ -44,7 +44,6 @@
   color: #00004D;
   font-weight: bold;
   font-size: 15px;
-  style: normal;
 }
 
 #navbar{
@@ -147,15 +146,18 @@ p{
 }
 
 .btnIcon::before{
-  content: url('https://i.imgur.com/Y52GAX0.png');
+  content: "+ ";
 }
 
-//Sticky Navigation Bar {}
+/* Sticky Navigation Bar */
 
 .content {
   padding: 16px;
 }
 
+.show {
+  display: none;
+}
 .sticky {
   position: fixed;
   top: 0;
@@ -166,7 +168,7 @@ p{
   padding-top: 60px;
 }
 
-//Dropdown button in menu{}
+/* Dropdown button in menu */
 
 .dropdown .dropbtn {
   font-size: 17px;
@@ -234,6 +236,8 @@ p{
   height: 25%;
   width: 100%;
 }
+
+/* Form Login */
 
 div.boton{
   text-align: center;
