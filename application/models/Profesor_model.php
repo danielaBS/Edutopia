@@ -17,12 +17,18 @@ Class Profesor_model extends CI_Model {
             }
         }
     }
-    public function registerUser($profile, $id, $firstName, $middleName, $apellidoUno, $apellidoDos, $grado){
-
+    public function registerUser($data){
+      $query = $this->db->insert('profesores',
+       array(
+      'nombreProf1' => $data['nombreProf1'],
+      'nombreProf2' => $data['nombreProf2'],
+      'apellidoProf1' => $data['apellidoProf1'],
+      'apellidoProf2' => $data['apellidoProf2'],
+      'estado' => $data['estado'],
+      'usuarioProf' => $data['usuarioProf'],
+      'contraseñaProf' => $data['contraseñaProf'],
+      'identificacionProf' => $data['identificacionProf']
+      ));
+      echo json_encode($query);
     }
-
-    private function generateUsername($firstName, $middleName, $lastName){
-
-    }
-
 }

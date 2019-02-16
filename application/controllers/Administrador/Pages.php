@@ -18,56 +18,59 @@ class Pages extends CI_Controller {
       $this->load->view('templates/footer');
    }
 
-   public function registroUsuarios(){
-     $RegPerfil= $this->input->post('perfil');
-     $RegIdEst = $this->input->post('identificacion');
-     $RegNameEst = $this->input->post('nombres');
-     $RegApellidosEst= $this->input->post('apellidos');
+   public function registroUsuarios($page = 'registro_users'){
+     $RegPerfil = $this->input->post('perfil');
+     $RegId = $this->input->post('identificacion');
+     $RegName = $this->input->post('nombres');
+     $RegApellidos = $this->input->post('apellidos');
+     $RegUser = $this->input->post('usuario');
+     $RegPasswd = $this->input->post('contraseña');
+
      $nombreUno=""; $nombreDos=""; $apellidoUno=""; $apellidoDos="";
 
      $pattern=" ";
 
-     if(strpos($RegNameEst, $pattern)!==false){
-       $names = explode(" ", $RegNameEst);
+     if(strpos($RegName, $pattern)!==false){
+       $names = explode(" ", $RegName);
        $nombreUno = $names[0];
        $nombreDos = $names[1];
       }else{
-       $nombreUno = $RegNameEst;
+       $nombreUno = $RegName;
      }
 
-     if(strpos($RegApellidosEst, $pattern)!==false){
-       $lastnames = explode(" ", $RegApellidosEst);
+     if(strpos($RegApellidos, $pattern)!==false){
+       $lastnames = explode(" ", $RegApellidos);
        $apellidoUno = $lastnames[0];
        $apellidoDos = $lastnames[1];
       }else{
-       $apellidoUno = $RegApellidosEst;
+       $apellidoUno = $RegApellidos;
      }
 
      if($RegPerfil==="profesor"){
-       echo "prof";
-       $usuarioProf = array(
+       $data = array(
          "nombreProf1" => $nombreUno,
          "nombreProf2" => $nombreDos,
          "apellidoProf1" => $apellidoUno,
          "apellidoProf2" => $apellidoDos,
          "estado" => "2",
-         "usuarioProf" => "",
-         "contraseñaProf" =>"",
-         "identificacionProf" => $RegIdEst,
+         "usuarioProf" => $RegUser,
+         "contraseñaProf" => $RegPasswd,
+         "identificacionProf" => $RegId,
        );
+       $this->profesor_model->registerUser($data);
+
      }else if ($RegPerfil==="estudiante"){
-       echo "est";
-       $usuarioEst = array(
+       $data = array(
          "nombreEst1" => $nombreUno,
          "nombreEst2" => $nombreDos,
          "apellidoEst1" => $apellidoUno,
          "apellidoEst2" => $apellidoDos,
          "idGrad" => "",
-         "usuarioEst" => "",
-         "contraseñaProf" => "",
+         "usuarioEst" => $RegUser,
+         "contraseñaProf" => $RegPasswd,
          "identificacionEst" => $RegIdEst,
        );
+       //$this->estudiante_model->registerUser($data);
      }
-
    }
 }

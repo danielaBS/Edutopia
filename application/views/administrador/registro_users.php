@@ -32,19 +32,19 @@
         <a class="current"> Registro de usuarios </a>
       </div>
       <div class="formRegister">
-        <form name= "formRegistro" action="http://localhost/edutopia/administrador/pages/registroUsuarios" onsubmit="return validateForm()" method="post">
-          Perfil:
+        <form name= "formRegistro" method="post" onsubmit="validateForm()">
+          <a class= "tittle">Perfil:</a>
           <input type="radio" name="perfil" id="profesor" value="profesor" checked>Profesor
           <input type="radio" name="perfil" id="estudiante" value="estudiante">Estudiante<br>
-          Nombres:
+          <a class= "tittle">Nombres:</a>
           <input type="text" name="nombres" ><br>
-          Apellidos:
+          <a class= "tittle">Apellidos:</a>
           <input type="text" name="apellidos" ><br>
-          No. de Identificación:
+          <a class= "tittle" id="ide">No. de Identificación:</a>
           <input type="text" name="identificacion" ><br>
-          <a id ="optionChecked">Grado:</a>
+          <a class= "tittle" id ="optionChecked">Grado:</a>
           <input type="number" name="grado" id ="grado" min="1" max="5" ><br>
-          <input type="submit" value="Registrar">
+          <input id="btnReg" type="submit" value="Registrar">
         </form>
       </div>
     </body>
