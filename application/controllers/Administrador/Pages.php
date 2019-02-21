@@ -11,10 +11,20 @@ class Pages extends CI_Controller {
       $this->load->helper('url_helper');
     }
 
-    public function index($page = 'registro_users') {
+    public function index($page ='home') {
+      if (!file_exists(APPPATH . 'views/administrador/' . $page . '.php')) {
+          // Whoops, we don't have a page for that!
+          show_404();
+      }
 
-      $this->load->view('templates/header');
-      $this->load->view('administrador/' . $page);
+
+      $data['profesores'] = $this->profesor_model->getTeachersList();
+      $data['profesor_item'] = $this->profesor_model->getTeachersList();
+      $data['estudiantes'] = $this->estudiante_model->getStudentsList();
+      $data['estudiante_item'] = $this->estudiante_model->getStudentsList();
+
+      $this->load->view('templates/header_admin');
+      $this->load->view('administrador/' . $page, $data);
       $this->load->view('templates/footer');
    }
 
@@ -25,6 +35,7 @@ class Pages extends CI_Controller {
      $RegApellidos = $this->input->post('apellidos');
      $RegUser = $this->input->post('usuario');
      $RegPasswd = $this->input->post('contraseña');
+     $grado = $this->input->post('grado');
 
      $nombreUno=""; $nombreDos=""; $apellidoUno=""; $apellidoDos="";
 
@@ -45,7 +56,6 @@ class Pages extends CI_Controller {
       }else{
        $apellidoUno = $RegApellidos;
      }
-
      if($RegPerfil==="profesor"){
        $data = array(
          "nombreProf1" => $nombreUno,
@@ -60,17 +70,17 @@ class Pages extends CI_Controller {
        $this->profesor_model->registerUser($data);
 
      }else if ($RegPerfil==="estudiante"){
-       $data = array(
+       $dataE = array(
          "nombreEst1" => $nombreUno,
          "nombreEst2" => $nombreDos,
          "apellidoEst1" => $apellidoUno,
          "apellidoEst2" => $apellidoDos,
-         "idGrad" => "",
+         "idGrad" => $grado,
          "usuarioEst" => $RegUser,
-         "contraseñaProf" => $RegPasswd,
-         "identificacionEst" => $RegIdEst,
+         "contraseñaEst" => $RegPasswd,
+         "identificacionEst" => $RegId,
        );
-       //$this->estudiante_model->registerUser($data);
+       $this->estudiante_model->registerUser($dataE);
      }
    }
 }

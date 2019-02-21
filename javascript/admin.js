@@ -1,11 +1,41 @@
 window.onload = function setView(){
-  var header= document.getElementById('header');
-  header.style.backgroundImage = "url('https://i.imgur.com/9nbGv3j.png')";
+  var headerIMG= document.getElementById('headerIMG');
+  headerIMG.style.backgroundImage = "url('https://i.imgur.com/9nbGv3j.png')";
   var perfilE = document.getElementById('estudiante');
   var perfilP = document.getElementById('profesor');
-  var tittleGrado = document.getElementById("optionChecked");
-  var inputGrado = document.getElementById("grado");
-  var btnRegistro = document.getElementById("btnReg");
+  var tittleGrado = document.getElementById('optionChecked');
+  var inputGrado = document.getElementById('grado');
+  var btnRegistro = document.getElementById('btnReg');
+  var home = document.getElementById('home');
+  var here = document.getElementById('ub');
+
+  var url = window.location.pathname;
+  var nameFile = url.substring(url.lastIndexOf('/')+1);
+  var title;
+
+  var titulos = [
+    ["home_admin", "Inicio"],
+    ["registro_users", "Registro de usuarios"],
+    ["profesores_list", "Profesores"],
+    ["estudiantes_list", "Estudiantes"],
+  ];
+
+  for( var i = 0, len = titulos.length; i < len; i++ ) {
+      if( titulos[i][0] === nameFile ) {
+          title = titulos[i][1];
+          break;
+      }
+  }
+
+  if(nameFile!=="home_admin"){
+    home.classList.add("left");
+    here.classList.add("current");
+  }else{
+    home.classList.add("current");
+    here.classList.add("left");
+  }
+
+  here.innerHTML = title;
 
   tittleGrado.classList.add("hide");
   inputGrado.classList.add("hide");
@@ -21,39 +51,54 @@ window.onload = function setView(){
     inputGrado.removeAttribute("required");
   }
 }
+
 function validateForm(){
-  var form= document.forms["formRegistro"];
-
   var perfil = [
-  document.forms["formRegistro"]["perfil"].value,
-  document.forms["formRegistro"]["nombres"].value,
-  document.forms["formRegistro"]["apellidos"].value,
-  document.forms["formRegistro"]["identificacion"].value,
-];
+    document.querySelector('input[name="perfil"]:checked').value,
+    document.getElementsByName('nombres')[0].value,
+    document.getElementsByName('apellidos')[0].value,
+    document.getElementsByName('identificacion')[0].value,
+  ];
 
-function val(perfilT){
-  return perfilT !== "";
-}
-if(perfil.every(val)){
-  var usuario = document.createElement("input");
-  usuario.type= 'hidden';
-  usuario.name= 'usuario';
-  usuario.value= generateUsername(perfil[1], perfil[2]);
-  var contraseña = document.createElement("input");
-  contraseña.type= 'hidden';
-  contraseña.name= 'contraseña';
-  contraseña.value= generatePasswd(8);
+  var grado = document.getElementsByName('grado')[0].value;
 
-console.log(usuario.value);
-/*form.appendChild(usuario);
-form.appendChild(contraseña);
-form.action= "http://localhost/edutopia/administrador/pages/registroUsuarios";
-  return true;
-}else{
-  alert("Llene todos los campos");
-  return false;
-}*/
-}
+  function val(perfilT){
+    return perfilT !== "";
+  }
+
+  if(perfil.every(val)){
+    var usuario = generateUsername(perfil[1], perfil[2]);
+    var contraseña = generatePasswd(8);
+
+    obj= {
+      "perfil": perfil[0],
+      "nombres": perfil[1],
+      "apellidos": perfil[2],
+      "identificacion": perfil[3],
+      "usuario": usuario,
+      "contraseña": contraseña,
+      "grado": grado
+    };
+
+    $.ajax({
+        url: "http://localhost/edutopia/administrador/pages/registroUsuarios",
+        type: "POST",
+        data: obj,
+        success: function (res) {
+            var len = res.length;
+              // Returns successful data submission message when the entered information is stored in database.
+            if (res==="true")
+            {
+              alert("success :)")
+              //  window.location = "http://localhost/edutopia/estudiante/pages";
+            }else{
+              alert("not success :(")
+            }
+          }
+    });
+  }else{
+    alert("Llene todos los campos");
+  }
 }
 
 window.onscroll = function navBar(){
@@ -69,7 +114,6 @@ window.onscroll = function navBar(){
 
 function generateUsername(nombres, apellidos){
   var nombre = nombres.split(" ");
-  console.log(nombre.length);
   var apellido = apellidos.split(" ");
   var nameStr= [];
   var userNm="";
@@ -87,7 +131,7 @@ function generateUsername(nombres, apellidos){
     }
   }else{
     nameStr[nombre.length]= apellido[0];
-  }  
+  }
   userNm= nameStr.join(".");
   return userNm;
 }

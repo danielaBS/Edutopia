@@ -17,5 +17,22 @@ Class Estudiante_model extends CI_Model {
             }
         }
     }
-
+    public function registerUser($dataE){
+      $query = $this->db->insert('estudiante',
+       array(
+      'nombreEst1' => $dataE['nombreEst1'],
+      'nombreEst2' => $dataE['nombreEst2'],
+      'apellidoEst1' => $dataE['apellidoEst1'],
+      'apellidoEst2' => $dataE['apellidoEst2'],
+      'idGrad' => $dataE['idGrad'],
+      'usuarioEst' => $dataE['usuarioEst'],
+      'contraseñaEst' => $dataE['contraseñaEst'],
+      'identificacionEst' => $dataE['identificacionEst']
+      ));
+      echo json_encode($query);
+    }
+    public function getStudentsList(){
+      $query = $this->db->get('estudiante');
+      return $query->result_array();
+    }
 }

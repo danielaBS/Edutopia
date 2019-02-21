@@ -1,8 +1,11 @@
+/* ID */
+
 #containerForm{
   margin: auto;
   width: 360px;
   height: auto;
 }
+
 #footer{
   background-color:#8CC0E7;
   color: #00004D;
@@ -15,6 +18,7 @@
 
 #imgHeaderEst{
   text-align: center;
+  margin-top: 27px;
 }
 
 #imgHeaderProf{
@@ -47,6 +51,7 @@
 }
 
 #navbar{
+  height: 5.6vh;
   box-shadow: 0 -5px 10px -5px rgba(0, 0, 7, 0.8);
   overflow: hidden;
   background-color:#00004D;
@@ -75,7 +80,7 @@
 #navbar a.current{
   border-top: 3px solid #8CC0E7;
   color: #00004D;
-  font-size: 19;
+  font-size: 19px;
   background-color: white;
   margin: 0px;
   float: left;
@@ -83,8 +88,12 @@
 }
 
 #navbar a.left{
-  margin: 4px 10px 0 10px;
+  text-align: center;
+  vertical-align: middle;
+  height: 23px;
+  margin: 5px 10px;
   float: left;
+  color: white;
   padding: 4px;
 }
 
@@ -137,6 +146,8 @@ p{
   margin: auto;
 }
 
+/* Class */
+
 .box{
   margin-top: 10px;
   display: inline-block;
@@ -158,6 +169,7 @@ p{
 .hide {
   display: none;
 }
+
 .sticky {
   position: fixed;
   top: 0;
@@ -166,6 +178,26 @@ p{
 
 .sticky + .content {
   padding-top: 60px;
+}
+
+.list{
+  margin: auto;
+}
+
+.tableUsers{
+  list-style-type: none;
+  margin: 10px 20px;
+}
+
+.tableUsers td{
+  width: 150px;
+  text-align: center;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px 20px;
 }
 
 /* Dropdown button in menu */
@@ -205,12 +237,16 @@ p{
   background-color: #2474B5;
 }
 
+/* Header IMG */
 .img{
   width: 527px;
   height: auto;
-  position: absolute; left: 40;
+  float: left;
+  margin-left: 40px;
   padding-top: 50px;
 }
+
+/* Login forms */
 
 .iniciarsesionEst{
   width: 150px;
@@ -232,8 +268,8 @@ p{
   border-color: rgba(0,0,0,0);
 }
 
-.header{
-  height: 25%;
+.headerIMG{
+  height: 25vh;
   width: 100%;
 }
 
