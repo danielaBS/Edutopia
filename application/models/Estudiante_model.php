@@ -17,6 +17,7 @@ Class Estudiante_model extends CI_Model {
             }
         }
     }
+
     public function registerUser($dataE){
       $query = $this->db->insert('estudiante',
        array(
@@ -31,8 +32,35 @@ Class Estudiante_model extends CI_Model {
       ));
       echo json_encode($query);
     }
+
     public function getStudentsList(){
       $query = $this->db->get('estudiante');
-      return $query->result_array();
+      $array = $query->result_array();
+      return array_reverse($array);
+    }
+
+    public function deleteuser($usuario){
+      $query = $this->db->query("SELECT * FROM estudiante WHERE usuarioEst='$usuario'");
+      $row = $query->row_array();
+      if (isset($row)) {
+        $this->db->delete('estudiante', array('usuarioEst' => $usuario));  // Produces: // DELETE FROM mytable  // WHERE id = $id
+          $log = true;
+          echo json_encode($log);
+      }
+    }
+
+    public function modificarUser($data){
+      $query = $this->db->where('usuarioEst', $data['usuario']);
+
+      $datos = array(
+          'nombreEst1' => $data['nombreEst1'],
+          'nombreEst2' => $data['nombreEst2'],
+          'apellidoEst1' => $data['apellidoEst1'],
+          'apellidoEst2' => $data['apellidoEst2'],
+          'identificacionEst' => $data['identificacionEst']);
+
+      $query = $this->db->update('estudiante', $datos);
+
+      echo json_encode(true);
     }
 }

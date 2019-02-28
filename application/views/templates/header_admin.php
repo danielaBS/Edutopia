@@ -2,6 +2,7 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
     <head>
+      <title>Edutopia</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="https://i.imgur.com/c4uU8lr.png">

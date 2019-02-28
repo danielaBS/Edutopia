@@ -1,32 +1,51 @@
-<table class="list">
+<div class="nota">
+  <strong>Nota:</strong><a> Los usuarios con perfil Administrador no pueden elminarse ni modificarse.</a>
+</div>
+<table id= "usersTable" class="list">
   <tr class="tablaUsers">
     <th>Nombres</th>
     <th>Apellidos</th>
     <th>Identificación</th>
     <th>Usuario</th>
+    <th>Perfil</th>
     <th>Fecha de creación</th>
+    <th>Editar</th>
   </tr>
   <tr class="tableUsers"><?php foreach ($profesores as $profesor_item): ?>
-    <td><?php
+    <td><input type="text" value=<?php
     echo $profesor_item['nombreProf1'];
     echo"\n\n";
     echo $profesor_item['nombreProf2'];
-    ?></td>
-    <td><?php
+    ?> disabled></td>
+    <td><input type="text" value=<?php
     echo $profesor_item['apellidoProf1'];
     echo"\n\n";
     echo $profesor_item['apellidoProf2'];
-    ?></td>
-    <td><?php
+    ?> disabled></td>
+    <td><input type="text" value=<?php
     echo $profesor_item['identificacionProf'];
-    ?></td>
+    ?> disabled></td>
     <td><?php
     echo $profesor_item['usuarioProf'];
     ?></td>
+    <td id="perfilProf"><?php
+    if($profesor_item['estado']==="2"){
+      echo "Profesor";
+    }else if($profesor_item['estado']==="1"){
+      echo "Administrador";
+    }?>
+    </td>
     <td><?php
     echo $profesor_item['fechaRegistroProf'];
     ?></td>
-    <?php echo '<br>'?>
+    <td>
+    <button class="hide" id="saveBtn" title="Guardar">
+      <img border="0" alt="Guardar" src="https://i.imgur.com/mhmU0iz.png" width="25">
+    <button class="edit" onclick="modificarUser(this)" title="Modificar registro">
+      <img border="0" alt="Modificar" src="https://i.imgur.com/v7BIMrF.png" width="20">
+    <button class="edit" onclick="eliminarUser(this)" title="Eliminar registro">
+      <img border="0" alt="Eliminar" src="https://i.imgur.com/bZFT7zG.png" width="20">
+    </td>
   </tr>
 <?php endforeach; ?>
 </div>

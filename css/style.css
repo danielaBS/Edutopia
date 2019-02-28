@@ -1,5 +1,4 @@
 /* ID */
-
 #containerForm{
   margin: auto;
   width: 360px;
@@ -101,6 +100,7 @@
   border-radius: 2px;
   background-color: rgba(36, 116, 181, 0.5);
 }
+
 #navbar a.ubicacion{
   margin: 4px 4px 0 5px;
   float: left;
@@ -111,11 +111,13 @@
   content: ">";
   padding: inherit;
 }
+
 #navbar a.ubicacion:hover{
   border: none;
   background-color: inherit;
   color: white;
 }
+
 #navbar div.dropdown{
   float: right;
   overflow: hidden;
@@ -147,7 +149,6 @@ p{
 }
 
 /* Class */
-
 .box{
   margin-top: 10px;
   display: inline-block;
@@ -160,12 +161,62 @@ p{
   content: "+ ";
 }
 
-/* Sticky Navigation Bar */
-
 .content {
   padding: 16px;
 }
 
+.edit {
+  margin: 0 10px;
+  padding: 0 5px;
+  background: none;
+  border: none;
+}
+
+.formRegister{
+  width: 50vh;
+  margin: 5vh auto;
+}
+
+.formRegistro{
+  display: inline-block;
+}
+
+#titles{
+  height: 110px;
+  width: 22vh;
+  float: left;
+}
+
+#titles a{
+  margin: 3px 0;
+  float: right;
+}
+
+#inputs{
+  height: 110px;
+  width: 28vh;
+  float: right;
+}
+
+#inputs input{
+  margin-top: 5px;
+}
+
+#button input{
+  margin: 20px 60px;
+}
+
+#saveBtn{
+  background: none;
+  border: none;
+  border-style: none;
+}
+
+.nota{
+  margin: 40px auto 40px auto;
+}
+
+/* Sticky Navigation Bar */
 .hide {
   display: none;
 }
@@ -180,28 +231,19 @@ p{
   padding-top: 60px;
 }
 
-.list{
-  margin: auto;
-}
-
-.tableUsers{
-  list-style-type: none;
-  margin: 10px 20px;
-}
-
 .tableUsers td{
-  width: 150px;
+  width: 155px;
   text-align: center;
 }
 
 table, th, td {
+  margin: 0px auto;
   border: 1px solid black;
   border-collapse: collapse;
-  padding: 5px 20px;
+  padding: 5px 10px;
 }
 
 /* Dropdown button in menu */
-
 .dropdown .dropbtn {
   font-size: 17px;
   border: none;
@@ -279,14 +321,17 @@ div.boton{
   text-align: center;
   margin: 3% 0;
 }
+
 div.id{
   align-items: center;
   margin-top: 4%;
 }
+
 div.mensaje{
   align-items: center;
   margin-top: 4%;
 }
+
 div.candado{
   align-items: center;
   margin-top: 2%;

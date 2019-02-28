@@ -1,9 +1,6 @@
 window.onload = function setView(){
   var headerIMG= document.getElementById('headerIMG');
   headerIMG.style.backgroundImage = "url('https://i.imgur.com/9nbGv3j.png')";
-  var perfilE = document.getElementById('estudiante');
-  var perfilP = document.getElementById('profesor');
-  var tittleGrado = document.getElementById('optionChecked');
   var inputGrado = document.getElementById('grado');
   var btnRegistro = document.getElementById('btnReg');
   var home = document.getElementById('home');
@@ -35,21 +32,26 @@ window.onload = function setView(){
     here.classList.add("left");
   }
 
-  here.innerHTML = title;
-
-  tittleGrado.classList.add("hide");
-  inputGrado.classList.add("hide");
-
-  perfilE.onclick = function checked(){
-    tittleGrado.classList.remove("hide");
-    inputGrado.classList.remove("hide");
-    inputGrado.setAttribute("required", "");
-  }
-  perfilP.onclick = function checked(){
+  if(nameFile == "registro_users"){
+    var tittleGrado = document.getElementById('optionChecked');
+    var perfilE = document.getElementById('estudiante');
+    var perfilP = document.getElementById('profesor');
     tittleGrado.classList.add("hide");
     inputGrado.classList.add("hide");
-    inputGrado.removeAttribute("required");
+
+    perfilE.onclick = function checked(){
+      tittleGrado.classList.remove("hide");
+      inputGrado.classList.remove("hide");
+      inputGrado.setAttribute("required", "");
+    }
+    perfilP.onclick = function checked(){
+      tittleGrado.classList.add("hide");
+      inputGrado.classList.add("hide");
+      inputGrado.removeAttribute("required");
+    }
   }
+
+  here.innerHTML = title;
 }
 
 function validateForm(){
@@ -90,6 +92,7 @@ function validateForm(){
             if (res==="true")
             {
               alert("success :)")
+              window.location.reload();
               //  window.location = "http://localhost/edutopia/estudiante/pages";
             }else{
               alert("not success :(")
@@ -132,7 +135,8 @@ function generateUsername(nombres, apellidos){
   }else{
     nameStr[nombre.length]= apellido[0];
   }
-  userNm= nameStr.join(".");
+  userNm= nameStr.join(".").toLowerCase();
+
   return userNm;
 }
 
@@ -157,4 +161,164 @@ function generatePasswd(passwordLength){
       array[j] = temp;
     }
     return array;
+  }
+
+  function eliminarUser(element) {
+    var rowNmbr = element.closest('tr').rowIndex;
+    var row = document.getElementById("usersTable").rows[rowNmbr];
+    var data = row.cells[3].innerHTML;
+    var profile = row.cells[4].innerHTML;
+
+    var url = window.location.pathname;
+    var nameFile = url.substring(url.lastIndexOf('/')+1);
+    var title;
+
+    var titulos = [
+      ["profesores_list", "Profesores"],
+      ["estudiantes_list", "Estudiantes"],
+    ];
+
+    for(var i = 0, len = titulos.length; i < len; i++) {
+      if( titulos[i][0] === nameFile ) {
+        title = titulos[i][1];
+        break;
+      }
+    }
+
+    var obj = {};
+
+    if(title === "Profesores"){
+      obj= {
+        "perfil": "profesor",
+        "usuario": data
+      };
+
+    }else if(title === "Estudiantes"){
+      obj= {
+        "perfil": "estudiante",
+        "usuario": data
+      };
+    }
+
+    if (profile.length===12){
+      var passUserAd = prompt("Ingrese su contraseña");
+      if (passUserAd === "54321"){
+        $.ajax({
+            url: "http://localhost/edutopia/administrador/pages/eliminarUsuario",
+            type: "POST",
+            data: obj,
+            success: function (res) {
+                var len = res.length;
+                  // Returns successful data submission message when the entered information is stored in database.
+                if (res==="true"){
+                  alert("Usuario eliminado");
+                  window.location.reload();
+                }
+              }
+        });
+      }else if(passUserAd!==null && passUserAd!=="54321"){
+        alert("Contraseña incorrecta");
+      }
+    }else if(profile.length===17){
+      alert("Este usuario tiene perfil Administrador por lo que no puede modificarse o eliminarse");
+    }
+  }
+
+  function modificarUser(element){
+    var url = window.location.pathname;
+    var nameFile = url.substring(url.lastIndexOf('/')+1);
+    var title;
+
+    var titulos = [
+      ["profesores_list", "Profesores"],
+      ["estudiantes_list", "Estudiantes"],
+    ];
+
+    for(var i = 0, len = titulos.length; i < len; i++) {
+      if( titulos[i][0] === nameFile ) {
+        title = titulos[i][1];
+        break;
+      }
+    }
+
+    var btnSave = document.getElementsByTagName('button');
+    var inputs = document.getElementsByTagName('input');
+    var rowNmbr;
+    var row;
+    var nmbr;
+    var nmbrTwo;
+    var data = [];
+
+    var profile;
+    var user;
+
+    if(title=== "Profesores"){
+      rowNmbr = element.closest('tr').rowIndex;
+      row = document.getElementById('usersTable').rows[rowNmbr];
+      profile = row.cells[4].innerHTML;
+      user= row.cells[3].innerHTML;
+      nmbr = 3*rowNmbr-3;
+      nmbrTwo = 3*rowNmbr;
+
+      for (i = nmbrTwo-2; i< btnSave.length; i){
+        btnSave[i].classList.remove("hide");
+      }
+
+      if (profile.length===12){
+        for (i=nmbr; i<3*rowNmbr; i++) {
+          inputs[i].disabled = false;
+          data[i] = inputs[i].value;
+        }
+
+        obj = {
+          "perfil": profile,
+          "nombres": data[nmbr],
+          "apellidos": data[nmbr+1],
+          "usuario": user,
+          "identificacion": data[nmbr+2]
+        };
+      }else if(profile.length===17){
+        alert("Este usuario tiene perfil Administrador por lo que no puede modificarse o eliminarse");
+      }
+    }else{
+      rowNmbr = element.closest('tr').rowIndex;
+      row = document.getElementById('usersTableEst').rows[rowNmbr];
+      profile = row.cells[4].innerHTML;
+      user= row.cells[3].innerHTML;
+      nmbr = 3*rowNmbr-3;
+      nmbrTwo = 3*rowNmbr;
+
+      btnSave[nmbrTwo-2].classList.remove("hide");
+
+      for (i=nmbr; i<3*rowNmbr; i++) {
+        inputs[i].disabled = false;
+        data[i] = inputs[i].value;
+      }
+
+      obj = {
+        "perfil": "Estudiante",
+        "nombres": data[nmbr],
+        "apellidos": data[nmbr+1],
+        "usuario": user,
+        "identificacion": data[nmbr+2]
+      };
+    }
+
+    btnSave[nmbrTwo-2].addEventListener("click", function(){
+    $.ajax({
+          url: "http://localhost/edutopia/administrador/pages/modificarUsuario",
+          type: "POST",
+          data: obj,
+          success: function (res) {
+              var len = res.length;
+                // Returns successful data submission message when the entered information is stored in database.
+              if (res==="true"){
+                alert("Usuario modificado");
+                window.location.reload();
+              }else{
+                alert("Intente nuevamente");
+              }
+            }
+      });
+    });
   }

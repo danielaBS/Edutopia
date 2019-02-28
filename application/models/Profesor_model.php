@@ -38,4 +38,32 @@ Class Profesor_model extends CI_Model {
       $array = $query->result_array();
       return array_reverse($array);
     }
+
+    public function deleteuser($usuario){
+      $query = $this->db->query("SELECT * FROM profesores WHERE usuarioProf='$usuario'");
+      $row = $query->row_array();
+      if (isset($row) && $row['estado']==="1") {
+          $log = false;
+          echo json_encode($log);
+      }else if(isset($row) && $row['estado']==="2"){
+        $this->db->delete('profesores', array('usuarioProf' => $usuario));  // Produces: // DELETE FROM mytable  // WHERE id = $id
+        $log = true;
+        echo json_encode($log);
+      }
+    }
+
+    public function modificarUser($data){
+      $query = $this->db->where('usuarioProf', $data['usuario']);
+
+      $datos = array(
+          'nombreProf1' => $data['nombreProf1'],
+          'nombreProf2' => $data['nombreProf2'],
+          'apellidoProf1' => $data['apellidoProf1'],
+          'apellidoProf2' => $data['apellidoProf2'],
+          'identificacionProf' => $data['identificacionProf']);
+
+      $query = $this->db->update('profesores', $datos);
+
+      echo json_encode(true);
+    }
   }
