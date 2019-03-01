@@ -1,7 +1,7 @@
 /* ID */
 #containerForm{
   margin: auto;
-  width: 360px;
+  width: 30%;
   height: auto;
 }
 
@@ -17,18 +17,18 @@
 
 #imgHeaderEst{
   text-align: center;
-  margin-top: 27px;
+  margin-top: 4%;
 }
 
 #imgHeaderProf{
   text-align: center;
-  margin-top: 27px;
+  margin-top: 4%;
 }
 
 #icono{
-  margin-top: 5px;
+  margin-top: 1%;
   vertical-align:middle;
-  margin-right: 20px;
+  margin-right: 3.5%;
 }
 
 #links:link, visited, active{
@@ -61,7 +61,7 @@
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 9px 16px;
+  padding: 1.4vh 16px;
   text-decoration: none;
   font-size: 17px;
 }
@@ -89,8 +89,8 @@
 #navbar a.left{
   text-align: center;
   vertical-align: middle;
-  height: 23px;
-  margin: 3px 10px;
+  height: 60%;
+  margin: 4px 10px;
   float: left;
   color: white;
   padding: 4px;
@@ -168,8 +168,8 @@ p{
 }
 
 .formRegister{
-  width: 50vh;
-  margin: 5vh auto;
+  width: 32%;
+  margin: 3% auto;
 }
 
 .formRegistro{
@@ -178,7 +178,7 @@ p{
 
 #titles{
   height: 110px;
-  width: 22vh;
+  width: 40%;
   float: left;
 }
 
@@ -189,12 +189,12 @@ p{
 
 #inputs{
   height: 110px;
-  width: 28vh;
+  width: 60%;
   float: right;
 }
 
 #inputs input{
-  margin-top: 5px;
+  margin-top: 2.5%;
 }
 
 #button input{
@@ -273,6 +273,20 @@ table, th, td {
 .navbar a:hover, .dropdown:hover .dropbtn {
   background-color: #2474B5;
 }
+
+.dropdown-user{
+  position: absolute; right: 0; top: 30.5vh;
+  float: right;
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+
+.logout {
+  width: 40px;
+  float: right;
+}
+
 
 /* Header IMG */
 .img{

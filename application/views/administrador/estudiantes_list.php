@@ -28,7 +28,7 @@
     echo $estudiante_item['fechaRegistroEst'];
     ?></td>
     <td>
-    <button class="edit" id="saveBtn" title="Guardar">
+    <button class="hide" id="saveBtn" title="Guardar">
       <img border="0" alt="Guardar" src="https://i.imgur.com/mhmU0iz.png" width="25">
     <button class="edit" onclick="modificarUser(this)" title="Modificar registro">
       <img border="0" alt="Modificar" src="https://i.imgur.com/v7BIMrF.png" width="20">

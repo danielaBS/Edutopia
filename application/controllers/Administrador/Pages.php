@@ -86,6 +86,15 @@ class Pages extends CI_Controller {
      }
    }
 
+   public function validate(){
+     $contraseñaEl = $this->input->post('pswd');
+     if($contraseñaEl === $this->session->userdata('contraseña')){
+       $delete = true;
+       echo json_encode($delete);
+     }
+
+   }
+
    public function eliminarUsuario(){
      $perfil = $this->input->post('perfil');
      $usuario = $this->input->post('usuario');
@@ -94,7 +103,7 @@ class Pages extends CI_Controller {
        $this->profesor_model->deleteuser($usuario);
      }else if($perfil==="estudiante"){
        $this->estudiante_model->deleteuser($usuario);
-     }
+     }     
    }
 
    public function modificarUsuario(){

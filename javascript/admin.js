@@ -202,23 +202,35 @@ function generatePasswd(passwordLength){
 
     if (profile.length===12){
       var passUserAd = prompt("Ingrese su contraseña");
-      if (passUserAd === "54321"){
-        $.ajax({
-            url: "http://localhost/edutopia/administrador/pages/eliminarUsuario",
-            type: "POST",
-            data: obj,
-            success: function (res) {
-                var len = res.length;
-                  // Returns successful data submission message when the entered information is stored in database.
-                if (res==="true"){
-                  alert("Usuario eliminado");
-                  window.location.reload();
-                }
-              }
-        });
-      }else if(passUserAd!==null && passUserAd!=="54321"){
-        alert("Contraseña incorrecta");
-      }
+      obj1= {
+        "pswd": passUserAd
+      };
+      console.log(obj1);
+
+      $.ajax({
+        url: "http://localhost/edutopia/administrador/pages/validate",
+        type: "POST",
+        data: obj1,
+        success: function (res){
+          if (res==="true"){
+            $.ajax({
+                url: "http://localhost/edutopia/administrador/pages/eliminarUsuario",
+                type: "POST",
+                data: obj,
+                success: function (res2) {
+                    var len = res2.length;
+                      // Returns successful data submission message when the entered information is stored in database.
+                    if (res2==="true"){
+                      alert("Usuario eliminado");
+                      window.location.reload();
+                    }
+                  }
+            });
+          }else if(passUserAd!==null && res !== "true"){
+            alert("Contraseña incorrecta");
+          }
+        }
+      });
     }else if(profile.length===17){
       alert("Este usuario tiene perfil Administrador por lo que no puede modificarse o eliminarse");
     }

@@ -53,7 +53,7 @@ Class Profesor_model extends CI_Model {
           echo json_encode($log);
       }else if(isset($row) && $row['estado']==="2"){
         $this->db->delete('profesores', array('usuarioProf' => $usuario));  // Produces: // DELETE FROM mytable  // WHERE id = $id
-        $log = "<meta http-equiv='refresh' content='0'>";
+        $log = true;
         echo json_encode($log);
       }
     }
