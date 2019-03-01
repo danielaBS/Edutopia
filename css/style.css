@@ -1,7 +1,7 @@
 /* ID */
 #containerForm{
   margin: auto;
-  width: 30%;
+  width: 28%;
   height: auto;
 }
 
@@ -86,7 +86,7 @@
   padding: 7px;
 }
 
-#navbar a.left{
+#navbar a.left {
   text-align: center;
   vertical-align: middle;
   height: 60%;
@@ -94,6 +94,16 @@
   float: left;
   color: white;
   padding: 4px;
+}
+
+#navbar a.lefthome{
+  float: left;
+}
+
+#navbar a.lefthome:hover{
+  background: none;
+  border: none;
+  color: white;
 }
 
 #navbar a.left:hover{
@@ -278,13 +288,19 @@ table, th, td {
   position: absolute; right: 0; top: 30.5vh;
   float: right;
   width: 100px;
-  height: 100px;
+  height: 300px;
   background-color: blue;
 }
 
+#navbar .logout input{
+  background: none;
+}
+
 .logout {
-  width: 40px;
+  overflow: hidden;
+  width: 50px;
   float: right;
+  margin: 0.7% 0;
 }
 
 

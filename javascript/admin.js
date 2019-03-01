@@ -5,6 +5,21 @@ window.onload = function setView(){
   var btnRegistro = document.getElementById('btnReg');
   var home = document.getElementById('home');
   var here = document.getElementById('ub');
+  var logoutBtn = document.getElementById('userLOBtn');
+  var logoutMenu = document.getElementById('dropMenu');
+  var isPressed = 1;
+
+  logoutBtn.addEventListener("click", function(){
+    isPressed += 1;
+    if (isPressed % 2 == 0) {
+        isPressed = false;
+        logoutMenu.classList.remove("hide");
+        logoutMenu.classList.add("dropdown-user");
+      }else{
+        logoutMenu.classList.remove("dropdown-user");
+        logoutMenu.classList.add("hide");
+      }
+  });
 
   var url = window.location.pathname;
   var nameFile = url.substring(url.lastIndexOf('/')+1);
@@ -29,7 +44,7 @@ window.onload = function setView(){
     here.classList.add("current");
   }else{
     home.classList.add("current");
-    here.classList.add("left");
+    here.classList.add("lefthome");
   }
 
   if(nameFile == "registro_users"){

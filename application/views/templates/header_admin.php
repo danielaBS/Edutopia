@@ -17,9 +17,8 @@
 </div>
 <div id="navbar">
   <div class="logout">
-    <a id="user">
-      <img border="0" alt="W3Schools" src="https://i.imgur.com/JPQBdJi.png" width="18">
-      <div class="dropdown-user">
+    <input type="image" id="userLOBtn" src="https://i.imgur.com/JPQBdJi.png" alt="Submit" width="18">
+      <div id="dropMenu" class="hide">
         <a>Cerrar sesión</a>
       </div>
   </div>
