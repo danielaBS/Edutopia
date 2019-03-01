@@ -16,7 +16,6 @@
   <img class="img" src="https://i.imgur.com/8flU2av.png">
 </div>
 <div id="navbar">
-  <a href="#">Estadísticas</a>
   <a href="#">Actividades</a>
   <a href="#">Grados</a>
   <div class="dropdown">

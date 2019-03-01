@@ -8,6 +8,7 @@ class Pages extends CI_Controller {
       parent::__construct();
       $this->load->model('estudiante_model');
       $this->load->helper('url_helper');
+      $this->load->library('session');
     }
 
     public function index($page = 'registro') {
@@ -21,5 +22,6 @@ class Pages extends CI_Controller {
       $this->load->view('templates/header', $data);
       $this->load->view('estudiante/' . $page, $dataModel, $data);
       $this->load->view('templates/footer', $data);
+
    }
 }

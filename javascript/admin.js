@@ -89,7 +89,7 @@ function validateForm(){
         success: function (res) {
             var len = res.length;
               // Returns successful data submission message when the entered information is stored in database.
-            if (res==="true")
+            if (res === true)
             {
               alert("success :)")
               window.location.reload();
@@ -260,23 +260,42 @@ function generatePasswd(passwordLength){
       nmbr = 3*rowNmbr-3;
       nmbrTwo = 3*rowNmbr;
 
-      for (i = nmbrTwo-2; i< btnSave.length; i){
-        btnSave[i].classList.remove("hide");
-      }
+      btnSave[nmbrTwo-2].classList.remove("hide");
 
       if (profile.length===12){
         for (i=nmbr; i<3*rowNmbr; i++) {
           inputs[i].disabled = false;
-          data[i] = inputs[i].value;
         }
 
-        obj = {
-          "perfil": profile,
-          "nombres": data[nmbr],
-          "apellidos": data[nmbr+1],
-          "usuario": user,
-          "identificacion": data[nmbr+2]
-        };
+        btnSave[nmbrTwo-2].addEventListener("click", function(){
+          for (i=nmbr; i<3*rowNmbr; i++) {
+            data[i] = inputs[i].value;
+          }
+
+          obj = {
+            "perfil": profile,
+            "nombres": data[nmbr],
+            "apellidos": data[nmbr+1],
+            "usuario": user,
+            "identificacion": data[nmbr+2]
+          };
+
+        $.ajax({
+              url: "http://localhost/edutopia/administrador/pages/modificarUsuario",
+              type: "POST",
+              data: obj,
+              success: function (res) {
+                  var len = res.length;
+                    // Returns successful data submission message when the entered information is stored in database.
+                  if (res==="true"){
+                    alert("Usuario modificado");
+                    window.location.reload();
+                  }else{
+                    alert("Intente nuevamente");
+                  }
+                }
+          });
+        });
       }else if(profile.length===17){
         alert("Este usuario tiene perfil Administrador por lo que no puede modificarse o eliminarse");
       }
@@ -292,7 +311,6 @@ function generatePasswd(passwordLength){
 
       for (i=nmbr; i<3*rowNmbr; i++) {
         inputs[i].disabled = false;
-        data[i] = inputs[i].value;
       }
 
       obj = {
@@ -302,23 +320,34 @@ function generatePasswd(passwordLength){
         "usuario": user,
         "identificacion": data[nmbr+2]
       };
-    }
+      btnSave[nmbrTwo-2].addEventListener("click", function(){
+        for (i=nmbr; i<3*rowNmbr; i++) {
+          data[i] = inputs[i].value;
+        }
 
-    btnSave[nmbrTwo-2].addEventListener("click", function(){
-    $.ajax({
-          url: "http://localhost/edutopia/administrador/pages/modificarUsuario",
-          type: "POST",
-          data: obj,
-          success: function (res) {
-              var len = res.length;
-                // Returns successful data submission message when the entered information is stored in database.
-              if (res==="true"){
-                alert("Usuario modificado");
-                window.location.reload();
-              }else{
-                alert("Intente nuevamente");
+        obj = {
+          "perfil": "Estudiante",
+          "nombres": data[nmbr],
+          "apellidos": data[nmbr+1],
+          "usuario": user,
+          "identificacion": data[nmbr+2]
+        };
+
+      $.ajax({
+            url: "http://localhost/edutopia/administrador/pages/modificarUsuario",
+            type: "POST",
+            data: obj,
+            success: function (res) {
+                var len = res.length;
+                  // Returns successful data submission message when the entered information is stored in database.
+                if (res==="true"){
+                  alert("Usuario modificado");
+                  window.location.reload();
+                }else{
+                  alert("Intente nuevamente");
+                }
               }
-            }
+        });
       });
-    });
+    }
   }

@@ -15,6 +15,12 @@ Class Profesor_model extends CI_Model {
                 echo($row['estado']);
                 echo json_encode($log);
             }
+            //cache del inicio del sesión
+            $dataSession = array(
+              'usuario' => $row['usuarioProf'],
+              'contraseña' => $row['contraseñaProf']
+            );
+            $this->session->set_userdata($dataSession);
         }
     }
 
@@ -47,7 +53,7 @@ Class Profesor_model extends CI_Model {
           echo json_encode($log);
       }else if(isset($row) && $row['estado']==="2"){
         $this->db->delete('profesores', array('usuarioProf' => $usuario));  // Produces: // DELETE FROM mytable  // WHERE id = $id
-        $log = true;
+        $log = "<meta http-equiv='refresh' content='0'>";
         echo json_encode($log);
       }
     }

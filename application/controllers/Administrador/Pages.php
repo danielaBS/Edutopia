@@ -9,6 +9,8 @@ class Pages extends CI_Controller {
       $this->load->model('estudiante_model');
       $this->load->model('profesor_model');
       $this->load->helper('url_helper');
+      $this->load->library('session');
+
     }
 
     public function index($page ='home') {
