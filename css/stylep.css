@@ -1,0 +1,86 @@
+
+/*navbarprofesor*/
+#navbarprof{
+
+  height: 5.5vh;
+  box-shadow: 0 -5px 10px -5px rgba(0, 0, 7, 0.8);
+  background-color:#00004D
+}
+
+#navbarprof ul{
+  float: right;
+  display: block;
+  list-style:none;
+  margin:0;
+  padding:0
+}
+
+#navbarprof ul a{
+  display:block;
+	color:#f2f2f2;
+	text-decoration:none;
+	font-size:17px;
+  text-align: center;
+  padding: 1.4vh 16px;
+}
+
+#navbarprof ul li{
+  position:relative;
+  float:right;
+  margin:0;
+  padding:0
+}
+
+#navbarprof ul li.current-menu-item{
+	background:#00004D;
+}
+
+#navbarprof ul li a:hover{
+  background-color: #ddd;
+  color:black;
+  display: block;
+}
+
+#navbarprof ul ul{
+  display:none;
+  position:absolute;
+  top:100%;
+  float:right;
+  background:#8CC0E7;
+  padding:0
+}
+#navbarprof ul ul ul{
+	display:none;
+	position:absolute;
+	top:100%;
+  float:inherit;
+	background:#8CC0E7;
+	padding:0
+}
+
+#navbarprof ul ul li{
+	float:none;
+	width:200px
+}
+
+#navbarprof ul ul a{
+	line-height:120%;
+	padding:10px 15px
+}
+
+#navbarprof ul ul ul{
+	top:0;
+	left:90%
+}
+#navbarprof ul ul li:hover{
+  background: #ddd;
+  color:black;
+}
+#navbarprof ul li:hover > ul
+{
+	display:block
+}
+/* Header IMG */
+.headerIMG{
+background-size: cover;
+}
