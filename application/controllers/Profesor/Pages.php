@@ -25,7 +25,7 @@ class Pages extends CI_Controller {
 
   		$this->session->set_userdata($data['profesor']);
 
-      $this->load->view('templates/header', $data);
+      $this->load->view('templates/header_prof');
       $this->load->view('profesor/' . $page, $dataModel, $data);
       $this->load->view('templates/footer', $data);
   }
