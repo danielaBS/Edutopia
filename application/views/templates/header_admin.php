@@ -8,7 +8,7 @@
         <link rel="icon" type="image/png" href="https://i.imgur.com/c4uU8lr.png">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/style.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/styleA.css">
         <script type="text/javascript" src="<?php echo base_url() . '/javascript/admin.js'; ?>" ></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
@@ -17,13 +17,13 @@
 </div>
 <div id="navbar">
   <div class="logout">
-    <input type="image" id="userLOBtn" src="https://i.imgur.com/JPQBdJi.png" alt="Submit" width="18">
+    <input type="image" id="userLOBtn" src="https://i.imgur.com/JPQBdJi.png" alt="Submit" height="25">
       <div id="dropMenu" class="hide">
         <a>Cerrar sesión</a>
       </div>
   </div>
-  <a href="#">Actividades</a>
-  <a href="#">Grados</a>
+  <a id="actividades" href="http://localhost/edutopia/administrador/pages/index/actividades">Actividades</a>
+  <a id="grados" href="http://localhost/edutopia/administrador/pages/index/grados">Grados</a>
   <div class="dropdown">
     <button class="dropbtn">Usuarios</button>
     <div class="dropdown-content">
@@ -33,6 +33,6 @@
     </div>
   </div>
   <a id="home" href="http://localhost/edutopia/administrador/pages/index/home_admin">
-    <img border="0" alt="W3Schools" src="https://i.imgur.com/sqyTsRk.png" width="25">
+    <img id ="homeIMG" border="0" alt="W3Schools" src="https://i.imgur.com/NAb0CJU.png" height="22">
   <a id="ub"></a>
 </div>

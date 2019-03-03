@@ -4,12 +4,17 @@ window.onload = function setView(){
   var inputGrado = document.getElementById('grado');
   var btnRegistro = document.getElementById('btnReg');
   var home = document.getElementById('home');
+  var homeImg = document.getElementById('homeIMG');
   var here = document.getElementById('ub');
+  var grados = document.getElementById('grados');
+  var actividades = document.getElementById('actividades');
   var logoutBtn = document.getElementById('userLOBtn');
   var logoutMenu = document.getElementById('dropMenu');
+
   var isPressed = 1;
 
-  logoutBtn.addEventListener("click", function(){
+  logoutBtn.addEventListener("click", function(){    
+
     isPressed += 1;
     if (isPressed % 2 == 0) {
         isPressed = false;
@@ -39,12 +44,21 @@ window.onload = function setView(){
       }
   }
 
-  if(nameFile!=="home_admin"){
+  if(nameFile !== "home_admin" && nameFile !== "grados" && nameFile !== "actividades"){
     home.classList.add("left");
     here.classList.add("current");
-  }else{
+  } else if(nameFile === "home_admin"){
+    homeImg.src="https://i.imgur.com/0AsXETe.png";
     home.classList.add("current");
-    here.classList.add("lefthome");
+    here.style.visibility= "hidden";
+  } else if (nameFile === "grados"){
+    home.classList.add("left");
+    here.style.visibility= "hidden";
+    grados.classList.add("ishere");
+  } else {
+    home.classList.add("left");
+    here.style.visibility= "hidden";
+    actividades.classList.add("ishere");
   }
 
   if(nameFile == "registro_users"){
@@ -85,7 +99,6 @@ function validateForm(){
 
   if(perfil.every(val)){
     var usuario = generateUsername(perfil[1], perfil[2]);
-    var contraseña = generatePasswd(8);
 
     obj= {
       "perfil": perfil[0],
@@ -93,7 +106,6 @@ function validateForm(){
       "apellidos": perfil[2],
       "identificacion": perfil[3],
       "usuario": usuario,
-      "contraseña": contraseña,
       "grado": grado
     };
 
@@ -104,7 +116,7 @@ function validateForm(){
         success: function (res) {
             var len = res.length;
               // Returns successful data submission message when the entered information is stored in database.
-            if (res === true)
+            if (res === "true")
             {
               alert("success :)")
               window.location.reload();
@@ -154,29 +166,6 @@ function generateUsername(nombres, apellidos){
 
   return userNm;
 }
-
-function generatePasswd(passwordLength){
-  var numberChars = "0123456789";
-    var upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    var lowerChars = "abcdefghijklmnopqrstuvwxyz";
-    var allChars = numberChars + upperChars + lowerChars;
-    var randPasswordArray = Array(passwordLength);
-    randPasswordArray[0] = numberChars;
-    randPasswordArray[1] = upperChars;
-    randPasswordArray[2] = lowerChars;
-    randPasswordArray = randPasswordArray.fill(allChars, 3);
-    return shuffleArray(randPasswordArray.map(function(x) { return x[Math.floor(Math.random() * x.length)] })).join('');
-  }
-
-  function shuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-    }
-    return array;
-  }
 
   function eliminarUser(element) {
     var rowNmbr = element.closest('tr').rowIndex;
@@ -287,25 +276,26 @@ function generatePasswd(passwordLength){
       nmbr = 3*rowNmbr-3;
       nmbrTwo = 3*rowNmbr;
 
-      btnSave[nmbrTwo-2].classList.remove("hide");
-
       if (profile.length===12){
-        for (i=nmbr; i<3*rowNmbr; i++) {
+        btnSave[nmbrTwo-2].classList.remove("hide");
+
+        for (i=nmbr+1; i<3*rowNmbr+1; i++) {
           inputs[i].disabled = false;
         }
-
         btnSave[nmbrTwo-2].addEventListener("click", function(){
-          for (i=nmbr; i<3*rowNmbr; i++) {
+
+          for (i=nmbr; i<nmbrTwo+1; i++) {
             data[i] = inputs[i].value;
           }
 
           obj = {
             "perfil": profile,
-            "nombres": data[nmbr],
-            "apellidos": data[nmbr+1],
+            "nombres": data[nmbr+1],
+            "apellidos": data[nmbr+2],
             "usuario": user,
-            "identificacion": data[nmbr+2]
+            "identificacion": data[nmbr+3]
           };
+          console.log(obj);
 
         $.ajax({
               url: "http://localhost/edutopia/administrador/pages/modificarUsuario",
@@ -336,28 +326,21 @@ function generatePasswd(passwordLength){
 
       btnSave[nmbrTwo-2].classList.remove("hide");
 
-      for (i=nmbr; i<3*rowNmbr; i++) {
+      for (i=nmbr+1; i<3*rowNmbr+1; i++) {
         inputs[i].disabled = false;
       }
 
-      obj = {
-        "perfil": "Estudiante",
-        "nombres": data[nmbr],
-        "apellidos": data[nmbr+1],
-        "usuario": user,
-        "identificacion": data[nmbr+2]
-      };
       btnSave[nmbrTwo-2].addEventListener("click", function(){
-        for (i=nmbr; i<3*rowNmbr; i++) {
+        for (i=nmbr; i<3*rowNmbr+1; i++) {
           data[i] = inputs[i].value;
         }
 
         obj = {
           "perfil": "Estudiante",
-          "nombres": data[nmbr],
-          "apellidos": data[nmbr+1],
+          "nombres": data[nmbr+1],
+          "apellidos": data[nmbr+2],
           "usuario": user,
-          "identificacion": data[nmbr+2]
+          "identificacion": data[nmbr+3]
         };
 
       $.ajax({

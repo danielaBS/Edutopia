@@ -6,15 +6,50 @@ Class Estudiante_model extends CI_Model {
         $connection = $this->load->database();
     }
 
-    public function get_student($id= FALSE, $user = FALSE, $passwd = FALSE) {
+    public function get_student($id= FALSE, $user = FALSE) {
+        if ($user !== "") {
+            $query1 = $this->db->query("SELECT * FROM estudiante WHERE usuarioEst='$user'");
+            $query2 = $this->db->query("SELECT * FROM estudiante WHERE identificacionEst='$id'");
+            $row1 = $query1->row_array();
+            $row2 = $query2->row_array();
+            $row;
+
+            if($row1===$row2){
+              $row = $query1->row_array();
+            }
+
+            if (isset($row)){
+              if ($id === $row['identificacionEst'] && $row['firstLog']==="0") {
+                $log = true;
+                echo json_encode($log);
+              }else if($row['firstLog']==="1"){
+                $log = false;
+                echo json_encode($log);
+              }
+              $dataSession = array(
+                'usuario' => $row['usuarioEst'],
+                'contraseña' => $row['contraseñaEst']
+              );
+              $this->session->set_userdata($dataSession);
+            }else if(!isset($row)){
+              echo json_encode(0);
+            }
+        }
+    }
+
+    public function get_student2($id= FALSE, $user = FALSE, $passwd = FALSE) {
+      $paswrdEnter = $passwd;
+      $log;
         if ($user !== "") {
             $query = $this->db->query("SELECT * FROM estudiante WHERE usuarioEst='$user'");
             $row = $query->row_array();
-
-            if (isset($row) && $passwd === $row['contraseñaEst'] && $id === $row['identificacionEst']) {
-                $log = true;
-                echo json_encode($log);
+            if (isset($row) && $id === $row['identificacionEst'] && $row['contraseñaEst'] === $paswrdEnter) {
+              $log = true;
+            }else if($row['contraseñaEst']!==$paswrdEnter){
+              $log= false;
             }
+            echo json_encode($log);
+
         }
     }
 
@@ -27,7 +62,6 @@ Class Estudiante_model extends CI_Model {
       'apellidoEst2' => $dataE['apellidoEst2'],
       'idGrad' => $dataE['idGrad'],
       'usuarioEst' => $dataE['usuarioEst'],
-      'contraseñaEst' => $dataE['contraseñaEst'],
       'identificacionEst' => $dataE['identificacionEst']
       ));
       echo json_encode($query);
@@ -49,18 +83,28 @@ Class Estudiante_model extends CI_Model {
       }
     }
 
-    public function modificarUser($data){
-      $query = $this->db->where('usuarioEst', $data['usuario']);
+    public function modificarUser($data, $password= false, $logged= false){
+      if ($data===null){
+        $query = $this->db->where('usuarioEst', $this->session->userdata('usuario'));
+        $datos = array(
+          'firstLog' => true,
+          'contraseñaEst' => $password
+        );
+        $query = $this->db->update('estudiante', $datos);
+        echo json_encode(true);
 
-      $datos = array(
-          'nombreEst1' => $data['nombreEst1'],
-          'nombreEst2' => $data['nombreEst2'],
-          'apellidoEst1' => $data['apellidoEst1'],
-          'apellidoEst2' => $data['apellidoEst2'],
-          'identificacionEst' => $data['identificacionEst']);
+      }else if($data!==null){
+        $query = $this->db->where('usuarioEst', $data['usuario']);
 
-      $query = $this->db->update('estudiante', $datos);
-
-      echo json_encode(true);
+        $datos = array(
+            'nombreEst1' => $data['nombreEst1'],
+            'nombreEst2' => $data['nombreEst2'],
+            'apellidoEst1' => $data['apellidoEst1'],
+            'apellidoEst2' => $data['apellidoEst2'],
+            'contraseñaEst' => $password,
+            'identificacionEst' => $data['identificacionEst']);
+        $query = $this->db->update('estudiante', $datos);
+        echo json_encode(true);
+      }
     }
 }

@@ -35,7 +35,6 @@ class Pages extends CI_Controller {
      $RegName = $this->input->post('nombres');
      $RegApellidos = $this->input->post('apellidos');
      $RegUser = $this->input->post('usuario');
-     $RegPasswd = $this->input->post('contraseña');
      $grado = $this->input->post('grado');
 
      $nombreUno=""; $nombreDos=""; $apellidoUno=""; $apellidoDos="";
@@ -66,7 +65,6 @@ class Pages extends CI_Controller {
          "apellidoProf2" => $apellidoDos,
          "estado" => "2",
          "usuarioProf" => $RegUser,
-         "contraseñaProf" => $RegPasswd,
          "identificacionProf" => $RegId,
        );
        $this->profesor_model->registerUser($data);
@@ -79,7 +77,6 @@ class Pages extends CI_Controller {
          "apellidoEst2" => $apellidoDos,
          "idGrad" => $grado,
          "usuarioEst" => $RegUser,
-         "contraseñaEst" => $RegPasswd,
          "identificacionEst" => $RegId,
        );
        $this->estudiante_model->registerUser($dataE);
@@ -103,7 +100,7 @@ class Pages extends CI_Controller {
        $this->profesor_model->deleteuser($usuario);
      }else if($perfil==="estudiante"){
        $this->estudiante_model->deleteuser($usuario);
-     }     
+     }
    }
 
    public function modificarUsuario(){

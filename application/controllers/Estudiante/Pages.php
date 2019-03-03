@@ -12,16 +12,35 @@ class Pages extends CI_Controller {
     }
 
     public function index($page = 'registro') {
-      $idEst = $this->input->post('idEst');
-      $userEst = $this->input->post('usuarioEst');
-      $passwdEst = $this->input->post('contrasenaEst');
 
-      $data['estudiante'] = $this->estudiante_model->get_student();
-      $dataModel['usuario'] = $this->estudiante_model->get_student($idEst, $userEst, $passwdEst);
+      $this->load->view('templates/header');
+      $this->load->view('estudiante/' . $page);
+      $this->load->view('templates/footer');
 
-      $this->load->view('templates/header', $data);
-      $this->load->view('estudiante/' . $page, $dataModel, $data);
-      $this->load->view('templates/footer', $data);
+   }
+
+   public function log(){
+     $idEst = $this->input->post('idEst');
+     $userEst = $this->input->post('usuarioEst');
+
+     $data['estudiante'] = $this->estudiante_model->get_student();
+     $dataModel['usuario'] = $this->estudiante_model->get_student($idEst, $userEst);
+   }
+
+   public function login2(){
+     $idEst = $this->input->post('idEst');
+     $userEst = $this->input->post('usuarioEst');
+     $passEst = $this->input->post('contrasenaEst');
+
+     $data['estudiante'] = $this->estudiante_model->get_student2();
+     $dataModel['usuario'] = $this->estudiante_model->get_student2($idEst, $userEst, $passEst);
+   }
+
+   public function modifUser(){
+     $passEst = $this->input->post('contrasenaEst');
+     $logged = $this->input->post('firstLog');
+
+     $this->estudiante_model->modificarUser(null, $passEst, $logged);
 
    }
 }
