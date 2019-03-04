@@ -22,8 +22,8 @@
         <a>Cerrar sesión</a>
       </div>
   </div>
-  <a id="actividades" href="http://localhost/edutopia/administrador/pages/index/actividades">Actividades</a>
-  <a id="grados" href="http://localhost/edutopia/administrador/pages/index/grados">Grados</a>
+  <a class="btn" id="actividades" href="http://localhost/edutopia/administrador/pages/index/actividades">Actividades</a>
+  <a class="btn" id="grados" href="http://localhost/edutopia/administrador/pages/index/grados">Grados</a>
   <div class="dropdown">
     <button class="dropbtn">Usuarios</button>
     <div class="dropdown-content">
@@ -32,7 +32,6 @@
       <a class="btnIcon" href="http://localhost/edutopia/administrador/pages/index/registro_users">Agregar Usuarios</a>
     </div>
   </div>
-  <a id="home" href="http://localhost/edutopia/administrador/pages/index/home_admin">
-    <img id ="homeIMG" border="0" alt="W3Schools" src="https://i.imgur.com/NAb0CJU.png" height="22">
+  <a class="btn" id="home" href="http://localhost/edutopia/administrador/pages/index/home_admin">Inicio</a>
   <a id="ub"></a>
 </div>

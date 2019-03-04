@@ -33,7 +33,7 @@
         </div>
         <div class="form-popup" id="myForm">
           <div class="form-container">
-            <img src="https://i.imgur.com/OeTDLxB.png" alt="Smiley face" width="85">
+            <img src="https://i.imgur.com/OeTDLxB.png" alt="lock" width="85">
             <h2>Defina su contraseña</h2>
             <input type="password" placeholder="Contraseña" name="contraseña" id="passwordSetEst" required>
             <input type="password" placeholder="Confirme la contraseña" id="passwordConfEst" name="contraseñaConf" required>
@@ -69,7 +69,7 @@
         </div>
         <div class="form-popup" id="myFormProf">
           <div class="form-container">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/LutraCanadensis_fullres.jpg/250px-LutraCanadensis_fullres.jpg" alt="Smiley face" height="42" width="42">
+            <img src="https://i.imgur.com/OeTDLxB.png" alt="lock" width="85">
             <h2>Defina su contraseña</h2>
             <input type="password" placeholder="Contraseña" name="contraseña" id="passwordSetProf" required>
             <input type="password" placeholder="Confirme la contraseña" id="passwordConfProf" name="contraseñaConf" required>

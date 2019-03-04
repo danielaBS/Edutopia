@@ -13,7 +13,9 @@ window.onload = function setView(){
 
   var isPressed = 1;
 
-  logoutBtn.addEventListener("click", function(){    
+  var linksMenu = document.getElementById("navbar").getElementsByClassName("btn");
+
+  logoutBtn.addEventListener("click", function(){
 
     isPressed += 1;
     if (isPressed % 2 == 0) {
@@ -30,35 +32,36 @@ window.onload = function setView(){
   var nameFile = url.substring(url.lastIndexOf('/')+1);
   var title;
 
+  here.style.display = "none";
+
   var titulos = [
-    ["home_admin", "Inicio"],
     ["registro_users", "Registro de usuarios"],
     ["profesores_list", "Profesores"],
     ["estudiantes_list", "Estudiantes"],
   ];
 
-  for( var i = 0, len = titulos.length; i < len; i++ ) {
-      if( titulos[i][0] === nameFile ) {
-          title = titulos[i][1];
-          break;
-      }
-  }
-
-  if(nameFile !== "home_admin" && nameFile !== "grados" && nameFile !== "actividades"){
-    home.classList.add("left");
+  if(nameFile === "registro_users" || nameFile === "profesores_list" || nameFile === "estudiantes_list"){
+    here.style.display = "block";
     here.classList.add("current");
-  } else if(nameFile === "home_admin"){
-    homeImg.src="https://i.imgur.com/0AsXETe.png";
-    home.classList.add("current");
-    here.style.visibility= "hidden";
-  } else if (nameFile === "grados"){
-    home.classList.add("left");
-    here.style.visibility= "hidden";
-    grados.classList.add("ishere");
-  } else {
-    home.classList.add("left");
-    here.style.visibility= "hidden";
-    actividades.classList.add("ishere");
+
+    for( var i = 0, len = titulos.length; i < len; i++ ) {
+      if( titulos[i][0] === nameFile ) {
+        title = titulos[i][1];
+        break;
+      }
+    }
+  }else{
+    var menuItems = [
+      ["actividades", "actividades"],
+      ["grados", "grados"],
+      ["home_admin", "home"],
+    ];
+
+    for(var i=0;i<menuItems.length;i++){
+      if(menuItems[i][0] === nameFile){
+        document.getElementById(menuItems[i][1]).classList.add("active");
+      }
+    }
   }
 
   if(nameFile == "registro_users"){

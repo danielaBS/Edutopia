@@ -59,7 +59,6 @@ window.onload = function changeView() {
         type: "POST",
         data: obj,
         success: function (res) {
-          console.log(res);
           // Returns successful data submission message when the entered information is stored in database.
           if (res === "0true"){
             formPassProf.style.display = "block";

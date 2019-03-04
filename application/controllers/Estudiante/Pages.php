@@ -13,7 +13,7 @@ class Pages extends CI_Controller {
 
     public function index($page = 'registro') {
 
-      $this->load->view('templates/header');
+      $this->load->view('templates/header_est');
       $this->load->view('estudiante/' . $page);
       $this->load->view('templates/footer');
 

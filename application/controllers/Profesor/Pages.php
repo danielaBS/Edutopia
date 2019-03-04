@@ -13,7 +13,7 @@ class Pages extends CI_Controller {
     }
 
     public function index($page= 'home') {
-      $this->load->view('templates/header');
+      $this->load->view('templates/header_prof');
       $this->load->view('profesor/' . $page);
       $this->load->view('templates/footer');
     }
