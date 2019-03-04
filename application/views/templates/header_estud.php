@@ -8,8 +8,8 @@
         <link rel="icon" type="image/png" href="https://i.imgur.com/c4uU8lr.png">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/stylep.css">
-        <script type="text/javascript" src="<?php echo base_url() . '/javascript/profesores.js'; ?>" ></script>
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/stylee.css">
+        <script type="text/javascript" src="<?php echo base_url() . '/javascript/estudiantes.js'; ?>" ></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
 <div class="headerIMG" id="headerIMG">
