@@ -1,0 +1,253 @@
+/* TAGS */
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+/* Navigation Bar */
+
+#navbar{
+  padding: 0 10%;
+  height: 5.5vh;
+  box-shadow: 0 -5px 10px -5px rgba(0, 0, 7, 0.8);
+  overflow: hidden;
+  background-color:#F9875C;
+}
+
+#navbar a{
+  font-size: 17px;
+  float: right;
+  display: block;
+  color: rgba(255,255,255, 0.8);
+  text-align: center;
+  padding: 1.4vh 16px;
+  height: 3vh;
+  text-decoration: none;
+}
+
+#navbar a:hover {
+  border-top: 3px solid #FF1A1A;
+  color: white;
+}
+
+#navbar a.current{
+  border-top: 3px solid #FF1A1A;
+  color: #00004D;
+  font-size: 19px;
+  background-color: white;
+  float: left;
+  margin: 0px;
+  padding: 7px 10px;
+}
+
+#navbar div.dropdown{
+  float: right;
+  overflow: hidden;
+}
+
+/* Dropdown button in menu */
+.dropbtn {
+ font-size: 17px;
+ border: none;
+ outline: none;
+ color: rgba(255,255,255,0.8);
+ margin: 0;
+ padding: 1.5vh 16px;
+ background-color: #F9875C;
+}
+
+.dropbtnRight{
+  background-color: white;
+  border: none;
+  font-size: 17px;
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 1.4vh 16px;
+  text-decoration: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute; top: 30.5vh;
+  box-shadow: 0px 10px 15px 0px #888888;
+  background-color: white;
+  min-width: 160px;
+}
+
+.dropdown-contentRight {
+  height: auto;
+  display: none;
+  position: absolute; top: 11.6vh; left: 100% ;
+  box-shadow: 0px 10px 15px 0px #888888;
+  background-color: white;
+  min-width: 160px;
+}
+
+#navbar .active{
+  color: white;
+  font-size: 18px;
+  padding: 9px 16px;
+}
+
+#navbar .dropdown-content a {
+  color: black;
+  text-decoration: none;
+  text-align: left;
+}
+
+#navbar .dropdown-contentRight a {
+  height: auto;
+  text-decoration: none;
+  text-align: left;
+}
+
+#navbar .dropdown-user a{
+  color: black;
+}
+
+#navbar .dropdown-content a:hover {
+  border: none;
+  background-color: #ddd;
+}
+
+#navbar .dropdown-contentRight a:hover {
+  border: none;
+  background-color: #ddd;
+  height: auto;
+  overflow: hidden;
+}
+
+#navbar .dropdown-user a:hover{
+  border: none;
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: grid;
+}
+
+.dropdown-right:hover .dropdown-contentRight {
+  display: grid;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  border-top: 3px solid #FF1A1A;
+  color: white;
+}
+
+.dropdown-user{
+  position: absolute; top:30.5vh;
+  width: 133.2px;
+  height: auto;
+  box-shadow: 0px 10px 15px 0px #888888;
+  background-color: white;
+}
+
+.logout {
+  overflow: hidden;
+  width: 50px;
+  float: right;
+  margin: 0.7% 0;
+}
+
+/* Table users */
+
+table, th, td {
+  max-width: 80%;
+  margin: 0px auto;
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px 10px;
+}
+
+.nota{
+  margin: 40px auto 40px auto;
+}
+
+.tableUsers td{
+  width: 155px;
+  text-align: center;
+}
+
+/* Form Register User */
+
+.edit {
+  margin: 0 10px;
+  padding: 0 5px;
+  background: none;
+  border: none;
+}
+
+.formRegister{
+  width: 32%;
+  margin: 3% auto;
+}
+
+.formRegistro{
+  display: inline-block;
+}
+
+#titles{
+  height: 110px;
+  width: 40%;
+  float: left;
+}
+
+#inputs{
+  height: 110px;
+  width: 60%;
+  float: right;
+}
+
+#titles a{
+  margin: 3px 0;
+  float: right;
+}
+
+#inputs input{
+  margin-top: 2.5%;
+}
+
+#button input{
+  margin: 20px 60px;
+}
+
+#saveBtn{
+  background: none;
+  border: none;
+  border-style: none;
+}
+
+/* Sticky Navigation Bar */
+.hide {
+  display: none;
+}
+
+.sticky {
+  position: fixed;
+  left:0; right:0; top: 0;
+  width: 80%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+/* Header IMG */
+
+.headerIMG{
+  height: 25vh;
+  width: 100%;
+}
+
+.img{
+  max-width: 527px;
+  height: auto;
+  float: left;
+  margin-left: 40px;
+  padding-top: 50px;
+}
