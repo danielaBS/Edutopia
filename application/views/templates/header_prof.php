@@ -40,47 +40,16 @@
       <a>Clases</a>
       <a>Materias</a>
       <a>Periodos</a>
-      <div><a>Temas</a>
-        <div class="dropdown-content1">
+        <div class="dropdown-right">
+          <button id ="leftMenu" class="dropbtnRight">Temas</button><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-right-b-512.png" width="20px" style="margin-top:6%; margin-left: 30%">
+          <div class="dropdown-contentRight">
           <a>Material de estudio</a>
           <a>Evaluaciones</a>
           <a>Actividades de repaso</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   <a class="btn" id="home" href="http://localhost/edutopia/profesor/pages/index/home_prof">Inicio</a>
   <a id="ub"></a>
 </div>
-<!--<nav id="navbarprof">
-<ul>
-  <li class="current-menu-item"><a href="#">Acerca de </a></li>
-  <li class="current-menu-item"><a href="#">Estadisticas</a></li>
-  <li class="current-menu-item"><a href="#">Actividades</a>
-  <ul>
-  <li><a href="#">Plataformas</a></li>
-  <li><a href="#">Evaluaciones </a></li>
-  <li><a href="#">Actividades de repaso</a></li>
-  <li><a href="#">Progreso</a></li>
-   </ul>
-   </li>
-  <li><a href="#">Grados</a>
-   <ul>
-   <li><a href="#">Clases</a></li>
-   <li><a href="#">Materias</a></li>
-   <li><a href="#">Periodos</a></li>
-   <li><a href="#">Temas</a>
-   <ul>
-  <li><a href="#">Material de estudio</a></li>
-  <li><a href="#">Evaluaciones</a></li>
-  <li><a href="#">Actividades de repaso</a></li>
-  </ul>
-  </li>
-  </li>
-  </ul>
- <li class="current-menu-item"><a href="#">Home</a>
- </ul>
-</nav>
-
-
-*/

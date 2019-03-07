@@ -1,9 +1,11 @@
-/*navbarprofesor*/
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   text-align: center;
 }
+
+/* Navigation Bar */
 
 #navbarprof{
   padding: 0 10%;
@@ -20,6 +22,7 @@ body {
   color: rgba(255,255,255, 0.8);
   text-align: center;
   padding: 1.4vh 16px;
+  height: 3vh;
   text-decoration: none;
 }
 
@@ -29,7 +32,7 @@ body {
 }
 
 #navbarprof a.current{
-  border-top: 3px solid #8CC0E7;
+  border-top: 3px solid #FF1A1A;
   color: #00004D;
   font-size: 19px;
   background-color: white;
@@ -54,15 +57,36 @@ body {
  background-color: #00004D;
 }
 
-.dropdown-content {
- display: none;
- position: absolute; top: 30.5vh;
- box-shadow: 0px 10px 15px 0px #888888;
- background-color: white;
- min-width: 160px;
+.dropbtnRight{
+  background-color: white;
+  border: none;
+  font-size: 17px;
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 1.4vh 16px;
+  text-decoration: none;
 }
 
-#navbarprof.active{
+.dropdown-content {
+  display: none;
+  position: absolute; top: 30.5vh;
+  box-shadow: 0px 10px 15px 0px #888888;
+  background-color: white;
+  min-width: 160px;
+}
+
+.dropdown-contentRight {
+  height: auto;
+  display: none;
+  position: absolute; top: 16.5vh; left: 100% ;
+  box-shadow: 0px 10px 15px 0px #888888;
+  background-color: white;
+  min-width: 160px;
+}
+
+#navbarprof .active{
   color: white;
   font-size: 18px;
   padding: 9px 16px;
@@ -70,6 +94,12 @@ body {
 
 #navbarprof .dropdown-content a {
   color: black;
+  text-decoration: none;
+  text-align: left;
+}
+
+#navbarprof .dropdown-contentRight a {
+  height: auto;
   text-decoration: none;
   text-align: left;
 }
@@ -83,12 +113,23 @@ body {
   background-color: #ddd;
 }
 
+#navbarprof .dropdown-contentRight a:hover {
+  border: none;
+  background-color: #ddd;
+  height: auto;
+  overflow: hidden;
+}
+
 #navbarprof .dropdown-user a:hover{
   border: none;
   background-color: #ddd;
 }
 
 .dropdown:hover .dropdown-content {
+  display: grid;
+}
+
+.dropdown-right:hover .dropdown-contentRight {
   display: grid;
 }
 
@@ -112,9 +153,6 @@ body {
   margin: 0.7% 0;
 }
 
-.btnIcon::before{
-  content: "+ ";
-}
 /* Header IMG */
 
 .headerIMG{
