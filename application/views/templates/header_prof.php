@@ -15,7 +15,44 @@
 <div class="headerIMG" id="headerIMG">
   <img class="img" src="https://i.imgur.com/ePjP4ib.png">
 </div>
-<nav id="navbarprof">
+
+<div id="navbarprof">
+  <  <div class="logout">
+      <input type="image" id="userLOBtn" src="https://i.imgur.com/JPQBdJi.png" alt="Submit" height="25">
+        <div id="dropMenu" class="hide">
+          <a>Cerrar sesión</a>
+        </div>
+  </div>
+  <a class="btn" id="actividades">Acerca de</a>
+  <a class="btn" id="actividades">Estadisticas</a>
+  <div class="dropdown">
+ <button class="dropbtn">Actividades</button>
+ <div class="dropdown-content">
+   <a>Plataformas</a>
+   <a>Evaluaciones</a>
+   <a>Actividades de repaso</a>
+   <a>Progreso</a>
+ </div>
+</div>
+<div class="dropdown">
+    <button class="dropbtn">Grados</button>
+    <div class="dropdown-content">
+      <a>Clases</a>
+      <a>Materias</a>
+      <a>Periodos</a>
+      <div><a>Temas</a>
+        <div class="dropdown-content1">
+          <a>Material de estudio</a>
+          <a>Evaluaciones</a>
+          <a>Actividades de repaso</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="btn" id="home" href="http://localhost/edutopia/profesor/pages/index/home_prof">Inicio</a>
+  <a id="ub"></a>
+</div>
+<!--<nav id="navbarprof">
 <ul>
   <li class="current-menu-item"><a href="#">Acerca de </a></li>
   <li class="current-menu-item"><a href="#">Estadisticas</a></li>
@@ -43,4 +80,7 @@
   </ul>
  <li class="current-menu-item"><a href="#">Home</a>
  </ul>
- </nav>
+</nav>
+
+
+*/

@@ -2,7 +2,7 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
     <head>
-      <title>Edutopia-Administradores</title>
+      <title>Edutopia</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="https://i.imgur.com/c4uU8lr.png">
@@ -15,6 +15,7 @@
 <div class="headerIMG" id="headerIMG">
   <img class="img" src="https://i.imgur.com/8flU2av.png">
 </div>
+
 <div id="navbar">
   <div class="logout">
     <input type="image" id="userLOBtn" src="https://i.imgur.com/JPQBdJi.png" alt="Submit" height="25">
