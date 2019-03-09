@@ -49,10 +49,11 @@ Class Profesor_model extends CI_Model {
         if ($user !== "") {
             $query = $this->db->query("SELECT * FROM profesores WHERE usuarioProf='$user'");
             $row = $query->row_array();
-            if (isset($row) && $id === $row['identificacionProf'] && $row['contraseñaProf'] === $passwd) {
+            if (isset($row) && $id === $row['identificacionProf']) {
                 $log = true;
                 echo($row['estado']);
                 echo json_encode($log);
+                echo($row['contraseñaProf']);
             }
         }
     }

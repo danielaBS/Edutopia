@@ -2,7 +2,7 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
     <head>
-      <title>Edutopia</title>
+      <title>Edutopia - Administradores</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="https://i.imgur.com/c4uU8lr.png">
@@ -27,8 +27,8 @@
   <a class="btn" id="grados" href="http://localhost/edutopia/administrador/pages/index/grados">Grados</a>
   <div class="dropdown">
     <button class="dropbtn">Usuarios</button>
-    <div class="dropdown-content">
-      <a href="c">Profesores</a>
+    <div class="hide" id="dropddd">
+      <a href="http://localhost/edutopia/administrador/pages/index/profesores_list">Profesores</a>
       <a href="http://localhost/edutopia/administrador/pages/index/estudiantes_list">Estudiantes</a>
       <a class="btnIcon" href="http://localhost/edutopia/administrador/pages/index/registro_users">Agregar Usuarios</a>
     </div>

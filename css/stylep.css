@@ -9,9 +9,8 @@ body {
 
 #navbarprof{
   padding: 0 10%;
-  height: 5.5vh;
+  height: 6.2vh;
   box-shadow: 0 -5px 10px -5px rgba(0, 0, 7, 0.8);
-  overflow: hidden;
   background-color:#00004D;
 }
 
@@ -22,7 +21,6 @@ body {
   color: rgba(255,255,255, 0.8);
   text-align: center;
   padding: 1.4vh 16px;
-  height: 3vh;
   text-decoration: none;
 }
 
@@ -47,13 +45,22 @@ body {
 }
 
 /* Dropdown button in menu */
+
+.leftMenu{
+  width: 80%;
+}
+
+.leftMenu:hover {
+  background-color: #ddd;
+}
+
 .dropbtn {
  font-size: 17px;
  border: none;
  outline: none;
  color: rgba(255,255,255,0.8);
  margin: 0;
- padding: 1.5vh 16px;
+ padding: 1.6vh 16px;
  background-color: #00004D;
 }
 
@@ -71,7 +78,7 @@ body {
 
 .dropdown-content {
   display: none;
-  position: absolute; top: 30.5vh;
+  position: absolute; top: 31.2vh;
   box-shadow: 0px 10px 15px 0px #888888;
   background-color: white;
   min-width: 160px;
@@ -80,10 +87,18 @@ body {
 .dropdown-contentRight {
   height: auto;
   display: none;
-  position: absolute; top: 11.5vh; left: 100% ;
+  position: absolute; top: 11.7vh; left: 100%;
   box-shadow: 0px 10px 15px 0px #888888;
   background-color: white;
   min-width: 160px;
+}
+
+.dropdown-content_Sticky {
+ display: none;
+ position: fixed; top: 6.2vh;
+ box-shadow: 0px 10px 15px 0px #888888;
+ background-color: white;
+ min-width: 160px;
 }
 
 #navbarprof .active{
@@ -139,7 +154,7 @@ body {
 }
 
 .dropdown-user{
-  position: absolute; top:30.5vh;
+  position: absolute; top:31.2vh;
   width: 133.2px;
   height: auto;
   box-shadow: 0px 10px 15px 0px #888888;
@@ -150,7 +165,31 @@ body {
   overflow: hidden;
   width: 50px;
   float: right;
-  margin: 0.7% 0;
+  margin: 1% 0;
+}
+
+
+/* Sticky Navigation Bar */
+.hide {
+  display: none;
+}
+
+.sticky {
+  position: fixed;
+  left:0; right:0; top: 0;
+  width: 80%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+/* HOME */
+
+.body_home{
+  margin: auto;
+  width: 80%;
+  padding-top: 20px;
 }
 
 /* Header IMG */

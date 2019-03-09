@@ -2,7 +2,7 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
     <head>
-      <title>Edutopia-Estudiantes</title>
+      <title>Edutopia - Estudiantes</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="https://i.imgur.com/c4uU8lr.png">
@@ -25,7 +25,7 @@
   <a class="btn" id="actividades" href="">Acerca de</a>
   <div class="dropdown">
     <button class="dropbtn">Actividades</button>
-    <div class="dropdown-content">
+    <div id="dropddd" class="hide">
       <a href="">Evaluaciones</a>
       <a href="">Actividades de repaso</a>
       <a href="">Progreso</a>
@@ -33,11 +33,10 @@
   </div>
   <div class="dropdown">
     <button class="dropbtn">Clases</button>
-    <div class="dropdown-content">
-      <a href="">Materias</a>
+    <div id="dropdddr" class="hide">
       <a href="">Periodos</a>
       <div class="dropdown-right">
-        <button id ="leftMenu" class="dropbtnRight">Temas</button><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-right-b-512.png" width="20px" style="margin-top:6%; margin-left: 30%">
+        <a class="leftMenu dropbtnRight">Temas<img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-right-b-512.png" width="20px" style="margin-left: 44%"></a>
         <div class="dropdown-contentRight">
           <a href="">Material de estudio</a>
           <a href="">Evaluaciones</a>

@@ -1,5 +1,6 @@
 window.onload = function setView(){
   var headerIMG= document.getElementById('headerIMG');
+  var menu = document.getElementById("dropddd");
   headerIMG.style.backgroundImage = "url('https://i.imgur.com/9nbGv3j.png')";
   var inputGrado = document.getElementById('grado');
   var btnRegistro = document.getElementById('btnReg');
@@ -14,6 +15,7 @@ window.onload = function setView(){
   var isPressed = 1;
 
   var linksMenu = document.getElementById("navbar").getElementsByClassName("btn");
+  menu.classList.add("dropdown-content");
 
   logoutBtn.addEventListener("click", function(){
 
@@ -136,12 +138,15 @@ function validateForm(){
 
 window.onscroll = function navBar(){
   var navbar = document.getElementById("navbar");
+  var menu = document.getElementById("dropddd");
   document.getElementsByClassName('className')
 
   if (window.pageYOffset >= 188) {
-    navbar.classList.add("sticky")
+    navbar.classList.add("sticky");
+    menu.classList.add("dropdown-content_Sticky");
   } else {
     navbar.classList.remove("sticky");
+    menu.classList.remove("dropdown-content_Sticky");
   }
 }
 

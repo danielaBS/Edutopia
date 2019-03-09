@@ -43,13 +43,11 @@ Class Estudiante_model extends CI_Model {
         if ($user !== "") {
             $query = $this->db->query("SELECT * FROM estudiante WHERE usuarioEst='$user'");
             $row = $query->row_array();
-            if (isset($row) && $id === $row['identificacionEst'] && $row['contraseñaEst'] === $paswrdEnter) {
+            if (isset($row) && $id === $row['identificacionEst']) {
               $log = true;
-            }else if($row['contraseñaEst']!==$paswrdEnter){
-              $log= false;
+              echo json_encode($log);
             }
-            echo json_encode($log);
-
+            echo $row['contraseñaEst'];
         }
     }
 
@@ -106,5 +104,10 @@ Class Estudiante_model extends CI_Model {
         $query = $this->db->update('estudiante', $datos);
         echo json_encode(true);
       }
+    }
+
+    public function getStudentsGrad($id){
+      $query = $this->db->query("SELECT * FROM estudiante WHERE idGrad='$id'");
+      echo "{$query->num_rows()} Estudiante(s)";
     }
 }

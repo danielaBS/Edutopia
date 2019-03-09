@@ -30,7 +30,7 @@ window.onload = function changeView() {
 
   bod.style.backgroundImage = "url('https://i.imgur.com/Po4JpNc.png')";
   pagEst.style.height = screen.height - screen.height / 4.1;
-  pagProf.style.backgroundImage = "url('https://i.imgur.com/CRJa2Vc.png')";
+  pagProf.style.backgroundImage = "url('https://i.imgur.com/xrWbEXa.png')";
   pagProf.style.display = "none";
   footer.style.backgroundColor = "#8CC0E7";
 
@@ -162,12 +162,15 @@ window.onload = function changeView() {
         type: "POST",
         data: obj,
         success: function (res) {
-          // Returns successful data submission message when the entered information is stored in database.
-          var string = res.slice(0, 5);
+          var string = res.slice(5,res.length);
+          var string2 = res.slice(0, 5);
+          var hash = CryptoJS.AES.decrypt(string, "grisette moxa sauna argon motte farcy").toString(CryptoJS.enc.Utf8);
 
-          if (string === "1true"){
+          // Returns successful data submission message when the entered information is stored in database.
+
+          if (string2 === "1true" && passIngProf === hash){
             window.location = "http://localhost/edutopia/administrador/pages/index/home_admin";
-          }else if (string === "2true"){
+          }else if (string2 === "2true" && passIngProf === hash){
             window.location = "http://localhost/edutopia/profesor/pages/index/home_prof";
           }else{
             alert("Datos incorrectos")
@@ -185,7 +188,6 @@ window.onload = function changeView() {
     var idIngEst = idEst.value;
     var usuarioIngEst = userEst.value;
     var passIngEst = contraseñaEst.value;
-    var hash = CryptoJS.AES.encrypt(passIngEst, "!55frRe34");
 
     obj = {
       "idEst": idIngEst,
@@ -200,8 +202,13 @@ window.onload = function changeView() {
         type: "POST",
         data: obj,
         success: function (res) {
+          var string = res.slice(4,res.length);
+          var string2 = res.slice(0,4);
+          var hash = CryptoJS.AES.decrypt(string, "mongrel anthill oriental chacma magma polypus").toString(CryptoJS.enc.Utf8);
+
           // Returns successful data submission message when the entered information is stored in database.
-          if (res === "falsetrue"){
+
+          if (string2 === "true" && passIngEst === hash){
             window.location = "http://localhost/edutopia/estudiante/pages";
           } else {
             alert("Datos incorrectos")
@@ -231,8 +238,10 @@ function definePasswdProf(){
 
   if(psSet!=="" && psConfirmed!==""){
     if(psSet===psConfirmed){
+      var hash = CryptoJS.AES.encrypt(psSet, "grisette moxa sauna argon motte farcy").toString();
+
       obj = {
-        "contrasenaProf": psConfirmed,
+        "contrasenaProf": hash,
         "firstLog":true
       };
 
@@ -263,10 +272,14 @@ function definePasswdEst(){
   var psSet = document.getElementById("passwordSetEst").value;
   var psConfirmed = document.getElementById("passwordConfEst").value;
 
+
   if(psSet!=="" && psConfirmed!==""){
+
     if(psSet===psConfirmed){
+      var hash = CryptoJS.AES.encrypt(psSet, "mongrel anthill oriental chacma magma polypus").toString();
+
       obj = {
-        "contrasenaEst": psConfirmed,
+        "contrasenaEst": hash,
         "firstLog":true
       };
 

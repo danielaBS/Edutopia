@@ -10,9 +10,8 @@ body {
 
 #navbar{
   padding: 0 10%;
-  height: 5.5vh;
+  height: 6.2vh;
   box-shadow: 0 -5px 10px -5px rgba(0, 0, 7, 0.8);
-  overflow: hidden;
   background-color:#F9875C;
 }
 
@@ -48,13 +47,22 @@ body {
 }
 
 /* Dropdown button in menu */
+
+.leftMenu{
+  width: 80%;
+}
+
+.leftMenu:hover {
+  background-color: #ddd;
+}
+
 .dropbtn {
  font-size: 17px;
  border: none;
  outline: none;
  color: rgba(255,255,255,0.8);
  margin: 0;
- padding: 1.5vh 16px;
+ padding: 1.6vh 16px;
  background-color: #F9875C;
 }
 
@@ -72,7 +80,7 @@ body {
 
 .dropdown-content {
   display: none;
-  position: absolute; top: 30.5vh;
+  position: absolute; top: 31.2vh;
   box-shadow: 0px 10px 15px 0px #888888;
   background-color: white;
   min-width: 160px;
@@ -81,10 +89,18 @@ body {
 .dropdown-contentRight {
   height: auto;
   display: none;
-  position: absolute; top: 11.6vh; left: 100% ;
+  position: absolute; top: 5.8vh; left: 100% ;
   box-shadow: 0px 10px 15px 0px #888888;
   background-color: white;
   min-width: 160px;
+}
+
+.dropdown-content_Sticky {
+ display: none;
+ position: fixed; top: 6.2vh;
+ box-shadow: 0px 10px 15px 0px #888888;
+ background-color: white;
+ min-width: 160px;
 }
 
 #navbar .active{
@@ -140,7 +156,7 @@ body {
 }
 
 .dropdown-user{
-  position: absolute; top:30.5vh;
+  position: absolute; top:31.2vh;
   width: 133.2px;
   height: auto;
   box-shadow: 0px 10px 15px 0px #888888;
@@ -151,7 +167,7 @@ body {
   overflow: hidden;
   width: 50px;
   float: right;
-  margin: 0.7% 0;
+  margin: 1% 0;
 }
 
 /* Table users */

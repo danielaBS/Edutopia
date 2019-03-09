@@ -24,10 +24,13 @@ class Pages extends CI_Controller {
       $data['profesor_item'] = $this->profesor_model->getTeachersList();
       $data['estudiantes'] = $this->estudiante_model->getStudentsList();
       $data['estudiante_item'] = $this->estudiante_model->getStudentsList();
+      $data['grados'] = $this->grados_model->getGradosList();
+      $data['grados_item'] = $this->grados_model->getGradosList();      
 
       $this->load->view('templates/header_admin');
       $this->load->view('administrador/' . $page, $data);
       $this->load->view('templates/footer');
+
    }
 
    public function registroUsuarios($page = 'registro_users'){
