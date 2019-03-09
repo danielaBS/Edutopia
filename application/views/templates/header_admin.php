@@ -28,7 +28,7 @@
   <div class="dropdown">
     <button class="dropbtn">Usuarios</button>
     <div class="dropdown-content">
-      <a href="http://localhost/edutopia/administrador/pages/index/profesores_list">Profesores</a>
+      <a href="c">Profesores</a>
       <a href="http://localhost/edutopia/administrador/pages/index/estudiantes_list">Estudiantes</a>
       <a class="btnIcon" href="http://localhost/edutopia/administrador/pages/index/registro_users">Agregar Usuarios</a>
     </div>

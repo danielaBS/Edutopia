@@ -7,14 +7,19 @@ class Pages extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('profesor_model');
+        $this->load->model('Clase_model');
         $this->load->helper('url_helper');
         $this->load->library('session');
 
     }
 
     public function index($page= 'home') {
+
+      $data['clase'] = $this->Clase_model->get_clases();
+      $data['clase_item'] = $this->Clase_model->get_clases();
+
       $this->load->view('templates/header_prof');
-      $this->load->view('profesor/' . $page);
+      $this->load->view('profesor/' . $page, $data);
       $this->load->view('templates/footer');
     }
 

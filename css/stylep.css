@@ -80,7 +80,7 @@ body {
 .dropdown-contentRight {
   height: auto;
   display: none;
-  position: absolute; top: 16.5vh; left: 100% ;
+  position: absolute; top: 11.5vh; left: 100% ;
   box-shadow: 0px 10px 15px 0px #888888;
   background-color: white;
   min-width: 160px;

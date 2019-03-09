@@ -37,8 +37,7 @@
 <div class="dropdown">
     <button class="dropbtn">Grados</button>
     <div class="dropdown-content">
-      <a>Clases</a>
-      <a>Materias</a>
+      <a class="btnIcon" href="http://localhost/edutopia/profesor/pages/index/Class_list">Clases</a>
       <a>Periodos</a>
         <div class="dropdown-right">
           <button id ="leftMenu" class="dropbtnRight">Temas</button><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-right-b-512.png" width="20px" style="margin-top:6%; margin-left: 30%">
@@ -51,5 +50,4 @@
       </div>
     </div>
   <a class="btn" id="home" href="http://localhost/edutopia/profesor/pages/index/home_prof">Inicio</a>
-  <a id="ub"></a>
 </div>
