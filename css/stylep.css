@@ -6,15 +6,23 @@ body {
 }
 
 /* Navigation Bar */
+.dropdown:hover .dropdown-menu, .btn-group:hover .dropdown-menu{
+      display: block;
+  }
 
-#navbarprof{
+#navbar{
   padding: 0 10%;
   height: 6.2vh;
   box-shadow: 0 -5px 10px -5px rgba(0, 0, 7, 0.8);
   background-color:#00004D;
 }
 
-#navbarprof a{
+#navbar li {
+  display: inline-block;
+  float: right;
+}
+
+#navbar a{
   font-size: 17px;
   float: right;
   display: block;
@@ -24,150 +32,58 @@ body {
   text-decoration: none;
 }
 
-#navbarprof a:hover {
+#navbar a:hover {
+  border-radius: 0;
   border-top: 3px solid #2474B5;
   color: white;
 }
 
-#navbarprof a.current{
-  border-top: 3px solid #FF1A1A;
+#navbar a.current{
+  position: absolute;top:25vh;
+  border-top: 3px solid #8CC0E7;
   color: #00004D;
-  font-size: 19px;
+  font-size: 18px;
   background-color: white;
   float: left;
-  margin: 0px;
-  padding: 7px 10px;
 }
 
-#navbarprof div.dropdown{
-  float: right;
-  overflow: hidden;
-}
-
-/* Dropdown button in menu */
-
-.leftMenu{
-  width: 80%;
-}
-
-.leftMenu:hover {
-  background-color: #ddd;
-}
-
-.dropbtn {
- font-size: 17px;
- border: none;
- outline: none;
- color: rgba(255,255,255,0.8);
- margin: 0;
- padding: 1.6vh 16px;
- background-color: #00004D;
-}
-
-.dropbtnRight{
-  background-color: white;
-  border: none;
-  font-size: 17px;
-  float: left;
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 1.4vh 16px;
-  text-decoration: none;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute; top: 31.2vh;
-  box-shadow: 0px 10px 15px 0px #888888;
-  background-color: white;
-  min-width: 160px;
-}
-
-.dropdown-contentRight {
-  height: auto;
-  display: none;
-  position: absolute; top: 11.7vh; left: 100%;
-  box-shadow: 0px 10px 15px 0px #888888;
-  background-color: white;
-  min-width: 160px;
-}
-
-.dropdown-content_Sticky {
- display: none;
- position: fixed; top: 6.2vh;
- box-shadow: 0px 10px 15px 0px #888888;
- background-color: white;
- min-width: 160px;
-}
-
-#navbarprof .active{
+#navbar .active{
   color: white;
   font-size: 18px;
-  padding: 9px 16px;
 }
 
-#navbarprof .dropdown-content a {
-  color: black;
-  text-decoration: none;
+#navbar .dropdown-menu a{
   text-align: left;
-}
-
-#navbarprof .dropdown-contentRight a {
-  height: auto;
-  text-decoration: none;
-  text-align: left;
-}
-
-#navbarprof .dropdown-user a{
   color: black;
 }
 
-#navbarprof .dropdown-content a:hover {
+#navbar .dropdown-menu a:hover{
   border: none;
+  width: 100%;
   background-color: #ddd;
 }
 
-#navbarprof .dropdown-contentRight a:hover {
-  border: none;
-  background-color: #ddd;
-  height: auto;
-  overflow: hidden;
-}
-
-#navbarprof .dropdown-user a:hover{
-  border: none;
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: grid;
-}
-
-.dropdown-right:hover .dropdown-contentRight {
-  display: grid;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn {
-  border-top: 3px solid #2474B5;
-  color: white;
-}
-
-.dropdown-user{
-  position: absolute; top:31.2vh;
-  width: 133.2px;
-  height: auto;
+#navbar .dropdown-menu{
   box-shadow: 0px 10px 15px 0px #888888;
-  background-color: white;
+  text-align: center;
+  padding: 0;
+  position: absolute; top:5.8vh;
+}
+
+#navbar .nav-item{
+  padding-right: 0;
 }
 
 .logout {
   overflow: hidden;
   width: 50px;
   float: right;
-  margin: 1% 0;
+  margin: 0.7rem 1rem;
 }
 
+.btnIcon::before{
+  content: "+ ";
+}
 
 /* Sticky Navigation Bar */
 .hide {
@@ -177,7 +93,6 @@ body {
 .sticky {
   position: fixed;
   left:0; right:0; top: 0;
-  width: 80%;
 }
 
 .sticky + .content {

@@ -49,12 +49,9 @@
       Grados
     </a>
     <div class="dropdown-menu dropdown-menu dropdown-menu-right">
-      <a class="dropdown-item" href="#">Clases</a>
-      <a class="dropdown-item" href="#">Periodos</a>
+      <a class="dropdown-item" href="http://localhost/edutopia/profesor/pages/index/registro_class">Clases</a>
       <span class="dropdown-item" href="#">Temas</span>
       <a style="border-top:1px solid #e9ecef;" class="dropdown-item" href="#">Material de estudio</a>
-      <a class="dropdown-item" href="#">Evaluaciones</a>
-      <a class="dropdown-item" href="#">Actividades de repaso</a>
     </div>
   </li>
   <li class="nav-item">

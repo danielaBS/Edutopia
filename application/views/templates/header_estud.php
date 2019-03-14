@@ -37,19 +37,11 @@
     <div class="dropdown-menu dropdown-menu dropdown-menu-right">
       <a class="dropdown-item" href="#">Evaluaciones</a>
       <a class="dropdown-item" href="#">Actividades de repaso</a>
-      <a class="dropdown-item" href="#">Progreso</a>
+      <a style="border-top:1px solid #e9ecef;" class="dropdown-item" href="#">Progreso</a>
     </div>
   </li>
-  <li class="nav-item dropdown">
-    <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Clases
-    </a>
-    <div class="dropdown-menu dropdown-menu dropdown-menu-right">
-      <a class="dropdown-item" href="#">Periodos</a>
-
-      <a class="dropdown-item" href="#">Temas</a>
-      <a class="dropdown-item" href="#">Material de estudio</a>
-    </div>
+  <li class="nav-item">
+    <a class="btn" id="grados" href="#">Clases</a>
   </li>
   <li class="nav-item">
     <a class="btn" id="home" href="http://localhost/edutopia/estudiante/pages/index/home_est">Inicio</a>
