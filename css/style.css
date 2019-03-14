@@ -1,9 +1,4 @@
 /* TAGS */
-body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  text-align: center;
-}
 
 p{
   vertical-align: middle;
@@ -27,12 +22,6 @@ p{
   width: 100%;
   overflow: hidden;
   padding: 4.5px 0px 0px 0px;
-}
-
-#icono{
-  margin-top: 1%;
-  vertical-align:middle;
-  margin-right: 3.5%;
 }
 
 #imgHeaderEst{
@@ -90,7 +79,7 @@ p{
 /* The popup form - hidden by default */
 .form-popup {
   width: 28%;
-  height: 380px;
+  height: auto;
   display: none;
   position: fixed;
   top: 28%;
@@ -103,15 +92,16 @@ p{
 
 /* Add styles to the form container */
 .form-container {
+  text-align: center;
   max-width: 100%;
-  height: 100%;
+  height: auto;
   padding: 20px 10px;
   background-color: white;
 }
 
 /* Full-width input fields */
 .form-container input[type=text], .form-container input[type=password] {
-  width: 90%;
+  width: 100%;
   padding: 15px;
   margin: 3px 0px;
   border: none;
@@ -135,10 +125,13 @@ p{
   opacity: 0.8;
 }
 
+.form-container .btn:hover{
+  color: white;
+}
+
 /* Add a red background color to the cancel button */
 .form-container .cancel {
   background-color: #f9875c;
-
 }
 
 /* Add some hover effects to buttons */
@@ -174,16 +167,6 @@ p{
   border-color: rgba(0,0,0,0);
 }
 
-/* Header IMG */
-
-.img{
-  width: 527px;
-  height: auto;
-  float: left;
-  margin-left: 40px;
-  padding-top: 50px;
-}
-
 /* Login forms */
 
 .iniciarsesionEst{
@@ -194,6 +177,10 @@ p{
   background-color: #f9875c;
   border-radius: 4px;
   border-color: rgba(0,0,0,0);
+}
+
+.imagenCara{
+  text-align: center;
 }
 
 .iniciarsesionProf{
@@ -219,16 +206,16 @@ div.boton{
 }
 
 div.candado{
-  align-items: center;
-  margin-top: 2%;
+  text-align: center;
+  margin: 2% 0;
 }
 
 div.id{
-  align-items: center;
-  margin-top: 2%;
+  text-align: center;
+  margin: 2% auto;
 }
 
 div.mensaje{
-  align-items: center;
-  margin-top: 4%;
+  text-align: center;
+  margin: 4% auto;
 }

@@ -13,7 +13,7 @@ class Pages extends CI_Controller {
 
     }
 
-    public function index($page= 'home') {
+    public function index($page= 'home_prof') {
 
       $data['clase'] = $this->Clase_model->get_clases();
       $data['clase_item'] = $this->Clase_model->get_clases();
