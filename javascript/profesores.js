@@ -25,6 +25,37 @@ window.onload = function setView(){
   });
 }
 
+function validateForm(){
+
+    var nombreClase = document.getElementsByName('nombreClase').value;
+    var descripcionClase =  document.getElementsByName('descripcionClase').value;
+    var grado = document.getElementsByName('grado').value;
+
+    obj= {
+      "nombreClase": nombreClase,
+      "descripcionClase": descripcionClase,
+      "grado": grado
+    };
+
+    $.ajax({
+        url: "http://localhost/edutopia/profesor/pages/registerclass",
+        type: "POST",
+        data: obj,
+        success: function (res) {
+            var len = res.length;
+              // Returns successful data submission message when the entered information is stored in database.
+            if (res === "true")
+            {
+              alert("success :)")
+              window.location.reload();
+              //  window.location = "http://localhost/edutopia/estudiante/pages";
+            }else{
+              alert("not success :(")
+            }
+          }
+    });
+  }
+
 window.onscroll = function navBar(){
   var navbar = document.getElementById("navbarprof");
   var menu = document.getElementById("dropddd");

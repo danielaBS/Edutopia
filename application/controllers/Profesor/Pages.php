@@ -7,7 +7,7 @@ class Pages extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('profesor_model');
-        $this->load->model('Clase_model');
+        $this->load->model('clase_model');
         $this->load->helper('url_helper');
         $this->load->library('session');
 
@@ -15,8 +15,8 @@ class Pages extends CI_Controller {
 
     public function index($page= 'home') {
 
-      $data['clase'] = $this->Clase_model->get_clases();
-      $data['clase_item'] = $this->Clase_model->get_clases();
+      $data['clase'] = $this->clase_model->get_clases();
+      $data['clase_item'] = $this->clase_model->get_clases();
 
       $this->load->view('templates/header_prof');
       $this->load->view('profesor/' . $page, $data);
@@ -46,4 +46,18 @@ class Pages extends CI_Controller {
 
       $this->profesor_model->modificarUser(null, $passProf, $logged);
     }
+
+    public function registroClases ($page = 'registro_clase') {
+        $RegName = $this->input->post('nombreClase');
+        $RegDescripcion = $this->input->post('descripcionClase');
+        $grado = $this->input->post('grado');
+
+        $data = array(
+          "nombreClase" => $RegName,
+          "descripcionClase" => $RegDescripcion,
+          "idGrad" => $grado,
+        );
+        $this->clase_model->registerclass($data);
+
+      }
   }
