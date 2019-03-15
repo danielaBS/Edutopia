@@ -12,7 +12,7 @@ Class Clase_model extends CI_Model {
       return array_reverse($array);
     }
 
-    public function registerclass($data){
+    public function registerClass($data){
       $query = $this->db->insert('clase',
       $data = array(
         "nombreClase" =>  $data['nombreClase'],

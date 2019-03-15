@@ -57,7 +57,7 @@ class Pages extends CI_Controller {
           "descripcionClase" => $RegDescripcion,
           "idGrad" => $grado,
         );
-        $this->clase_model->registerclass($data);
+        $this->clase_model->registerClass($data);
 
       }
   }

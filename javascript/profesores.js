@@ -2,8 +2,7 @@ window.onload = function setView(){
   var headerIMG= document.getElementById('headerIMG');
 
   headerIMG.style.backgroundImage = "url('https://i.imgur.com/xrWbEXa.png')";
-  menu.classList.add("dropdown-content");
-  menuTw.classList.add("dropdown-content");
+
 }
 
 function validateForm(){
@@ -19,7 +18,7 @@ function validateForm(){
     };
 
     $.ajax({
-        url: "http://localhost/edutopia/profesor/pages/registerclass",
+        url: "http://localhost/edutopia/profesor/pages/registroClases",
         type: "POST",
         data: obj,
         success: function (res) {
