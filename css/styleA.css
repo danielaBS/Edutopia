@@ -2,17 +2,39 @@
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif !important;
   text-align: center;
 }
 
+div a{
+  color: black;
+  text-decoration: none;
+}
+
+ div a:hover{
+   color: black;
+   text-decoration: none;
+ }
+
 /* Navigation Bar */
+.dropdown:hover .dropdown-menu, .btn-group:hover .dropdown-menu{
+      display: block;
+  }
 
 #navbar{
   padding: 0 10%;
   height: 6.2vh;
   box-shadow: 0 -5px 10px -5px rgba(0, 0, 7, 0.8);
   background-color:#00004D;
+}
+
+#navbar li {
+  display: inline-block;
+  float: right;
+}
+
+#navbar li:last-child{
+  float: left;
 }
 
 #navbar a{
@@ -26,6 +48,7 @@ body {
 }
 
 #navbar a:hover {
+  border-radius: 0;
   border-top: 3px solid #2474B5;
   color: white;
 }
@@ -33,97 +56,42 @@ body {
 #navbar a.current{
   border-top: 3px solid #8CC0E7;
   color: #00004D;
-  font-size: 19px;
+  font-size: 18px;
   background-color: white;
-  float: left;
-  margin: 0px;
-  padding: 7px 10px;
-}
-
-#navbar div.dropdown{
-  float: right;
-  overflow: hidden;
-}
-
-/* Dropdown button in menu */
-.dropbtn {
- font-size: 17px;
- border: none;
- outline: none;
- color: rgba(255,255,255,0.8);
- margin: 0;
- padding: 1.6vh 16px;
- background-color: #00004D;
-}
-
-.dropdown-content {
- display: none;
- position: absolute; top: 31.2vh;
- box-shadow: 0px 10px 15px 0px #888888;
- background-color: white;
- min-width: 160px;
-}
-
-.dropdown-content_Sticky {
- display: none;
- position: fixed; top: 6.2vh;
- box-shadow: 0px 10px 15px 0px #888888;
- background-color: white;
- min-width: 160px;
 }
 
 #navbar .active{
   color: white;
   font-size: 18px;
-  padding: 9px 16px;
 }
 
-#navbar .dropdown-content a {
-  color: black;
-  text-decoration: none;
+#navbar .dropdown-menu a{
   text-align: left;
-}
-
-#navbar .dropdown-user a{
   color: black;
 }
 
-#navbar .dropdown-content a:hover {
+#navbar .dropdown-menu a:hover{
   border: none;
+  width: 100%;
   background-color: #ddd;
 }
 
-#navbar .dropdown-user a:hover{
-  border: none;
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: grid;
-}
-
-.dropdown:hover .dropdown-content_Sticky{
-  display: grid;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn {
-  border-top: 3px solid #2474B5;
-  color: white;
-}
-
-.dropdown-user{
-  position: absolute; top:31.2vh;
-  width: 133.2px;
-  height: auto;
+#navbar .dropdown-menu{
   box-shadow: 0px 10px 15px 0px #888888;
-  background-color: white;
+  text-align: center;
+  padding: 0;
+  position: absolute; top:5.8vh;
+}
+
+#navbar .nav-item{
+  padding-right: 0;
 }
 
 .logout {
   overflow: hidden;
   width: 50px;
   float: right;
-  margin: 1% 0;
+  margin: 0.7rem 1rem;
 }
 
 .btnIcon::before{
@@ -133,23 +101,18 @@ body {
 /* Table users */
 
 table, th, td {
+  text-align: center;
   max-width: 80%;
-  margin: 0px auto;
+  margin: 0px auto 40px;
   border: 1px solid black;
   border-collapse: collapse;
   padding: 5px 10px;
 }
 
 .nota{
-  margin: 40px auto 40px auto;
+  width: 600px;
+  margin: 40px auto;
 }
-
-.tableUsers td{
-  width: 155px;
-  text-align: center;
-}
-
-/* Form Register User */
 
 .edit {
   margin: 0 10px;
@@ -158,44 +121,61 @@ table, th, td {
   border: none;
 }
 
-.formRegister{
-  width: 32%;
-  margin: 3% auto;
-}
-
-.formRegistro{
-  display: inline-block;
-}
-
-#titles{
-  height: 110px;
-  width: 40%;
-  float: left;
-}
-
-#inputs{
-  height: 110px;
-  width: 60%;
-  float: right;
-}
-
-#titles a{
-  margin: 3px 0;
-  float: right;
-}
-
-#inputs input{
-  margin-top: 2.5%;
-}
-
-#button input{
-  margin: 20px 60px;
-}
-
 #saveBtn{
   background: none;
   border: none;
   border-style: none;
+}
+
+/* Form Register User */
+.formRegister {
+  width: 460px;
+  height: auto;
+  margin: auto;
+}
+
+.formRegister div{
+  padding-right: 20px;
+  height: auto;
+  width: 230px;
+  font-size: 19px;
+  margin: 60px 0 0;
+  display: inline-block;
+  float: left;
+}
+
+.formRegister div:first-child{
+  text-align: right;
+}
+
+.formRegister input{
+  width: 200px;
+  margin: 1% 0;
+}
+
+.formRegister input:first-child, input:nth-child(2){
+  width: auto;
+}
+
+div .tittle {
+  margin: 4px 0 2px;
+}
+
+#button {
+  width: 20%;
+  height: 10%;
+  margin: 150px auto;
+}
+
+ #btnReg{
+   margin: 15px 0;
+   text-align: center;
+   width: 200px;
+   height: 35px;
+   border-radius: 5px;
+   font-size: 19px;
+   background-color: #00004D;
+   color: white;
 }
 
 /* Sticky Navigation Bar */
@@ -206,7 +186,6 @@ table, th, td {
 .sticky {
   position: fixed;
   left:0; right:0; top: 0;
-  width: 80%;
 }
 
 .sticky + .content {
@@ -233,17 +212,16 @@ table, th, td {
 .body_grad{
   margin: auto;
   width: 80%;
-  padding-top: 20px;
+
 }
 
-.grados {
+.body_grad div{
   width: 80%;
   height: 250px;
   background-color: MediumAquamarine;
-  margin: 60px 30px 0 0;
-  padding: 5px 0;
+  margin: 40px auto 10px;
   border-radius: 20px;
-  display: inline-block
+  text-align: center;
 }
 
 .grados a{

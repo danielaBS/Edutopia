@@ -1,5 +1,5 @@
 <div class="nota">
-  <strong>Nota:</strong><a> Los usuarios con perfil Administrador no pueden elminarse ni modificarse.</a>
+  <strong>Nota:</strong><span> Los usuarios con perfil Administrador no pueden elminarse ni modificarse.</span>
 </div>
 <table id= "usersTable" class="list">
   <tr class="tablaUsers">
@@ -39,7 +39,7 @@
     echo $profesor_item['fechaRegistroProf'];
     ?></td>
     <td>
-    <button class="hide" id="saveBtn" title="Guardar">
+    <button class="hide btnsa" id="saveBtn" title="Guardar" name="btnSa">
       <img border="0" alt="Guardar" src="https://i.imgur.com/mhmU0iz.png" width="25">
     <button class="edit" onclick="modificarUser(this)" title="Modificar registro">
       <img border="0" alt="Modificar" src="https://i.imgur.com/v7BIMrF.png" width="20">

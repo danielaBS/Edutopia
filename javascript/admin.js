@@ -1,6 +1,5 @@
 window.onload = function setView(){
   var headerIMG= document.getElementById('headerIMG');
-  var menu = document.getElementById("dropddd");
   headerIMG.style.backgroundImage = "url('https://i.imgur.com/9nbGv3j.png')";
   var inputGrado = document.getElementById('grado');
   var btnRegistro = document.getElementById('btnReg');
@@ -9,26 +8,10 @@ window.onload = function setView(){
   var here = document.getElementById('ub');
   var grados = document.getElementById('grados');
   var actividades = document.getElementById('actividades');
-  var logoutBtn = document.getElementById('userLOBtn');
-  var logoutMenu = document.getElementById('dropMenu');
 
   var isPressed = 1;
 
   var linksMenu = document.getElementById("navbar").getElementsByClassName("btn");
-  menu.classList.add("dropdown-content");
-
-  logoutBtn.addEventListener("click", function(){
-
-    isPressed += 1;
-    if (isPressed % 2 == 0) {
-        isPressed = false;
-        logoutMenu.classList.remove("hide");
-        logoutMenu.classList.add("dropdown-user");
-      }else{
-        logoutMenu.classList.remove("dropdown-user");
-        logoutMenu.classList.add("hide");
-      }
-  });
 
   var url = window.location.pathname;
   var nameFile = url.substring(url.lastIndexOf('/')+1);
@@ -96,7 +79,7 @@ function validateForm(){
     document.getElementsByName('identificacion')[0].value,
   ];
 
-  var grado = document.getElementsByName('grado')[0].value;
+  var grado = document.getElementById("grado").value;
 
   function val(perfilT){
     return perfilT !== "";
@@ -114,11 +97,14 @@ function validateForm(){
       "grado": grado
     };
 
+    console.log(perfil[4]);
+
     $.ajax({
         url: "http://localhost/edutopia/administrador/pages/registroUsuarios",
         type: "POST",
         data: obj,
         success: function (res) {
+
             var len = res.length;
               // Returns successful data submission message when the entered information is stored in database.
             if (res === "true")
@@ -138,15 +124,12 @@ function validateForm(){
 
 window.onscroll = function navBar(){
   var navbar = document.getElementById("navbar");
-  var menu = document.getElementById("dropddd");
-  document.getElementsByClassName('className')
+  document.getElementsByClassName('className');
 
   if (window.pageYOffset >= 188) {
     navbar.classList.add("sticky");
-    menu.classList.add("dropdown-content_Sticky");
   } else {
     navbar.classList.remove("sticky");
-    menu.classList.remove("dropdown-content_Sticky");
   }
 }
 
@@ -265,8 +248,9 @@ function generateUsername(nombres, apellidos){
       }
     }
 
-    var btnSave = document.getElementsByTagName('button');
     var inputs = document.getElementsByTagName('input');
+    var save = document.getElementsByClassName("btnsa");
+
     var rowNmbr;
     var row;
     var nmbr;
@@ -275,24 +259,37 @@ function generateUsername(nombres, apellidos){
 
     var profile;
     var user;
+    var cont = 0;
+    var inputsPerRow;
 
     if(title=== "Profesores"){
       rowNmbr = element.closest('tr').rowIndex;
       row = document.getElementById('usersTable').rows[rowNmbr];
       profile = row.cells[4].innerHTML;
       user= row.cells[3].innerHTML;
-      nmbr = 3*rowNmbr-3;
+      nmbr = 3*rowNmbr-4;
       nmbrTwo = 3*rowNmbr;
 
       if (profile.length===12){
-        btnSave[nmbrTwo-2].classList.remove("hide");
+        for (var j= 0; j< inputs.length; j++){
+          inputs[j].disabled = true;
+        }
 
-        for (i=nmbr+1; i<3*rowNmbr+1; i++) {
+        for (var i=0; i< save.length; i++){
+          if (i!= rowNmbr){
+            save[i].classList.add("hide");
+          }else{
+            save[i-1].classList.remove("hide");
+          }
+        }
+
+        for (var i=nmbr+1; i<3*rowNmbr; i++) {
           inputs[i].disabled = false;
         }
-        btnSave[nmbrTwo-2].addEventListener("click", function(){
 
-          for (i=nmbr; i<nmbrTwo+1; i++) {
+        save[rowNmbr-1].addEventListener("click", function(){
+
+          for (i=nmbr+1; i<nmbrTwo+1; i++) {
             data[i] = inputs[i].value;
           }
 
@@ -303,6 +300,7 @@ function generateUsername(nombres, apellidos){
             "usuario": user,
             "identificacion": data[nmbr+3]
           };
+
           console.log(obj);
 
         $.ajax({
@@ -329,17 +327,27 @@ function generateUsername(nombres, apellidos){
       row = document.getElementById('usersTableEst').rows[rowNmbr];
       profile = row.cells[4].innerHTML;
       user= row.cells[3].innerHTML;
-      nmbr = 3*rowNmbr-3;
+      nmbr = 3*rowNmbr-4;
       nmbrTwo = 3*rowNmbr;
 
-      btnSave[nmbrTwo-2].classList.remove("hide");
+      for (var j= 0; j< inputs.length; j++){
+        inputs[j].disabled = true;
+      }
 
-      for (i=nmbr+1; i<3*rowNmbr+1; i++) {
+      for (var i=0; i< save.length; i++){
+        if (i!= rowNmbr){
+          save[i].classList.add("hide");
+        }else{
+          save[i-1].classList.remove("hide");
+        }
+      }
+
+      for (var i=nmbr+1; i<3*rowNmbr; i++) {
         inputs[i].disabled = false;
       }
 
-      btnSave[nmbrTwo-2].addEventListener("click", function(){
-        for (i=nmbr; i<3*rowNmbr+1; i++) {
+      save[rowNmbr-1].addEventListener("click", function(){
+        for (i=nmbr+1; i<3*rowNmbr+1; i++) {
           data[i] = inputs[i].value;
         }
 

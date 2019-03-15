@@ -11,7 +11,7 @@ class Pages extends CI_Controller {
       $this->load->library('session');
     }
 
-    public function index($page = 'registro') {
+    public function index($page = 'home_est') {
 
       $this->load->view('templates/header_estud');
       $this->load->view('estudiante/' . $page);

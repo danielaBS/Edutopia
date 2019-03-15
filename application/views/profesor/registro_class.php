@@ -2,9 +2,9 @@
   <div class="formRegister">
     <div name= "formRegistro">
       <div id="titles">
-        <a class= "tittle">Nombre de la clase:</a><br>
-        <a class="tittle">Descripcion de la clase </a><br>
-        <a class= "tittle">Grado:</a>
+        <span class= "tittle">Nombre de la clase:</span><br>
+        <span class="tittle">Descripcion de la clase </span><br>
+        <span class= "tittle">Grado:</span>
       </div>
       <div id="inputs">
         <input type="text" name="nombre" ><br>

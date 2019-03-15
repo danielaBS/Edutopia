@@ -14,7 +14,7 @@ class Pages extends CI_Controller {
 
     }
 
-    public function index($page ='home') {
+    public function index($page ='home_admin') {
       if (!file_exists(APPPATH . 'views/administrador/' . $page . '.php')) {
           // Whoops, we don't have a page for that!
           show_404();
@@ -25,7 +25,7 @@ class Pages extends CI_Controller {
       $data['estudiantes'] = $this->estudiante_model->getStudentsList();
       $data['estudiante_item'] = $this->estudiante_model->getStudentsList();
       $data['grados'] = $this->grados_model->getGradosList();
-      $data['grados_item'] = $this->grados_model->getGradosList();      
+      $data['grados_item'] = $this->grados_model->getGradosList();
 
       $this->load->view('templates/header_admin');
       $this->load->view('administrador/' . $page, $data);
@@ -142,6 +142,7 @@ class Pages extends CI_Controller {
          "usuario" => $usuario,
          "identificacionProf" => $identificacion,
        );
+       
        $this->profesor_model->modificarUser($data);
 
      }else{
