@@ -67,7 +67,7 @@ Class Profesor_model extends CI_Model {
         'apellidoProf2' => $data['apellidoProf2'],
         'estado' => $data['estado'],
         'usuarioProf' => $data['usuarioProf'],
-        'identificacionProf' => $data['identificacionProf']
+        'identificacionProf' => $data['identificacionProf'],
       ));
       echo json_encode($query);
     }

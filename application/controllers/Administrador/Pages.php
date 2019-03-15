@@ -142,6 +142,7 @@ class Pages extends CI_Controller {
          "usuario" => $usuario,
          "identificacionProf" => $identificacion,
        );
+       
        $this->profesor_model->modificarUser($data);
 
      }else{

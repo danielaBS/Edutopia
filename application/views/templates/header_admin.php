@@ -46,5 +46,7 @@
   <li class="nav-item">
     <a class="btn" id="home" href="http://localhost/edutopia/administrador/pages/index/home_admin">Inicio</a>
   </li>
-  <a id="ub"></a>
+  <li  class="nav-item">
+    <a id="ub"></a>
+  </li>
 </div>

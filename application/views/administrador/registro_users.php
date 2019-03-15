@@ -1,11 +1,22 @@
     <body>
       <div class="formRegister">
           <div id="titles">
-            <a class= "tittle">Perfil:</a><br>            
-            <a class= "tittle">Nombres:</a><br>
-            <a class= "tittle">Apellidos:</a><br>
-            <a class= "tittle" id="ide">No. de Identificación:</a><br>
-            <a class= "tittle" id ="optionChecked">Grado:</a>
+            <div class= "tittle">
+              <span>Perfil:</span><br>
+            </div>
+            <div  class= "tittle">
+              <span>Nombres:</span><br>
+            </div>
+            <div  class= "tittle">
+              <span>Apellidos:</span><br>
+            </div>
+            <div  class= "tittle">
+              <span id="ide">No. de Identificación:</span><br>
+            </div>
+            <div  class= "tittle">
+              <span id ="optionChecked">Grado:</span>
+            </div>
+          
           </div>
           <div id="inputs">
             <input type="radio" name="perfil" id="profesor" value="profesor" checked> Profesor

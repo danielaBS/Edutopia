@@ -46,4 +46,8 @@ class Pages extends CI_Controller {
 
       $this->profesor_model->modificarUser(null, $passProf, $logged);
     }
+
+    public function registroClase(){
+
+    }
   }

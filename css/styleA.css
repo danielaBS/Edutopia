@@ -1,5 +1,11 @@
 /* TAGS */
 
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif !important;
+  text-align: center;
+}
+
 div a{
   color: black;
   text-decoration: none;
@@ -27,6 +33,10 @@ div a{
   float: right;
 }
 
+#navbar li:last-child{
+  float: left;
+}
+
 #navbar a{
   font-size: 17px;
   float: right;
@@ -44,12 +54,10 @@ div a{
 }
 
 #navbar a.current{
-  position: absolute;top:25vh;
   border-top: 3px solid #8CC0E7;
   color: #00004D;
   font-size: 18px;
   background-color: white;
-  float: left;
 }
 
 #navbar .active{
@@ -127,6 +135,7 @@ table, th, td {
 }
 
 .formRegister div{
+  padding-right: 20px;
   height: auto;
   width: 230px;
   font-size: 19px;
@@ -139,18 +148,17 @@ table, th, td {
   text-align: right;
 }
 
-.formRegister div a{
-  margin: 3rem 15px;
-}
-
 .formRegister input{
   width: 200px;
   margin: 1% 0;
 }
 
 .formRegister input:first-child, input:nth-child(2){
-
   width: auto;
+}
+
+div .tittle {
+  margin: 4px 0 2px;
 }
 
 #button {
