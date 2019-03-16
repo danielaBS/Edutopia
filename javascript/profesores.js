@@ -7,9 +7,9 @@ window.onload = function setView(){
 
 function validateForm(){
 
-    var nombreClase = document.getElementsByName('nombreClase').value;
-    var descripcionClase =  document.getElementsByName('descripcionClase').value;
-    var grado = document.getElementsByName('grado').value;
+    var nombreClase = document.getElementsByName('nombre')[0].value;
+    var descripcionClase =  document.getElementsByName('descripcionClase')[0].value;
+    var grado = document.getElementsByName('grado')[0].value;
 
     obj= {
       "nombreClase": nombreClase,
