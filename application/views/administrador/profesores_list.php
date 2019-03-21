@@ -8,7 +8,6 @@
     <th>Identificación</th>
     <th>Usuario</th>
     <th>Perfil</th>
-    <th>Fecha de creación</th>
     <th>Editar</th>
   </tr>
   <tr class="tableUsers"><?php foreach ($profesores as $profesor_item): ?>
@@ -37,9 +36,6 @@
       echo "Administrador";
     }?>
     </td>
-    <td><?php
-    echo $profesor_item['fechaRegistroProf'];
-    ?></td>
     <td>
     <button class="hide btnsa" id="saveBtn" title="Guardar" name="btnSa">
       <img border="0" alt="Guardar" src="https://i.imgur.com/mhmU0iz.png" width="25">
