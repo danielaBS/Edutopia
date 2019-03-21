@@ -79,7 +79,6 @@ class Pages extends CI_Controller {
          "nombreEst2" => $nombreDos,
          "apellidoEst1" => $apellidoUno,
          "apellidoEst2" => $apellidoDos,
-         "idGrad" => $grado,
          "usuarioEst" => $RegUser,
          "identificacionEst" => $RegId,
        );
@@ -142,7 +141,7 @@ class Pages extends CI_Controller {
          "usuario" => $usuario,
          "identificacionProf" => $identificacion,
        );
-       
+
        $this->profesor_model->modificarUser($data);
 
      }else{

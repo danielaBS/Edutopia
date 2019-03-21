@@ -1,12 +1,10 @@
 window.onload = function setView(){
   var headerIMG= document.getElementById('headerIMG');
   headerIMG.style.backgroundImage = "url('https://i.imgur.com/9nbGv3j.png')";
-  var inputGrado = document.getElementById('grado');
   var btnRegistro = document.getElementById('btnReg');
   var home = document.getElementById('home');
   var homeImg = document.getElementById('homeIMG');
   var here = document.getElementById('ub');
-  var grados = document.getElementById('grados');
   var actividades = document.getElementById('actividades');
 
   var isPressed = 1;
@@ -49,25 +47,6 @@ window.onload = function setView(){
     }
   }
 
-  if(nameFile == "registro_users"){
-    var tittleGrado = document.getElementById('optionChecked');
-    var perfilE = document.getElementById('estudiante');
-    var perfilP = document.getElementById('profesor');
-    tittleGrado.classList.add("hide");
-    inputGrado.classList.add("hide");
-
-    perfilE.onclick = function checked(){
-      tittleGrado.classList.remove("hide");
-      inputGrado.classList.remove("hide");
-      inputGrado.setAttribute("required", "");
-    }
-    perfilP.onclick = function checked(){
-      tittleGrado.classList.add("hide");
-      inputGrado.classList.add("hide");
-      inputGrado.removeAttribute("required");
-    }
-  }
-
   here.innerHTML = title;
 }
 
@@ -78,8 +57,6 @@ function validateForm(){
     document.getElementsByName('apellidos')[0].value,
     document.getElementsByName('identificacion')[0].value,
   ];
-
-  var grado = document.getElementById("grado").value;
 
   function val(perfilT){
     return perfilT !== "";
@@ -93,11 +70,8 @@ function validateForm(){
       "nombres": perfil[1],
       "apellidos": perfil[2],
       "identificacion": perfil[3],
-      "usuario": usuario,
-      "grado": grado
+      "usuario": usuario
     };
-
-    console.log(perfil[4]);
 
     $.ajax({
         url: "http://localhost/edutopia/administrador/pages/registroUsuarios",

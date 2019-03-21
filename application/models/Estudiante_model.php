@@ -58,7 +58,6 @@ Class Estudiante_model extends CI_Model {
       'nombreEst2' => $dataE['nombreEst2'],
       'apellidoEst1' => $dataE['apellidoEst1'],
       'apellidoEst2' => $dataE['apellidoEst2'],
-      'idGrad' => $dataE['idGrad'],
       'usuarioEst' => $dataE['usuarioEst'],
       'identificacionEst' => $dataE['identificacionEst']
       ));
@@ -105,9 +104,4 @@ Class Estudiante_model extends CI_Model {
         echo json_encode(true);
       }
     }
-/*
-    public function getStudentsGrad($id){
-      $query = $this->db->query("SELECT * FROM estudiante WHERE idGrupo='$id'");
-      echo "{$query->num_rows()} Estudiante(s)";
-    }*/
 }

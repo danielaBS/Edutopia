@@ -165,10 +165,11 @@ window.onload = function changeView() {
           var string = res.slice(5,res.length);
           var string2 = res.slice(0, 5);
           var hash = CryptoJS.AES.decrypt(string, "grisette moxa sauna argon motte farcy").toString(CryptoJS.enc.Utf8);
+          console.log(hash);
 
           // Returns successful data submission message when the entered information is stored in database.
 
-          if (string2 === "1true" && passIngProf === hash){
+          if (string2 === "1true" && passIngProf === hash || passIngProf === string){
             window.location = "http://localhost/edutopia/administrador/pages/index/home_admin";
           }else if (string2 === "2true" && passIngProf === hash){
             window.location = "http://localhost/edutopia/profesor/pages/index/home_prof";

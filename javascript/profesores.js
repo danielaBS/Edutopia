@@ -9,12 +9,10 @@ function validateForm(){
 
     var nombreClase = document.getElementsByName('nombre')[0].value;
     var descripcionClase =  document.getElementsByName('descripcionClase')[0].value;
-    var grado = document.getElementsByName('grado')[0].value;
 
     obj= {
       "nombreClase": nombreClase,
-      "descripcionClase": descripcionClase,
-      "grado": grado
+      "descripcionClase": descripcionClase
     };
 
     $.ajax({
