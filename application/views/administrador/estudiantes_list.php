@@ -4,20 +4,19 @@
     <th>Apellidos</th>
     <th>Identificación</th>
     <th>Usuario</th>
-    <th>Fecha de creación</th>
     <th>Editar</th>
   </tr>
   <tr class="tableUsers"><?php foreach ($estudiantes as $estudiante_item): ?>
     <td><input type="text" value=<?php
-    $nombreEstudianteUno = $estudiante_item['nombreEst1'];
-    $nombreEstudianteDos = $estudiante_item['nombreEst2'];
-    $string = $nombreEstudianteUno . "&nbsp;" . $nombreEstudianteDos;
+    $nombreUno = $estudiante_item['nombreEst1'];
+    $nombreDos = $estudiante_item['nombreEst2'];
+    $string = $nombreUno . "&nbsp;" . $nombreDos;
     echo $string;
     ?> disabled></td>
     <td><input type="text" value=<?php
-    $apellidoEstudianteUno = $estudiante_item['apellidoEst1'];
-    $apellidoEstudianteDos = $estudiante_item['apellidoEst2'];
-    $string = $apellidoEstudianteUno . "&nbsp;" . $apellidoEstudianteDos;
+    $apellidoUno = $estudiante_item['apellidoEst1'];
+    $apellidoDos = $estudiante_item['apellidoEst2'];
+    $string = $apellidoUno . "&nbsp;" . $apellidoDos;
     echo $string;
     ?> disabled></td>
     <td><input type="text" value=<?php
@@ -25,9 +24,6 @@
     ?> disabled></td>
     <td><?php
     echo $estudiante_item['usuarioEst'];
-    ?></td>
-    <td><?php
-    echo $estudiante_item['fechaRegistroEst'];
     ?></td>
     <td>
     <button class="hide btnsa" id="saveBtn" title="Guardar">

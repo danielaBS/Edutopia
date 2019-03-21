@@ -4,7 +4,7 @@
       <span class="titulo"> <?php echo $grados_item['nombreGrado'];?></span><br>
       <span>
         <?php
-          $this->estudiante_model->getStudentsGrad($grados_item['idGrado']);
+          //$this->estudiante_model->getStudentsGrad($grados_item['idGrado']);
         ?></span>
     </div>
   <?php endforeach; ?>

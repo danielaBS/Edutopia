@@ -7,8 +7,8 @@
         <span class= "tittle">Grado:</span>
       </div>
       <div id="inputs">
-        <input type="text" name="nombre" ><br>
-        <input type="text" name="descripcion" ><br>
+        <input type="text" name="nombreClase" ><br>
+        <input type="text" name="descripcionClase" ><br>
         <input type="number" name="grado" id ="grado" min="1" max="5">
       </div>
       <div id= "button">

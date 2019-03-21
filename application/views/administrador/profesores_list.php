@@ -13,14 +13,16 @@
   </tr>
   <tr class="tableUsers"><?php foreach ($profesores as $profesor_item): ?>
     <td><input type="text" value=<?php
-    echo $profesor_item['nombreProf1'];
-    echo"\n\n";
-    echo $profesor_item['nombreProf2'];
+    $nombreUno = $profesor_item['nombreProf1'];
+    $nombreDos = $profesor_item['nombreProf2'];
+    $string = $nombreUno . "&nbsp;" . $nombreDos;
+    echo $string;
     ?> disabled></td>
     <td><input type="text" value=<?php
-    echo $profesor_item['apellidoProf1'];
-    echo"\n\n";
-    echo $profesor_item['apellidoProf2'];
+    $apellidoUno = $profesor_item['apellidoProf1'];
+    $apellidoDos = $profesor_item['apellidoProf2'];
+    $string = $apellidoUno . "&nbsp;" . $apellidoDos;
+    echo $string;
     ?> disabled></td>
     <td><input type="text" value=<?php
     echo $profesor_item['identificacionProf'];

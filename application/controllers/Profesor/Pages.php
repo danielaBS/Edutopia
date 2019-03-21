@@ -47,7 +47,7 @@ class Pages extends CI_Controller {
       $this->profesor_model->modificarUser(null, $passProf, $logged);
     }
 
-    public function registroClases ($page = 'registro_clase') {
+    public function registroClases ($page = 'home_prof') {
         $RegName = $this->input->post('nombreClase');
         $RegDescripcion = $this->input->post('descripcionClase');
         $grado = $this->input->post('grado');

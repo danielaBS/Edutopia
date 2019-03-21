@@ -105,9 +105,9 @@ Class Estudiante_model extends CI_Model {
         echo json_encode(true);
       }
     }
-
+/*
     public function getStudentsGrad($id){
-      $query = $this->db->query("SELECT * FROM estudiante WHERE idGrad='$id'");
+      $query = $this->db->query("SELECT * FROM estudiante WHERE idGrupo='$id'");
       echo "{$query->num_rows()} Estudiante(s)";
-    }
+    }*/
 }
