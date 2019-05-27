@@ -22,6 +22,7 @@ div a{
   }
 
 #navbar{
+  z-index: 2;
   padding: 0 10%;
   height: 6.2vh;
   box-shadow: 0 -5px 10px -5px rgba(0, 0, 7, 0.8);
@@ -92,10 +93,6 @@ div a{
   margin: 0.7rem 1rem;
 }
 
-.btnIcon::before{
-  content: "+ ";
-}
-
 /* Sticky Navigation Bar */
 .hide {
   display: none;
@@ -130,4 +127,86 @@ div a{
 .home{
   text-align: center;
   margin: 40px 0;
+  padding: 20px 0;
+}
+
+
+.clases {
+  margin: 2em 3em;
+  width: 500px;
+  height: 280px;
+  border-radius: 1em;
+  display: inline-block;
+  position: relative;
+  background-size: cover;
+}
+
+.clases h2 {
+  vertical-align: middle;
+  align-self: center;
+  margin: 23% 0;
+}
+
+/* CLASE */
+
+.actividades {
+  max-width: 80em;
+  display: inline-block;
+  padding: 30px;
+}
+
+.actividades img {
+  border-radius: 50%;
+  margin: 10px 0 0 0;
+}
+
+.actividades p{
+  color: black;
+  margin: 15px 0 0 0;
+  align-self: baseline;
+}
+
+.act {
+  margin: 10px 0 0 100px;
+  float: right;
+  z-index: -2;
+  max-width: 70em;
+  max-height: 10em;
+  min-width: 50em;
+  min-height: 10em;
+  background-color: teal;
+  overflow: hidden;
+  text-align: left;
+  padding: 0 10%;
+  border-radius: 0 0 10px 0;
+
+}
+
+.date {
+  position: absolute;
+  z-index: 1;
+  max-width: 10em;
+  max-height: 10em;
+  min-width: 8em;
+  min-height: 10em;
+  float: left;
+  border-radius: 10px 0 0 0;
+}
+
+.date p {
+  color: white;
+}
+
+.info {
+  font-size: 18px;
+  max-width: 35em;
+  text-align: justify;
+  position: absolute;
+  z-index: 0;
+  display: inline-block;
+  float: left;
+}
+
+.titulo {
+  font-weight: bold;
 }

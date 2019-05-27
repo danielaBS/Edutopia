@@ -7,14 +7,24 @@ class Pages extends CI_Controller {
     public function __construct() {
       parent::__construct();
       $this->load->model('estudiante_model');
+      $this->load->model('asignatura_model');
+      $this->load->model('grados_model');
       $this->load->helper('url_helper');
       $this->load->library('session');
     }
 
     public function index($page = 'home_est') {
+      if (!file_exists(APPPATH . 'views/estudiante/' . $page . '.php')) {
+          // Whoops, we don't have a page for that!
+          show_404();
+      }
+
+      $data['asignatura'] = $this->asignatura_model->getStudentAsig($this->session->userdata('grado'));
+      $data['asignatura_item'] = $this->asignatura_model->getStudentAsig($this->session->userdata('grado'));
 
       $this->load->view('templates/header_estud');
-      $this->load->view('estudiante/' . $page);
+      $this->load->view('estudiante/' . $page, $data);
+
       $this->load->view('templates/footer');
 
    }

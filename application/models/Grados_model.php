@@ -10,6 +10,6 @@ Class Grados_model extends CI_Model {
       $query = $this->db->get('grado');
       $array = $query->result_array();
       return $array;
-    }
+    }    
   }
 ?>

@@ -24,26 +24,11 @@
       <img src="https://i.imgur.com/JPQBdJi.png" height="25">
     </a>
     <div class="dropdown-menu dropdown-menu dropdown-menu-right">
+      <a class="dropdown-item" href="#">Modificar contraseña</a>
       <a class="dropdown-item" href="#">Cerrar sesión</a>
     </div>
   </li>
-  <li class="nav-item">
-    <a class="btn" id="grados" href="#">Acerca de</a>
-  </li>
-  <li class="nav-item dropdown">
-    <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Actividades
-    </a>
-    <div class="dropdown-menu dropdown-menu dropdown-menu-right">
-      <a class="dropdown-item" href="#">Evaluaciones</a>
-      <a class="dropdown-item" href="#">Actividades de repaso</a>
-      <a style="border-top:1px solid #e9ecef;" class="dropdown-item" href="#">Progreso</a>
-    </div>
-  </li>
-  <li class="nav-item">
-    <a class="btn" id="grados" href="#">Clases</a>
-  </li>
-  <li class="nav-item">
+  <li class="nav-item" style="float:left">
     <a class="btn" id="home" href="http://localhost/edutopia/estudiante/pages/index/home_est">Inicio</a>
   </li>
   <a id="ub"></a>

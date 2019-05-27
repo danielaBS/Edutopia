@@ -26,9 +26,15 @@ Class Estudiante_model extends CI_Model {
                 $log = false;
                 echo json_encode($log);
               }
+              $idd = $row['idEstudiante'];
+              $query3 =  $this->db->query("SELECT * FROM matricula WHERE idEstudiante='$idd'");
+              $row3 = $query3->row_array();
+
               $dataSession = array(
                 'usuario' => $row['usuarioEst'],
-                'contraseña' => $row['contraseñaEst']
+                'contraseña' => $row['contraseñaEst'],
+                'id' => $row['idEstudiante'],
+                'grado' => $row3['idGrad']
               );
               $this->session->set_userdata($dataSession);
             }else if(!isset($row)){

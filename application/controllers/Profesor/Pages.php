@@ -7,6 +7,8 @@ class Pages extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('profesor_model');
+        $this->load->model('grados_model');
+        $this->load->model('grupos_model');      
         $this->load->model('clase_model');
         $this->load->helper('url_helper');
         $this->load->library('session');
@@ -17,6 +19,8 @@ class Pages extends CI_Controller {
 
       $data['clase'] = $this->clase_model->get_clases();
       $data['clase_item'] = $this->clase_model->get_clases();
+      $data['grados'] = $this->grados_model->getGradosList();
+      $data['grados_item'] = $this->grados_model->getGradosList();
 
       $this->load->view('templates/header_prof');
       $this->load->view('profesor/' . $page, $data);

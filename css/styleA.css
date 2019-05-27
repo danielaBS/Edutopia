@@ -211,17 +211,45 @@ div .tittle {
 
 .body_grad{
   margin: auto;
+  align-content: flex-end;
   width: 80%;
-
 }
 
-.body_grad div{
-  width: 80%;
-  height: 250px;
-  background-color: MediumAquamarine;
-  margin: 40px auto 10px;
-  border-radius: 20px;
+.body_grad div {
+  display: inline-block;
+}
+
+.grados {
+  width: 100%;
+  margin: 2rem auto;
   text-align: center;
+}
+
+.profesores {
+  width: 100%;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.grado {
+  margin: 2rem;
+  text-align: center;
+  border-radius: 20px;
+  width: 40%;
+  float: left;
+  display: inline-block;
+  background-color: MediumAquamarine;
+}
+
+.profesor {
+  margin: 2rem 1rem;
+  text-align: center;
+  border-radius: 20px;
+  background-color: teal;
+  width: 20%;
+  height: 100px;
+  display: inline-block;
+  float: left;
 }
 
 .grados a{
