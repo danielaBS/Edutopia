@@ -210,7 +210,7 @@ window.onload = function changeView() {
           // Returns successful data submission message when the entered information is stored in database.
 
           if (string2 === "true" && passIngEst === hash){
-            window.location = "http://localhost/edutopia/estudiante/pages/home_est";
+            window.location = "http://localhost/edutopia/estudiante/pages/index/home_est";
           } else {
             alert("Datos incorrectos")
           }
@@ -292,7 +292,7 @@ function definePasswdEst(){
           // Returns successful data submission message when the entered information is stored in database.
           if (res === "true"){
             alert("La contraseña se ha guardado");
-            window.location = "http://localhost/edutopia/estudiante/pages/home_est";
+            window.location = "http://localhost/edutopia/estudiante/pages/index/home_est";
           }
         }
       });

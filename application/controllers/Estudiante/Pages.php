@@ -51,6 +51,17 @@ class Pages extends CI_Controller {
      $logged = $this->input->post('firstLog');
 
      $this->estudiante_model->modificarUser(null, $passEst, $logged);
-
    }
+
+   public function setId(){
+     $id = $this->input->post('idAsig');
+     $idSEt = array(
+       'idASig' => $id
+     );
+     $this->session->set_userdata($idSEt);
+     $set= $this->session->userdata['idASig'];
+     echo $set;
+   }
+
+
 }

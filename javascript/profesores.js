@@ -36,7 +36,6 @@ function validateForm(){
 
 window.onscroll = function navBar(){
   var navbar = document.getElementById("navbar");
-  document.getElementsByClassName('className')
 
   if (window.pageYOffset >= 188) {
     navbar.classList.add("sticky");

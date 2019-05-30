@@ -31,5 +31,7 @@
   <li class="nav-item" style="float:left">
     <a class="btn" id="home" href="http://localhost/edutopia/estudiante/pages/index/home_est">Inicio</a>
   </li>
-  <a id="ub"></a>
+  <li class="nav-item" style="float:left">
+    <a id="ub"></a>
+  </li>
 </div>

@@ -12,12 +12,14 @@ window.onload = function setView(){
   var title;
 
   var titulos = [
-    ["claseEsp", "Clase"],
-    ["profesores_list", "Profesores"],
-    ["estudiantes_list", "Estudiantes"],
+    ["claseEsp", "Español"],
+    ["claseIng", "Inglés"],
+    ["actividadTipoA", "Actividad A"],
+    ["actividadTipoB", "Actividad B"],
+    ["actividadTipoC", "Actividad C"],
   ];
 
-  if(nameFile === "hom" || nameFile === "profesores_list" || nameFile === "estudiantes_list"){
+  if(nameFile === "claseEsp" || nameFile === "claseIng" || nameFile === "actividadTipoA" || nameFile === "actividadTipoB" || nameFile === "actividadTipoC"){
     here.style.display = "block";
     here.classList.add("current");
 
@@ -25,16 +27,6 @@ window.onload = function setView(){
       if( titulos[i][0] === nameFile ) {
         title = titulos[i][1];
         break;
-      }
-    }
-  }else{
-    var menuItems = [
-      ["home_est", "home"],
-    ];
-
-    for(var i=0;i<menuItems.length;i++){
-      if(menuItems[i][0] === nameFile){
-        document.getElementById(menuItems[i][1]).classList.add("active");
       }
     }
   }
@@ -60,9 +52,10 @@ window.onload = function setView(){
   }
 
   if(nameFile==="home_est" || nameFile ==="pages"){
+    console.log(".-.");
     var divs= document.getElementsByClassName("clases");
       for (i=0; i<divs.length;i++){
-        divs[i].style.backgroundImage= "url('https://i.imgur.com/tq8cmXh.png')";
+        divs[i].style.backgroundImage= "url('https://i.imgur.com/euRwkKe.png')";
       }
   }
 
@@ -73,23 +66,55 @@ window.onload = function setView(){
 }
 
 function setURl(element){
+  var obj;
   var h2= element.getElementsByClassName("asignatura");
   if(h2[0].innerHTML.slice(0,4) ==="Leng"){
+    obj= {
+      'idAsig': '1'
+    };
     window.location.assign("http://localhost/edutopia/estudiante/pages/index/claseEsp");
   }else{
+    obj= {
+      'idAsig': '2'
+    };
     window.location.assign("http://localhost/edutopia/estudiante/pages/index/claseIng");
   }
+  $.ajax({
+      url: "http://localhost/edutopia/estudiante/pages/setId",
+      type: "POST",
+      data: obj,
+      success: function (res) {
+          var len = res.length;
+            // Returns successful data submission message when the entered information is stored in database.
+          if (res)
+          {
+            console.log(res)
+          }else{
+            console.log("not success :(")
+          }
+        }
+  });
+}
 
+function openPopUp(element){
+  var link = element.id;
+  var popUp = document.getElementById(link);
+  var iframe= document.getElementById("video");
+  iframe.src = link;
+  console.log(popUp.id );
+  popUp.style.display = "block";
 }
 
 window.onscroll = function navBar(){
   var navbar = document.getElementById("navbar");
-  document.getElementsByClassName('className');
 
   if (window.pageYOffset >= 188) {
     navbar.classList.add("sticky");
-
   } else {
     navbar.classList.remove("sticky");
   }
+}
+
+function closeForm() {
+  document.getElementById("popUpA").style.display = "none";
 }

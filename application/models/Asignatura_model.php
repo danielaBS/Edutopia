@@ -17,5 +17,12 @@ Class Asignatura_model extends CI_Model {
       $row = $query->row_array();
       return $row;
     }
+
+    public function getSongA(){
+      $id = $this->session->userdata['idASig'];
+      $query = $this->db->query("SELECT * FROM cancionacta WHERE idAsign='$id'");
+      $array = $query->result_array();
+      return $array;
+    }
   }
 ?>
