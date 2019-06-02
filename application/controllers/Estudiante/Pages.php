@@ -20,12 +20,12 @@ class Pages extends CI_Controller {
       }
 
       $data['asignatura'] = $this->asignatura_model->getStudentAsig($this->session->userdata('grado'));
-      $data['asignatura_item'] = $this->asignatura_model->getStudentAsig($this->session->userdata('grado'));
+      $data['asignatura_item'] = $this->asignatura_model->getStudentAsig($this->session->userdata('grado'));    
 
       $this->load->view('templates/header_estud');
       $this->load->view('estudiante/' . $page, $data);
 
-      $this->load->view('templates/footer');
+      $this->load->view('templates/footerEst');
 
    }
 
@@ -50,7 +50,7 @@ class Pages extends CI_Controller {
      $passEst = $this->input->post('contrasenaEst');
      $logged = $this->input->post('firstLog');
 
-     $this->estudiante_model->modificarUser(null, $passEst, $logged);
+     $this->estudiante_model->modificarUser(null, $passEst, $logged, null);
    }
 
    public function setId(){
@@ -63,5 +63,13 @@ class Pages extends CI_Controller {
      echo $set;
    }
 
+   public function getChar(){
+     $idPer= $this->session->userdata['personaje'];
+     echo $idPer;
+   }
 
+   public function setChar(){
+     $charID = $this->input->post('personaje');
+     $this->estudiante_model->modificarUser(null, null, null, $charID);
+   }
 }

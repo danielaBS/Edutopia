@@ -153,7 +153,7 @@ class Pages extends CI_Controller {
          "usuario" => $usuario,
          "identificacionEst" => $identificacion,
        );
-       $this->estudiante_model->modificarUser($dataE);
+       $this->estudiante_model->modificarUser($dataE, null);
      }
    }
 }

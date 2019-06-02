@@ -34,7 +34,8 @@ Class Estudiante_model extends CI_Model {
                 'usuario' => $row['usuarioEst'],
                 'contraseña' => $row['contraseñaEst'],
                 'id' => $row['idEstudiante'],
-                'grado' => $row3['idGrad']
+                'grado' => $row3['idGrad'],
+                'personaje' => $row['personaje']
               );
               $this->session->set_userdata($dataSession);
             }else if(!isset($row)){
@@ -86,8 +87,8 @@ Class Estudiante_model extends CI_Model {
       }
     }
 
-    public function modificarUser($data, $password= false, $logged= false){
-      if ($data===null){
+    public function modificarUser($data, $password= false, $logged= false, $char){
+      if ($data===null && $char===null){
         $query = $this->db->where('usuarioEst', $this->session->userdata('usuario'));
         $datos = array(
           'firstLog' => true,
@@ -96,7 +97,7 @@ Class Estudiante_model extends CI_Model {
         $query = $this->db->update('estudiante', $datos);
         echo json_encode(true);
 
-      }else if($data!==null){
+      }else if($data!==null && $char===null){
         $query = $this->db->where('usuarioEst', $data['usuario']);
 
         $datos = array(
@@ -108,6 +109,14 @@ Class Estudiante_model extends CI_Model {
             'identificacionEst' => $data['identificacionEst']);
         $query = $this->db->update('estudiante', $datos);
         echo json_encode(true);
+      }else if($data === null && $char!==null){
+        $query = $this->db->where('usuarioEst', $this->session->userdata('usuario'));
+
+        $datos = array(
+            'personaje' => $char);
+        $this->session->set_userdata($datos);
+        $query = $this->db->update('estudiante', $datos);
+        echo json_encode('set');
       }
     }
-}
+  }

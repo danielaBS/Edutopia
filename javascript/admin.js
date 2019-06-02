@@ -173,7 +173,6 @@ function generateUsername(nombres, apellidos){
       obj1= {
         "pswd": passUserAd
       };
-      console.log(obj1);
 
       $.ajax({
         url: "http://localhost/edutopia/administrador/pages/validate",
@@ -273,8 +272,6 @@ function generateUsername(nombres, apellidos){
             "usuario": user,
             "identificacion": data[nmbr+3]
           };
-
-          console.log(obj);
 
         $.ajax({
               url: "http://localhost/edutopia/administrador/pages/modificarUsuario",

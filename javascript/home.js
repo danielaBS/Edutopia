@@ -165,7 +165,6 @@ window.onload = function changeView() {
           var string = res.slice(5,res.length);
           var string2 = res.slice(0, 5);
           var hash = CryptoJS.AES.decrypt(string, "grisette moxa sauna argon motte farcy").toString(CryptoJS.enc.Utf8);
-          console.log(hash);
 
           // Returns successful data submission message when the entered information is stored in database.
 
@@ -292,7 +291,8 @@ function definePasswdEst(){
           // Returns successful data submission message when the entered information is stored in database.
           if (res === "true"){
             alert("La contraseña se ha guardado");
-            window.location = "http://localhost/edutopia/estudiante/pages/index/home_est";
+            var url = "http://localhost/edutopia/estudiante/pages/index/home_est";
+            window.location = url;
           }
         }
       });

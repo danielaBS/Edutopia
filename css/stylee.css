@@ -40,21 +40,21 @@ div a{
   display: block;
   color: rgba(255,255,255, 0.8);
   text-align: center;
-  padding: 1.3vh 16px;
+  padding: 1.12vh 16px;
   text-decoration: none;
 }
 
 #navbar a:hover {
   border-radius: 0;
-  border-top: 3px solid #FF1A1A;
+  border-bottom: 3.5px solid #FF1A1A;
   color: white;
 }
 
 #navbar a.current{
-  border-top: 3px solid #8CC0E7;
-  color: #00004D;
-  font-size: 16px;
-  background-color: white;
+  border-radius: 0;
+  border-bottom: 3.5px solid #00004D;
+  color: white;
+  font-size: 17px;
   float: left;
 }
 
@@ -83,6 +83,7 @@ div a{
 
 #navbar .nav-item{
   padding-right: 0;
+  float: left;
 }
 
 .logout {
@@ -141,12 +142,8 @@ div a{
 }
 
 .clases h2 {
-  vertical-align: middle;
-  align-self: center;
-  margin: 23% 0;
+  margin: 40% 0;
   font-size: 50px;
-  color: #000;
-
 }
 
 /* CLASE */
@@ -245,29 +242,25 @@ div a{
   max-width: 540px;
 }
 
-/* POPUP ACTIVIDAD A */
-
-.popUpAct {
-  background-color: lavender;
-  width: 70%;
-  height: auto;
-  display: none;
-  position: absolute;
-  margin: 15%;
-  top: 10%;
-  border: 3px solid #f1f1f1;
-  border-radius: 8px;
-  z-index: 0;
-}
-
-.popUpAct iframe{
-  margin: 40px 0;
-}
-
-.letra{
-  width:30%;
-  height: auto;
-  color:black;
+.modal-ku {
+  width: 750px;
   margin: auto;
-  text-align:center;
+}
+
+/* HIDE RADIO */
+[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+  border-bottom: 3px solid #4872B1;
 }
