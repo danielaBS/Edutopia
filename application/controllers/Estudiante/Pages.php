@@ -9,8 +9,10 @@ class Pages extends CI_Controller {
       $this->load->model('estudiante_model');
       $this->load->model('asignatura_model');
       $this->load->model('grados_model');
-      $this->load->helper('url_helper');
       $this->load->library('session');
+
+      $this->load->helper('url_helper');
+      $this->load->helper('directory');
     }
 
     public function index($page = 'home_est') {
@@ -20,7 +22,7 @@ class Pages extends CI_Controller {
       }
 
       $data['asignatura'] = $this->asignatura_model->getStudentAsig($this->session->userdata('grado'));
-      $data['asignatura_item'] = $this->asignatura_model->getStudentAsig($this->session->userdata('grado'));    
+      $data['asignatura_item'] = $this->asignatura_model->getStudentAsig($this->session->userdata('grado'));
 
       $this->load->view('templates/header_estud');
       $this->load->view('estudiante/' . $page, $data);
@@ -71,5 +73,10 @@ class Pages extends CI_Controller {
    public function setChar(){
      $charID = $this->input->post('personaje');
      $this->estudiante_model->modificarUser(null, null, null, $charID);
+   }
+
+   public function getMinSec(){
+    $iii = $this->input->post('link');
+     echo $this->session->userdata[$iii];
    }
 }

@@ -28,7 +28,7 @@ $this->session->set_userdata($asign);
     <div class="act">
       <p class="info titulo">Actividad 2</p><br>
       <p class="info">
-        ༼ つ ◕_◕ ༽つ ಠ_ಠ
+        Pon en práctica lo que sabes hasta ahora. Crea un cuento en dónde apliques todo lo visto en clase.
       </p>
     </div>
   </div>
@@ -41,7 +41,7 @@ $this->session->set_userdata($asign);
     <div class="act">
       <p class="info titulo">Actividad 3</p><br>
       <p class="info">
-        (づ｡ ◕‿‿◕｡) づ ̿'̿'\̵͇̿̿\з=( ͠° ͟ʖ ͡°)=ε/̵͇̿̿/'̿̿ ̿ ̿ ̿
+        ¿Qué puedes aprender de este cuento?
       </p>
     </div>
   </div>

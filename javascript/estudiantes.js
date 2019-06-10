@@ -32,10 +32,10 @@ window.onload = function setView(){
             {
               $(document).ready(function(){
                   $("#personaje").modal();
-              });
+              }, 1000);
             }else if (res==="un"){
               chrDiv.style.display = "block";
-              imgChar[0].src = "https://i.imgur.com/iEJYYLF.png";
+              imgChar[0].src = "https://i.imgur.com/zpDfbiR.png";
             }else if (res=="do"){
               chrDiv.style.display = "block";
               imgChar[0].src = "https://i.imgur.com/Zj4q6Ty.png";
@@ -104,13 +104,16 @@ window.onload = function setView(){
     document.getElementById("home").classList.add("current");
     var divEsp = document.getElementById("1");
     var divEng = document.getElementById("2");
-    divEsp.style.backgroundImage= "url('https://i.imgur.com/euRwkKe.png')";
+    divEsp.style.backgroundImage= "url('https://i.imgur.com/h66JjYX.png')";
     divEng.style.backgroundImage= "url('https://i.imgur.com/awJxCQl.png')";
   }
 
   var asig = document.getElementsByClassName("asignatura");
   for (i=0; i<asig.length; i++){
     var currentli = $($('.asignatura')).parent().href="https://www.youtube.com/";
+  }
+
+  if(nameFile==="TESTgoosheet"){
   }
 }
 
@@ -143,13 +146,13 @@ function setChar(){
       break;
     }
   }
-  setTimeout(location.reload.bind(location), 50);
+  setTimeout(location.reload.bind(location), 100);
 }
 
 function setURl(element){
   var obj;
-  var h2= element.getElementsByClassName("asignatura");
-  if(h2[0].innerHTML.slice(0,4) ==="Espa"){
+  var h2= element.id;
+  if(h2 ==="1"){
     obj= {
       'idAsig': '1'
     };
@@ -168,34 +171,4 @@ function setURl(element){
           var len = res.length;
         }
   });
-}
-
-function openPopUp(element){
-  var link = element.className;
-  var res = link.split(" ");
-
-  var popUp = document.getElementById(res[1]);
-  var iframe= popUp.getElementsByTagName("iframe");
-  iframe[0].src = res[1];
-  popUp.style.display = "block";
-  $(iframe).focus();
-
-}
-
-window.onscroll = function navBar(){
-  var navbar = document.getElementById("navbar");
-
-  if (window.pageYOffset >= 188) {
-    navbar.classList.add("sticky");
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-
-function closeForm() {
-  var pops = document.getElementsByClassName("popUpAct");
-  for(i=0; i<=pops.length; i++){
-    pops[i].style.display = "none";
-    window.location.reload();
-  }
 }

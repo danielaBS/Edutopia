@@ -9,8 +9,8 @@
   height:40px;
   z-index: 2;
 }
-p {
-  color:white;
+.footer p {
+  color:white !important;
   vertical-align:middle;
 }
 .character{

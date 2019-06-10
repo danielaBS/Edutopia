@@ -23,13 +23,10 @@
       </div>
     </div>
   </div>
-  <?php foreach ($asignatura as $asignatura_item): ?>
+  <h2 id= "clase"> Estas son tus clases, <?php
+  echo $this->session->userdata['nombre'] . ":"; ?></h2>
+  <?php  foreach ($asignatura as $asignatura_item): ?>
   <div onclick="setURl(this)"; style="cursor: pointer;" class="clases" id="<?php echo $asignatura_item['idAsignatura']?>">
-    <h2 class = "asignatura"><?php
-    $idAsig = $this->asignatura_model->getNameAsig($asignatura_item['idAsignatura']);
-    $string = $idAsig['nombreAsignatura'] . "&nbsp;" . "-" . "&nbsp;" . $this->session->userdata['grado'];
-    echo $string;
-    ?></h2>
   </div>
   <?php endforeach; ?>
 </div>

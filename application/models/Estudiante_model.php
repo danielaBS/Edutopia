@@ -34,6 +34,7 @@ Class Estudiante_model extends CI_Model {
                 'usuario' => $row['usuarioEst'],
                 'contraseña' => $row['contraseñaEst'],
                 'id' => $row['idEstudiante'],
+                'nombre' => $row['nombreEst1'],
                 'grado' => $row3['idGrad'],
                 'personaje' => $row['personaje']
               );
