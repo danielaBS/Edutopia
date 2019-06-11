@@ -96,4 +96,11 @@ class Pages extends CI_Controller {
        echo $key. " ";
      }
   }
+
+  public function guardarHistoria(){
+    $titulo = $this->input->post('titulo');
+    $texto = $this->input->post('texto');
+    $this->asignatura_model->guardarHistoria($titulo, $texto);
+
+ }
 }

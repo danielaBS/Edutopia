@@ -24,5 +24,14 @@ Class Asignatura_model extends CI_Model {
       $array = $query->result_array();
       return $array;
     }
+
+    public function guardarHistoria($titulo, $texto){
+      $query = $this->db->insert('historias',
+       array(
+      'título' => $titulo,
+      'texto' => $texto
+      ));
+      echo json_encode($query);
+    }
   }
 ?>

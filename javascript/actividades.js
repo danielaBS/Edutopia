@@ -160,7 +160,7 @@ function iniciarActividad(random){
       }
     }
 
-    document.getElementById("resultado").innerHTML= "Tu puntuación es: "+ result/verbos2.length*100+"%";
+    document.getElementById("resultado").innerHTML= "Tu puntuación es: "+ (result/verbos2.length*100).toFixed(2)+"%";
   });
 }
 
