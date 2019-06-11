@@ -25,6 +25,11 @@ $cancion1 = array();
 $cancion2 = array();
 $cancion3 = array();
 
+$verbos = array();
+$verbos1 = array();
+$verbos2 = array();
+$verbos3 = array();
+
 ?>
 
 <div class="home">
@@ -67,7 +72,7 @@ $cancion3 = array();
             <button  class="pause ply"  name="<?php echo $can ?>">Pausar actividad</button>
           </div>
           <div class="modal-body"  style="display: inline-block; width:100%">
-            <div style= "float: left; text-align: left; width:55%; padding:4%" id="letra">
+            <div style= "float: left; text-align: left; width:60%; padding:4%" id="letra">
               <?php
 
               $spreadsheetId = $cancion_item['letra'];
@@ -84,9 +89,7 @@ $cancion3 = array();
               $tiempoEntero = array();
               $tiempoEnteroFin = array();
               $poldios = array();
-              $timee = array();
               $sum = array();
-              $sum2 = array();
 
                 //TENGO CONTROL ABSOLUTO MUAJAJAJAJA
 
@@ -97,6 +100,8 @@ $cancion3 = array();
                     array_push($palabrotas, $row[0]);
                     array_push($tiemposInicio, $row[1]);
                     array_push($tiemposFin, $row[2]);
+                    array_push($verbos, $row[4]);
+
                       // Print columns A and D, which correspond to indices 0 and 4.
                       ?><p style="color: black"><?php echo($row[0]); ?></p>
                       <?php
@@ -124,16 +129,18 @@ $cancion3 = array();
                     array($cancion_item['link'] => $poldios[0]));
                 }
 
+
+
                  ?>
             </div>
-            <div class="modal-body" id= "preguntas" style="float: left; text-align: left; width:45%;background-Color:lavender; ">
+            <div class="modal-body" id= "preguntas" style="float: left; text-align: left; width:40%;background-Color:lavender; ">
               <p style="color:black">Presta atención a la letra de la canción.</p>
               <p style="color:black" id="dialogo"></p>
-              <textarea rows="4" cols="35" name= "verbos"></textarea>
-              <textarea rows="4" cols="35" name= "sustantivos"></textarea>
-              <textarea rows="4" cols="35" name= "adjetivos"></textarea>
-              <textarea rows="4" cols="35" name= "adverbios"></textarea>
-              <input type= "submit" name="submit"></input>
+              <textarea rows="4" cols="30" name= "verbos"></textarea>
+              <textarea rows="4" cols="30" name= "sustantivos"></textarea>
+              <textarea rows="4" cols="30" name= "adjetivos"></textarea>
+              <textarea rows="4" cols="30" name= "adverbios"></textarea>
+              <input style="margin: 4px 0 0 0;" type= "submit" name="submit"></input><p id="resultado"></p>
             </div>
           </div>
           <div class="modal-footer">
@@ -151,22 +158,25 @@ $cancion3 = array();
     }
   }
 
-  foreach (array_slice($lines,1, 1)as $line) {
-    foreach ($line as $words){
-      array_push($cancion2, $words);
-    }
+  foreach (array_slice($verbos, 0, $numLines[0]-1)as $linea) {
+    array_push($verbos1, $linea);
   }
 
-  foreach (array_slice($lines,2, 3)as $line) {
-    foreach ($line as $words){
-      array_push($cancion3, $words);
-    }
+  foreach (array_slice($verbos, $numLines[0]-1, $numLines[1]-1)as $lineb) {
+    array_push($verbos2, $lineb);
+  }
+
+  foreach (array_slice($verbos, count($verbos)- $numLines[2] +1, count($verbos))as $linec) {
+    array_push($verbos3, $linec);
   }
 
   $this->session->set_userdata(array(
     'cancion1' => $cancion1,
     'cancion2' => $cancion2,
-    'cancion3' => $cancion3
+    'cancion3' => $cancion3,
+    'verbos1' => $verbos1,
+    'verbos2' => $verbos2,
+    'verbos3' => $verbos3,
   ));
 
   ?>

@@ -84,8 +84,15 @@ class Pages extends CI_Controller {
      $suma = array();
      $line = $this->input->post('random');
      $suma = $this->session->userdata('cancion1');
+     $verbo = $this->session->userdata('verbos1');
 
      foreach ($suma as $key) {
+       echo $key. " ";
+     }
+
+     echo "APARTIRDEAQUÍVERBOS";
+
+     foreach ($verbo as $key) {
        echo $key. " ";
      }
   }

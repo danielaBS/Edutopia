@@ -67,6 +67,8 @@ var iniciarPre;
 var count;
 var timer;
 var cancion;
+var verbos;
+var verbos2
 
 function onPlay(id){
   obj= {
@@ -91,11 +93,12 @@ function iniciarActividad(random){
   var dialogo = document.getElementById("dialogo");
   var btn = act.getElementsByTagName("input");
 
-  dialogo.innerHTML = "1. Menciona todos los sustantivos que hayas encontrado hasta la parte de la canción que está <span style='font-weight:bold'>señalada</span>.";
+  dialogo.innerHTML = "1. Menciona todos los verbos que hayas encontrado hasta la parte de la canción que está <span style='font-weight:bold'>señalada</span>.";
 
   for(i=0; i<textareas.length; i++){
     if(textareas[i].getAttribute("name") == "verbos"){
       textareas[i].style.display = "block";
+      textareas[i].classList.add("selected");
     }
   }
 
@@ -114,7 +117,8 @@ function iniciarActividad(random){
     data: obj,
     success: function (res) {
       var len = res.length;
-      cancion = res.split(" ");
+      cancion = res.split("APARTIRDEAQUÍVERBOS")[0].split(" ");
+      verbos = res.split("APARTIRDEAQUÍVERBOS")[1].split(" ");
     }
   });
 
@@ -127,12 +131,36 @@ function iniciarActividad(random){
 
   if(ps[index].innerHTML == "<br>"){
     ps[index+1].style.fontWeight = "bold";
+    verbos2 = verbos.slice(0, index+1);
   }else{
     ps[index].style.fontWeight = "bold";
+    verbos2 = verbos.slice(0, index);
   }
 
-  $('input').on('click', function(){
+  for(i=0; i<verbos2.length; i++){
+    verbos2 = verbos2.filter(word => word != "0");
+  }
 
+  console.log(ps[index].innerHTML);
+  console.log(ps[index+1].innerHTML);
+  console.log(cancion);
+  console.log(verbos2);
+  console.log(random.toFixed(2));
+  console.log(index);
+
+
+  $('input').on('click', function(){
+    var result=0;
+    var text= null;
+    var text = act.getElementsByClassName('selected')[0].value.split(" ");
+
+    for (var i = 0; i < text.length; i++) {
+      if (verbos2.indexOf(text[i]) > -1) {
+        result++;
+      }
+    }
+
+    document.getElementById("resultado").innerHTML= "Tu puntuación es: "+ result/verbos2.length*100+"%";
   });
 }
 
@@ -150,7 +178,7 @@ function onPlayerReady(event) {
        timer = setTimeout(function(){
          count++;
          counter();
-         console.log(count + " " +  timePlayed + " " + random.toFixed(2) + " " + min + " " + max + " " + event.target.getDuration());
+         console.log(count + " " + random.toFixed(2) + " " + min + " " + max + " " + event.target.getDuration());
          if (count>= random){
            event.target.pauseVideo();
            iniciarActividad(random);
