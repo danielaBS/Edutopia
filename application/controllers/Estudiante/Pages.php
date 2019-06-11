@@ -79,4 +79,14 @@ class Pages extends CI_Controller {
     $iii = $this->input->post('link');
      echo $this->session->userdata[$iii];
    }
+
+   public function searchLine(){
+     $suma = array();
+     $line = $this->input->post('random');
+     $suma = $this->session->userdata('cancion1');
+
+     foreach ($suma as $key) {
+       echo $key. " ";
+     }
+  }
 }

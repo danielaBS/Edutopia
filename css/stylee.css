@@ -252,9 +252,6 @@ div a{
   margin: auto;
 }
 
-.modal-body input{
-  display: none;
-}
 /* HIDE RADIO */
 [type=radio] {
   position: absolute;

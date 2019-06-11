@@ -44,6 +44,17 @@ window.onload = function setView(){
     });
 
   if(nameFile === "actividadTipoA" || nameFile === "actividadTipoB" || nameFile === "actividadTipoC"){
+    var act = document.getElementById("preguntas");
+
+    var textareas = act.getElementsByTagName("textarea");
+    var btn = act.getElementsByTagName("input");
+    btn[0].style.display = "none";
+
+
+    for(i=0; i<textareas.length; i++){
+      textareas[i].style.display = "none";
+    }
+
     here.style.display = "block";
     here.classList.add("current");
 

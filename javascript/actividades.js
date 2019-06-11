@@ -1,4 +1,3 @@
-
 var tag;
 var firstScriptTag;
 var player;
@@ -60,12 +59,14 @@ function onYouTubeIframeAPIReady(id) {
 }
 
 var timePlayed = 0;
+var min= 0;
 var max= 0;
 var random = 0;
 var questionTime;
 var iniciarPre;
 var count;
 var timer;
+var cancion;
 
 function onPlay(id){
   obj= {
@@ -81,49 +82,93 @@ function onPlay(id){
           iniciarPre = res;
         }
   });
-  questionTime= random.toFixed(2);
 }
 
 function iniciarActividad(random){
+  var act = document.getElementById("preguntas");
+  var letra = document.getElementById("letra");
+  var textareas = act.getElementsByTagName("textarea");
   var dialogo = document.getElementById("dialogo");
-  dialogo.innerHTML = "1. Menciona al menos cinco sustantivos que hayas encontrado hasta aquí.";
+  var btn = act.getElementsByTagName("input");
+
+  dialogo.innerHTML = "1. Menciona todos los sustantivos que hayas encontrado hasta la parte de la canción que está <span style='font-weight:bold'>señalada</span>.";
+
+  for(i=0; i<textareas.length; i++){
+    if(textareas[i].getAttribute("name") == "verbos"){
+      textareas[i].style.display = "block";
+    }
+  }
+
+  for(i=0; i<btn.length; i++){
+    btn[i].style.display = "block";
+  }
+
+  obj= {
+    'random' : random
+  };
+
+  $.ajax({
+    url: "http://localhost/edutopia/estudiante/pages/searchLine",
+    type: "POST",
+    async: false,
+    data: obj,
+    success: function (res) {
+      var len = res.length;
+      cancion = res.split(" ");
+    }
+  });
+
+  function findLines(line) {
+    return line >= random.toFixed(2);
+  }
+
+  var index = cancion.findIndex(findLines);
+  var ps = letra.getElementsByTagName("p");
+
+  if(ps[index].innerHTML == "<br>"){
+    ps[index+1].style.fontWeight = "bold";
+  }else{
+    ps[index].style.fontWeight = "bold";
+  }
+
+  $('input').on('click', function(){
+
+  });
 }
+
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
    count = 0,
-   timer,
    paused = false,
-   min = iniciarPre +30;
-   max= timePlayed + 50;
+   min = parseInt(iniciarPre, 10) + 20;
+   max= parseInt(iniciarPre, 10) + 30;
 
    random = Math.random() * (+max - +min) + +min;
+
    counter = function(){
-     count++;
-     if (count > event.target.getDuration()) { count = 0; }
-     timer = setTimeout(function(){
-       console.log(count + " " +  timePlayed + " " + random + " " + min);
-       counter(event);
-       if (count> random){
-         iniciarActividad(random);
-       }
-     }, 1000);
+     if (count < event.target.getDuration() && !paused) {
+       timer = setTimeout(function(){
+         count++;
+         counter();
+         console.log(count + " " +  timePlayed + " " + random.toFixed(2) + " " + min + " " + max + " " + event.target.getDuration());
+         if (count>= random){
+           event.target.pauseVideo();
+           iniciarActividad(random);
+           paused = !paused;
+         }
+       }, 1000);
+     }
    };
 
-      $('button').on('click', function(){
-          clearTimeout(timer);
-          if ($(this).hasClass('start')) {
-            event.target.playVideo();
-              count = 0;
-              paused = false;
-              counter();
-          } else {
-              paused = !paused;
-              timePlayed+=count;
-              event.target.pauseVideo();
-              if (!paused) {
-                counter();
-              }
-              count = timePlayed;
-          }
-      });
-}
+    $('button').on('click', function(){
+        clearTimeout(timer);
+        if ($(this).hasClass('start')) {
+          event.target.playVideo();
+            paused = false;
+            counter();
+        }else{
+          paused = !paused;
+          event.target.pauseVideo();
+        }
+    });
+  }

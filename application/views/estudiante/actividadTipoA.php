@@ -19,6 +19,11 @@ $service = new Google_Service_Sheets($client);
 
 // Prints the names and majors of students in a sample spreadsheet:
 // https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
+$lines = array();
+$numLines = array();
+$cancion1 = array();
+$cancion2 = array();
+$cancion3 = array();
 
 ?>
 
@@ -60,12 +65,11 @@ $service = new Google_Service_Sheets($client);
             </div>
             <button  class="start ply"  name="<?php echo $can ?>">Iniciar actividad</button>
             <button  class="pause ply"  name="<?php echo $can ?>">Pausar actividad</button>
-            <div  class=" ply" name="<?php echo $can?>" onclick="print(this)">Imprimir tiempos</div>
-            <h2 id= "ll"></h2>
           </div>
-          <div class="modal-body"  style="display: inline-block; width:100%;">
-            <div style= "float: left; text-align: left; width:55%; padding:4%">
+          <div class="modal-body"  style="display: inline-block; width:100%">
+            <div style= "float: left; text-align: left; width:55%; padding:4%" id="letra">
               <?php
+
               $spreadsheetId = $cancion_item['letra'];
               $range = 'Hoja 1!A2:F' . $cancion_item['lineas'];
 
@@ -111,20 +115,25 @@ $service = new Google_Service_Sheets($client);
                     }
                 }
 
+                array_push($lines, $sum);
                 array_push($poldios, $sum[0]);
+                array_push($numLines, $cancion_item['lineas']);
+
                 for ($i=0; $i<count($poldios); $i++){
-                  $this->session->set_userdata(array($cancion_item['link'] => $poldios[0]));
+                  $this->session->set_userdata(
+                    array($cancion_item['link'] => $poldios[0]));
                 }
+
                  ?>
             </div>
-            <div class="modal-body" style="float: left; text-align: left; width:45%;background-Color:lavender; ">
+            <div class="modal-body" id= "preguntas" style="float: left; text-align: left; width:45%;background-Color:lavender; ">
               <p style="color:black">Presta atención a la letra de la canción.</p>
               <p style="color:black" id="dialogo"></p>
-              <input type= "text" name "verbos"></input>
-              <input type= "text" name "sustantivos"></input>
-              <input type= "text" name "adjetivos"></input>
-              <input type= "text" name "adverbios"></input>
-              <input type= "submit"></input>
+              <textarea rows="4" cols="35" name= "verbos"></textarea>
+              <textarea rows="4" cols="35" name= "sustantivos"></textarea>
+              <textarea rows="4" cols="35" name= "adjetivos"></textarea>
+              <textarea rows="4" cols="35" name= "adverbios"></textarea>
+              <input type= "submit" name="submit"></input>
             </div>
           </div>
           <div class="modal-footer">
@@ -134,5 +143,31 @@ $service = new Google_Service_Sheets($client);
         </div>
       </div>
     </div>
-  <?php endforeach; ?>
+  <?php endforeach;
+
+  foreach (array_slice($lines,0, 1)as $line) {
+    foreach ($line as $words){
+      array_push($cancion1, $words);
+    }
+  }
+
+  foreach (array_slice($lines,1, 1)as $line) {
+    foreach ($line as $words){
+      array_push($cancion2, $words);
+    }
+  }
+
+  foreach (array_slice($lines,2, 3)as $line) {
+    foreach ($line as $words){
+      array_push($cancion3, $words);
+    }
+  }
+
+  $this->session->set_userdata(array(
+    'cancion1' => $cancion1,
+    'cancion2' => $cancion2,
+    'cancion3' => $cancion3
+  ));
+
+  ?>
 </div>
