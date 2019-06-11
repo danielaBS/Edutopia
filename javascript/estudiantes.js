@@ -116,7 +116,7 @@ window.onload = function setView(){
     var divEsp = document.getElementById("1");
     var divEng = document.getElementById("2");
     divEsp.style.backgroundImage= "url('https://i.imgur.com/h66JjYX.png')";
-    divEng.style.backgroundImage= "url('https://i.imgur.com/awJxCQl.png')";
+    divEng.style.backgroundImage= "url('https://i.imgur.com/iXv4Yz8.png')";
   }
 
   var asig = document.getElementsByClassName("asignatura");
