@@ -289,3 +289,9 @@ div a{
   color: black;
   float: left;
 }
+
+/* ACTIVIDAD B */
+
+.actividadB h2, input{
+  margin: 2%;
+}

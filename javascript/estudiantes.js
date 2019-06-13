@@ -44,16 +44,6 @@ window.onload = function setView(){
     });
 
   if(nameFile === "actividadTipoA" || nameFile === "actividadTipoB" || nameFile === "actividadTipoC"){
-    var act = document.getElementById("preguntas");
-
-    var textareas = act.getElementsByTagName("textarea");
-    var btn = act.getElementsByTagName("input");
-    btn[0].style.display = "none";
-
-
-    for(i=0; i<textareas.length; i++){
-      textareas[i].style.display = "none";
-    }
 
     here.style.display = "block";
     here.classList.add("current");
@@ -63,6 +53,17 @@ window.onload = function setView(){
         title = titulos[i][1];
         break;
       }
+    }
+  }
+
+  if(nameFile === "actividadTipoA"){
+    var act = document.getElementById("preguntas");
+    var textareas = act.getElementsByTagName("textarea");
+    var btn = act.getElementsByTagName("input");
+    btn[0].style.display = "none";
+
+    for(i=0; i<textareas.length; i++){
+      textareas[i].style.display = "none";
     }
   }
 
@@ -118,13 +119,15 @@ window.onload = function setView(){
     divEsp.style.backgroundImage= "url('https://i.imgur.com/h66JjYX.png')";
     divEng.style.backgroundImage= "url('https://i.imgur.com/iXv4Yz8.png')";
   }
+}
 
-  var asig = document.getElementsByClassName("asignatura");
-  for (i=0; i<asig.length; i++){
-    var currentli = $($('.asignatura')).parent().href="https://www.youtube.com/";
-  }
+window.onscroll = function navBar(){
+  var navbar = document.getElementById("navbar");
 
-  if(nameFile==="TESTgoosheet"){
+  if (window.pageYOffset >= 188) {
+    navbar.classList.add("sticky");
+  } else {
+    navbar.classList.remove("sticky");
   }
 }
 
@@ -162,8 +165,8 @@ function setChar(){
 
 function setURl(element){
   var obj;
-  var h2= element.id;
-  if(h2 ==="1"){
+  var h2 = element.id;
+  if(h2 === "1"){
     obj= {
       'idAsig': '1'
     };

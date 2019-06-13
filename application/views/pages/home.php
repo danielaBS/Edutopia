@@ -25,7 +25,7 @@
           <img style="width:180px"src="https://i.imgur.com/jl8Ye11.png">
         </div>
         <div class="id">
-          <input id="identifEst" type="text" class="box" name="identificacion" maxlength="30" size="40" placeholder="No. de Identificación">
+          <input id="identifEst" type="text" class="box" name="identificacion" maxlength="30" size="40" placeholder="No. de Identificación" autofocus>
         </div>
         <div class="mensaje">
           <input id="userEst" type="text" class="box" name="usuario" maxlength="30" size="40" placeholder="Usuario">

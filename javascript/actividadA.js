@@ -3,7 +3,7 @@ var firstScriptTag;
 var player;
 var isPlaying = false;
 var ply;
-var i=0;
+var i = 0;
 
 function openPopUp(element){
   var link = element.className;
@@ -27,16 +27,6 @@ function openPopUp(element){
 
   onYouTubeIframeAPIReady(res[1]);
   onPlay(res[1]);
-}
-
-window.onscroll = function navBar(){
-  var navbar = document.getElementById("navbar");
-
-  if (window.pageYOffset >= 188) {
-    navbar.classList.add("sticky");
-  } else {
-    navbar.classList.remove("sticky");
-  }
 }
 
 function closeForm() {
@@ -68,7 +58,7 @@ var count;
 var timer;
 var cancion;
 var verbos;
-var verbos2
+var verbos2;
 
 function onPlay(id){
   obj= {

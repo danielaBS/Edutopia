@@ -14,7 +14,10 @@
         <link rel="icon" type="image/png" href="https://i.imgur.com/c4uU8lr.png">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/styleE.css">
         <script type="text/javascript" src="<?php echo base_url() . '/javascript/estudiantes.js'; ?>" ></script>
-        <script type="text/javascript" src="<?php echo base_url() . '/javascript/actividades.js'; ?>" ></script>
+        <script type="text/javascript" src="<?php echo base_url() . '/javascript/actividadA.js'; ?>" ></script>
+        <script type="text/javascript" src="<?php echo base_url() . '/javascript/actividadB.js'; ?>" ></script>
+        <script type="text/javascript" src="<?php echo base_url() . '/javascript/nltk.js'; ?>" ></script>
+
     </head>
 <div class="headerIMG" id="headerIMG">
   <img class="img" src="https://i.imgur.com/yyRuMzt.png">

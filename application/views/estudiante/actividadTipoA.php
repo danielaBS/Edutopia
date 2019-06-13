@@ -65,8 +65,9 @@ $verbos3 = array();
             </button>
           </div>
           <div class="modal-body" style="display:inline-block">
+            <div style= "width: 700px; height: 393.75px; position: absolute; margin: 0 0 0 34px; z-index:100"></div>
             <div style="cursor: pointer; z-index:10; position: relative; width:700px; height:393.75px"  id="player">
-               <iframe style="margin: 0 0 0 34px; width:700px; height:393.75px" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="video"></iframe>
+              <iframe style="margin: 0 0 0 34px; width:700px; height:393.75px" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="video"></iframe>
             </div>
             <button  class="start ply"  name="<?php echo $can ?>">Iniciar actividad</button>
             <button  class="pause ply"  name="<?php echo $can ?>">Pausar actividad</button>

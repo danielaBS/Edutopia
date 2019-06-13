@@ -110,6 +110,7 @@ Class Estudiante_model extends CI_Model {
             'identificacionEst' => $data['identificacionEst']);
         $query = $this->db->update('estudiante', $datos);
         echo json_encode(true);
+
       }else if($data === null && $char!==null){
         $query = $this->db->where('usuarioEst', $this->session->userdata('usuario'));
 

@@ -75,6 +75,8 @@ class Pages extends CI_Controller {
      $this->estudiante_model->modificarUser(null, null, null, $charID);
    }
 
+/* ACTIVIDADES */
+
    public function getMinSec(){
     $iii = $this->input->post('link');
      echo $this->session->userdata[$iii];
