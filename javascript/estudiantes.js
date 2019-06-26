@@ -1,3 +1,4 @@
+var classAct = false;
 window.onload = function setView(){
   var headerIMG= document.getElementById('headerIMG');
   headerIMG.style.backgroundImage = "url('https://i.imgur.com/Po4JpNc.png')";
@@ -15,6 +16,9 @@ window.onload = function setView(){
     ["actividadTipoA", "Actividad A"],
     ["actividadTipoB", "Actividad B"],
     ["actividadTipoC", "Actividad C"],
+    ["claseEsp", "Español"],
+    ["claseIng", "Inglés"],
+    ["cancion", "Actividad A - Canciones"],
   ];
 
   var urlLOG = window.location.href;
@@ -33,17 +37,17 @@ window.onload = function setView(){
               $(document).ready(function(){
                   $("#personaje").modal();
               }, 1000);
-            }else if (res==="un"){
+            }else if (res==="un" && nameFile !== "actividadTipoA"){
               chrDiv.style.display = "block";
-              imgChar[0].src = "https://i.imgur.com/zpDfbiR.png";
-            }else if (res=="do"){
+              imgChar[0].src = "https://i.imgur.com/L0K7pKo.png";
+            }else if (res=="do" && nameFile !== "actividadTipoA"){
               chrDiv.style.display = "block";
-              imgChar[0].src = "https://i.imgur.com/Zj4q6Ty.png";
+              imgChar[0].src = "https://i.imgur.com/83uoeWy.png";
             }
           }
     });
 
-  if(nameFile === "actividadTipoA" || nameFile === "actividadTipoB" || nameFile === "actividadTipoC"){
+  if(nameFile === "actividadTipoA" || nameFile === "actividadTipoB" || nameFile === "actividadTipoC" || nameFile === "claseEsp" || nameFile === "claseIng" || nameFile === "cancion"){
 
     here.style.display = "block";
     here.classList.add("current");
@@ -56,44 +60,11 @@ window.onload = function setView(){
     }
   }
 
-  if(nameFile === "actividadTipoA"){
-    var act = document.getElementById("preguntas");
-    var textareas = act.getElementsByTagName("textarea");
-    var btn = act.getElementsByTagName("input");
-    btn[0].style.display = "none";
-
-    for(i=0; i<textareas.length; i++){
-      textareas[i].style.display = "none";
-    }
-  }
-
-  var obj;
-
-  if(nameFile === "claseEsp"){
-    obj= {
-      'idAsig': 1
-    };
-    document.getElementById("esp").classList.add("current");
-  }
-  if(nameFile === "claseIng"){
-    obj= {
-      'idAsig': 2
-    };
-    document.getElementById("ing").classList.add("current");
-  }
-
   here.innerHTML = title;
 
   if(nameFile==="claseEsp" || nameFile==="claseIng"){
+    classAct = true;
 
-      $.ajax({
-          url: "http://localhost/edutopia/estudiante/pages/setId",
-          type: "POST",
-          data: obj,
-          success: function (res) {
-              var len = res.length;
-            }
-      });
 
     var dates = document.getElementsByClassName("date");
 
@@ -112,12 +83,50 @@ window.onload = function setView(){
     }
   }
 
+  if(nameFile === "actividadTipoA"){
+    el = document.getElementById("tut");
+    el.scrollIntoView(false);
+    window.scrollBy(0, 80);
+  }
+
   if(nameFile==="home_est" || nameFile ==="pages"){
     document.getElementById("home").classList.add("current");
     var divEsp = document.getElementById("1");
     var divEng = document.getElementById("2");
+    var divCyP = document.getElementById("3");
     divEsp.style.backgroundImage= "url('https://i.imgur.com/h66JjYX.png')";
     divEng.style.backgroundImage= "url('https://i.imgur.com/iXv4Yz8.png')";
+    divCyP.style.backgroundImage= "url('https://i.imgur.com/P4dcS2C.png')";
+  }
+
+  var idS = urlLOG.substring(urlLOG.lastIndexOf('/')+1, urlLOG.lastIndexOf('?'));
+
+  if(nameFile === "cancion"){
+
+    if(urlLOG.includes("https://www.youtube.com/embed")){
+      // 2. This code loads the IFrame Player API code asynchronously.
+      tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+
+      var rndm = randomNum();
+
+      player = new YT.Player('player', {
+        height: '370',
+        width: '650',
+        videoId: idS,
+        events: {
+                'onReady': onPlayerReady
+              }
+      });
+
+      onPlay(idS);
+    }
   }
 }
 
@@ -160,29 +169,45 @@ function setChar(){
       break;
     }
   }
-  setTimeout(location.reload.bind(location), 100);
+  setTimeout(location.reload.bind(location), 500);
 }
 
 function setURl(element){
   var obj;
-  var h2 = element.id;
-  if(h2 === "1"){
-    obj= {
-      'idAsig': '1'
-    };
-    window.location.assign("http://localhost/edutopia/estudiante/pages/index/claseEsp");
-  }else{
-    obj= {
-      'idAsig': '2'
-    };
-    window.location.assign("http://localhost/edutopia/estudiante/pages/index/claseIng");
+  var linkAct = element.id;
+
+  if(classAct){
+    var h1 = element.getElementsByClassName('status')[0].innerHTML;
+    if(h1 === "Completado"){
+      alert("Ya completaste esta actividad.");
+    }else{
+      window.location.assign(linkAct);
+    }
+
+  } else {
+    if(linkAct === "1"){
+      obj= {
+        'idAsig': '1'
+      };
+      window.location.assign("http://localhost/edutopia/estudiante/pages/index/claseEsp");
+    }else if (linkAct === "2"){
+      obj= {
+        'idAsig': '2'
+      };
+      window.location.assign("http://localhost/edutopia/estudiante/pages/index/claseIng");
+    }else if (linkAct === "3"){
+      obj= {
+        'idAsig': '3'
+      };
+      window.location.assign("http://localhost/edutopia/estudiante/pages/index/cultura-y-paz");
+    }
+    $.ajax({
+        url: "http://localhost/edutopia/estudiante/pages/setId",
+        type: "POST",
+        data: obj,
+        success: function (res) {
+            var len = res.length;
+          }
+    });
   }
-  $.ajax({
-      url: "http://localhost/edutopia/estudiante/pages/setId",
-      type: "POST",
-      data: obj,
-      success: function (res) {
-          var len = res.length;
-        }
-  });
 }

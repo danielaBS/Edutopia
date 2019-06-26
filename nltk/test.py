@@ -1,14 +1,10 @@
+#!/usr/bin/env python3.7.3
+import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+from nltk.stem import SnowballStemmer
 
-text = 'En este tutorial estoy aprendiendo NLTK, Es una plataforma interesante.'
-stop_words = set(stopwords.words('spanish'))
-words = word_tokenize(text)
+text = nltk.word_tokenize("Había una vez una iguana con una ruana de lana")
 
-new_sentence = []
-
-for word in words:
-    if word not in stop_words:
-        new_sentence.append(word)
-
-print(new_sentence)
+gu = nltk.pos_tag(text)
+print(gu)

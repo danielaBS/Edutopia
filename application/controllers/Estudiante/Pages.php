@@ -24,6 +24,9 @@ class Pages extends CI_Controller {
       $data['asignatura'] = $this->asignatura_model->getStudentAsig($this->session->userdata('grado'));
       $data['asignatura_item'] = $this->asignatura_model->getStudentAsig($this->session->userdata('grado'));
 
+      $data['actividad'] = $this->asignatura_model->getActInfo($this->session->userdata('idASig'));
+      $data['actividad_item'] = $this->asignatura_model->getActInfo($this->session->userdata('idASig'));
+
       $this->load->view('templates/header_estud');
       $this->load->view('estudiante/' . $page, $data);
 
@@ -75,28 +78,42 @@ class Pages extends CI_Controller {
      $this->estudiante_model->modificarUser(null, null, null, $charID);
    }
 
-/* ACTIVIDADES */
+   /* ACTIVIDADES */
 
    public function getMinSec(){
-    $iii = $this->input->post('link');
-     echo $this->session->userdata[$iii];
+     echo $this->session->userdata['tiempoInicio'];
    }
 
    public function searchLine(){
      $suma = array();
      $line = $this->input->post('random');
-     $suma = $this->session->userdata('cancion1');
-     $verbo = $this->session->userdata('verbos1');
+     $suma = $this->session->userdata('sumas');
+     $verbo = $this->session->userdata('verbos');
+     $sust = $this->session->userdata('sustantivos');
 
      foreach ($suma as $key) {
        echo $key. " ";
      }
 
-     echo "APARTIRDEAQUÍVERBOS";
+     echo "APARTIRDEAQUÍ";
 
      foreach ($verbo as $key) {
        echo $key. " ";
      }
+
+     echo "APARTIRDEAQUÍ";
+
+     foreach ($sust as $key) {
+       echo $key. " ";
+     }
+
+  }
+
+  public function guardarActSession(){
+    $titulo = $this->input->post('titulo');
+    $texto = $this->input->post('texto');
+    $this->asignatura_model->guardarActSession();
+
   }
 
   public function guardarHistoria(){

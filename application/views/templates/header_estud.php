@@ -16,8 +16,6 @@
         <script type="text/javascript" src="<?php echo base_url() . '/javascript/estudiantes.js'; ?>" ></script>
         <script type="text/javascript" src="<?php echo base_url() . '/javascript/actividadA.js'; ?>" ></script>
         <script type="text/javascript" src="<?php echo base_url() . '/javascript/actividadB.js'; ?>" ></script>
-        <script type="text/javascript" src="<?php echo base_url() . '/javascript/nltk.js'; ?>" ></script>
-
     </head>
 <div class="headerIMG" id="headerIMG">
   <img class="img" src="https://i.imgur.com/yyRuMzt.png">
@@ -37,10 +35,7 @@
     <a id="home" href="http://localhost/edutopia/estudiante/pages/index/home_est">Inicio - Clases</a>
   </li>
   <li class="nav-item">
-    <a id="esp" href="http://localhost/edutopia/estudiante/pages/index/claseEsp">Español</a>
-  </li>
-  <li class="nav-item">
-    <a id="ing" href="http://localhost/edutopia/estudiante/pages/index/claseIng">Inglés</a>
+    <a href="#">Progreso</a>
   </li>
   <li class="nav-item">
     <a id="ub"></a>

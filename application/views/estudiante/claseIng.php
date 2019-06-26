@@ -1,41 +1,38 @@
+<?php
+$asign=  array(
+  'clase' => '2'
+);
+$this->session->set_userdata($asign);
+?>
 <div class="home">
-  <div onclick="location.href='http://localhost/edutopia/estudiante/pages/index/actividadTipoA';" style="cursor: pointer;" class="actividades">
+  <?php  foreach ($actividad as $actividad_item): ?>
+  <div onclick = "setURl(this)" style="cursor: pointer;" class="actividades" id="<?php echo $actividad_item['actividadLink']?>">
     <div class="date">
-      <img src="https://i.imgur.com/b19Mqce.png" width="60%">
+      <img src="<?php echo $actividad_item['imgLink'] ?>" width="60%">
       <p>Semana
         2</p>
     </div>
     <div class="act">
-      <p class="info titulo">Activity 1</p><br>
+      <p class="info titulo">Actividad <?php echo $actividad_item['idAct'] . ": " . $actividad_item['nombreAct']?></p><br>
       <p class="info">
-        Identify diffrent elemnts on your favorite songs.
+        <?php echo $actividad_item['descripción']?>
       </p>
+      <span class= "keyword">Palabras clave:</span><p class= "info2"><?php echo $actividad_item['palabrasClave']?></p>
     </div>
+    <?php
+    $status = $this->asignatura_model->getActStatus($actividad_item['idAct']);
+    if ($status !== null && $status !== false){
+    ?>
+    <div class="fini" style="background-color: teal !important">
+      <img src="https://funermostra.feriavalencia.com/wp-content/uploads/2019/03/604a0cadf94914c7ee6c6e552e9b4487-icono-de-c-rculo-de-marca-de-verificaci-n-curvo-by-vexels.png" width="60%">
+        <p class = "status">Completado</p>
+    </div>
+  <?php } else if ($status === false){ ?>
+    <div class="fini">
+      <img src="https://i.kym-cdn.com/entries/icons/facebook/000/011/743/metal-gear-alert.jpg" width="60%">
+      <p class = "status">Pendiente</p>
+    </div>
+  <?php } ?>
   </div>
-  <div onclick="location.href='http://localhost/edutopia/estudiante/pages/index/actividadTipoB';" style="cursor: pointer;" class="actividades">
-    <div class="date">
-      <img src="https://i.imgur.com/kcSQKVW.png" width="60%">
-      <p>Semana
-        5</p>
-    </div>
-    <div class="act">
-      <p class="info titulo">Actividad 2</p><br>
-      <p class="info">
-        Create your own story where you include everything you've learn in your classes.
-      </p>
-    </div>
-  </div>
-  <div onclick="location.href='http://localhost/edutopia/estudiante/pages/index/actividadTipoC';" style="cursor: pointer;" class="actividades">
-    <div class="date">
-      <img src="https://i.imgur.com/gPzGtyK.png" width="60%">
-      <p>Semana
-        8</p>
-    </div>
-    <div class="act">
-      <p class="info titulo">Actividad 3</p><br>
-      <p class="info">
-        How much can you say about this short story?
-      </p>
-    </div>
-  </div>
+  <?php endforeach; ?>
 </div>

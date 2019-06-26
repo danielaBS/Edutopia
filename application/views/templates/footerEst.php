@@ -22,7 +22,7 @@
 }
 </style>
 <div class="character" id="charDiv">
-  <img width="auto" height="370px" src="">
+  <img width="auto" height="330px" src="">
 </div>
 <div class ="footer">
   <p>Acerca de</p>
