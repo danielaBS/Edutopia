@@ -83,11 +83,13 @@ if (empty($values)) {
     <div style= "width: 650px; height: 365.625px; float:left; position: absolute; z-index:1;" onclick="toastView()"></div>
     <div id="toastView">Por favor de clic en el botón 'Iniciar actividad' para empezar.</div>
     <div id="player" style="float:left;"></div>
-    <div style= "width:30%; height: 365.625px; float:left; margin: 0 40px 0; padding: 0 10px">
-      <p>Deslizate hacía abajo y busca en la letra de la canción todos los sustantivos y verbos que encuentres.
-        Cuándo el vídeo se detenga, escribelos en los recuadros correspondientes.</p>
-      <p>recuerda que los verbos son las acciones que realizas</p>
-      <p>recuerda que los sustantivos son (?)</p>
+    <div style= "width:30%; height: 365.625px; float:left; margin: 0 40px 0; padding: 0 10px; text-align: justify">
+      <p>Deslizate hacia abajo y busca en la letra de la canción los sustantivos y verbos.
+        Cuándo el vídeo se detenga, escribelos en el recuadro que corresponde.</p>
+      <img src= "https://i.imgur.com/s07d2lp.png" width="100%">
+      <span style= "font-weight: bold">Recuerda:</span>
+      <p>Los verbos son las acciones que realizas.</p>
+      <p>Los sustantivos son palabras que identifican elementos; ya sean objetos, seres vivos, lugares, etc.</p>
     </div>
   </div>
   <div class="botones">

@@ -1,4 +1,5 @@
 var classAct = false;
+
 window.onload = function setView(){
   var headerIMG= document.getElementById('headerIMG');
   headerIMG.style.backgroundImage = "url('https://i.imgur.com/Po4JpNc.png')";
@@ -7,6 +8,7 @@ window.onload = function setView(){
   var headerIMG= document.getElementById('headerIMG');
 
   here.style.display = "none";
+  $('personajeIntro').hide();
 
   var url = window.location.pathname;
   var nameFile = url.substring(url.lastIndexOf('/')+1);
@@ -26,26 +28,87 @@ window.onload = function setView(){
   var chrDiv = document.getElementById("charDiv");
   var imgChar = chrDiv.getElementsByTagName("img");
 
-    $.ajax({
-        url: "http://localhost/edutopia/estudiante/pages/getChar",
-        type: "POST",
-        success: function (res) {
-            var len = res.length;
-              // Returns successful data submission message when the entered information is stored in database.
-            if (res!=="un" && res !=="do")
-            {
-              $(document).ready(function(){
-                  $("#personaje").modal();
-              }, 1000);
-            }else if (res==="un" && nameFile !== "actividadTipoA"){
-              chrDiv.style.display = "block";
+   imgsCleo = [
+    {"pag": "home_est", "url": "https://i.imgur.com/jPl4fMJ.png"},
+    {"pag": "home_est", "url": "https://i.imgur.com/uE7fBr0.png"},
+    {"pag": "claseEsp", "url": "https://i.imgur.com/2e4DJGR.png"},
+    {"pag": "claseEsp", "url": "https://i.imgur.com/jFCVHTt.png"},
+  ];
+
+   imgsMatias = [
+     {"pag": "home_est", "url": "https://i.imgur.com/nhVD0OI.png"},
+     {"pag": "home_est", "url": "https://i.imgur.com/bxRTwFf.png"},
+     {"pag": "claseEsp", "url": "https://i.imgur.com/yE8721q.png"},
+     {"pag": "claseEsp", "url": "https://i.imgur.com/W4M5Cp0.png"},
+  ];
+
+  $.ajax({
+      url: "http://localhost/edutopia/estudiante/pages/getChar",
+      type: "POST",
+      success: function (res) {
+          var len = res.length;
+            // Returns successful data submission message when the entered information is stored in database.
+          if (res!=="un" && res !=="do")
+          {
+            $(document).ready(function(){
+                $("#personaje").modal();
+            }, 1000);
+          }else if (res==="un" && nameFile !== "actividadTipoA" && nameFile !== "actividadTipoB" && nameFile !== "cancion"){
+            chrDiv.style.display = "block";
+
+            if(nameFile === "home_est"){
               imgChar[0].src = "https://i.imgur.com/L0K7pKo.png";
-            }else if (res=="do" && nameFile !== "actividadTipoA"){
-              chrDiv.style.display = "block";
-              imgChar[0].src = "https://i.imgur.com/83uoeWy.png";
+            }else if(nameFile === "claseEsp"){
+              imgChar[0].src = "https://i.imgur.com/2e4DJGR.png";
             }
+
+            var i = 0;
+
+            var links = imgsMatias.filter(function (url) {
+              if (url.pag == nameFile) {
+                return url
+              }
+            });
+
+            setInterval(function () {
+              imgChar[0].src = links[i].url;
+
+              i = i + 1;
+
+              if (i >= links.length) {
+                i =  0;
+              }
+
+            }, 9000);
+
+          }else if (res=="do" && nameFile !== "actividadTipoA" && nameFile !== "actividadTipoB" && nameFile !== "cancion"){
+            chrDiv.style.display = "block";
+            if(nameFile === "home_est"){
+              imgChar[0].src = "https://i.imgur.com/83uoeWy.png";
+            }else if(nameFile === "claseEsp"){
+              imgChar[0].src = "https://i.imgur.com/2e4DJGR.png";
+            }
+
+            var i = 0;
+
+            var links = imgsCleo.filter(function (url) {
+              if (url.pag == nameFile) {
+                return url
+              }
+            });
+
+            setInterval(function () {
+              imgChar[0].src = links[i].url;
+              i = i + 1;
+
+              if (i >= links.length) {
+                i =  0;
+              }
+
+            }, 9000);
           }
-    });
+        }
+      });
 
   if(nameFile === "actividadTipoA" || nameFile === "actividadTipoB" || nameFile === "actividadTipoC" || nameFile === "claseEsp" || nameFile === "claseIng" || nameFile === "cancion"){
 
@@ -63,6 +126,7 @@ window.onload = function setView(){
   here.innerHTML = title;
 
   if(nameFile==="claseEsp" || nameFile==="claseIng"){
+
     classAct = true;
 
 
@@ -97,6 +161,27 @@ window.onload = function setView(){
     divEsp.style.backgroundImage= "url('https://i.imgur.com/h66JjYX.png')";
     divEng.style.backgroundImage= "url('https://i.imgur.com/iXv4Yz8.png')";
     divCyP.style.backgroundImage= "url('https://i.imgur.com/P4dcS2C.png')";
+
+    tag1 = document.createElement('script');
+
+    tag1.src = "https://www.youtube.com/iframe_api";
+    firstScriptTag1 = document.getElementsByTagName('script')[0];
+    firstScriptTag1.parentNode.insertBefore(tag1, firstScriptTag1);
+
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
+
+
+    player1 = new YT.Player('intro', {
+      height: '450',
+      width: '800',
+      videoId: 'Bf2g0UeHCVM',
+      events: {
+              'onReady': onPlayerReadyH,
+              'onStateChange': onPlayerStateChangeH
+            }
+    });
+
   }
 
   var idS = urlLOG.substring(urlLOG.lastIndexOf('/')+1, urlLOG.lastIndexOf('?'));
@@ -121,7 +206,7 @@ window.onload = function setView(){
         width: '650',
         videoId: idS,
         events: {
-                'onReady': onPlayerReady
+          'onReady': onPlayerReady
               }
       });
 
@@ -150,26 +235,90 @@ function setChar(){
         'personaje': choose[i].value
       };
 
-      $.ajax({
-        url: "http://localhost/edutopia/estudiante/pages/setChar",
-        type: "POST",
-        data: obj,
-        success: function (res) {
-            var sli = res.slice(1,4);
-              // Returns successful data submission message when the entered information is stored in database.
-            if (sli==="set")
-            {
-              alert("El personaje se ha guardado exitosamente.");
-              $('#personaje').modal('hide');
-            }else{
-              alert("Ha ocurrido un error. Por favor intente nuevamente. :(")
+      var txt;
+      if (confirm("¿EStás seguro que quieres escoger este personaje?")) {
+
+        $.ajax({
+          url: "http://localhost/edutopia/estudiante/pages/setChar",
+          type: "POST",
+          async: false,
+          data: obj,
+          success: function (res) {
+              var sli = res.slice(1,4);
+                // Returns successful data submission message when the entered information is stored in database.
+              if (sli==="set")
+              {
+                $('#personaje').modal('hide');
+                document.getElementById('clicking').click();
+
+                tag2 = document.createElement('script');
+                tag2.src = "https://www.youtube.com/iframe_api";
+                firstScriptTag2= document.getElementsByTagName('script')[0];
+                firstScriptTag2.parentNode.insertBefore(tag2, firstScriptTag2);
+
+                // 3. This function creates an <iframe> (and YouTube player)
+                //    after the API code downloads.
+
+                player2 = new YT.Player('charIntro', {
+                  height: '672',
+                  width: '1200',
+                  videoId: 'U3vX8g46Knw',
+                  events: {
+                          'onReady': onPlayerReadyY,
+                          'onStateChange': onPlayerStateChangeY
+                        }
+                });
+
+              }else{
+                alert("Ha ocurrido un error. Por favor intente nuevamente. :(")
+              }
             }
-          }
-      });      // only one radio can be logically checked, don't check the rest
+        });
+
+      } else {
+        txt = "Asegurate de escoger un personaje.";
+      }
       break;
     }
   }
-  setTimeout(location.reload.bind(location), 500);
+}
+
+var done1 = false;
+
+function onPlayerReadyH(event) {
+  event.target.playVideo();
+}
+
+function onPlayerStateChangeH(event) {
+  if (event.data == YT.PlayerState.PLAYING && !done1) {
+    setTimeout(stopVideo, 6000);
+    done1 = true;
+  }
+}
+
+function stopVideo() {
+  player1.stopVideo();
+  player1.destroy();
+}
+
+var done2 = false;
+
+function onPlayerReadyY(event) {
+  event.target.playVideo();
+}
+
+function onPlayerStateChangeY(event) {
+  if (event.data == YT.PlayerState.PLAYING && !done2) {
+    setTimeout(stopVideoY, 17000);
+    done2 = true;
+  }
+}
+
+function stopVideoY() {
+  player2.stopVideo();
+  player2.destroy();
+  $('#perIN').css("display", "none");
+  setTimeout(window.location.assign("http://localhost/edutopia/estudiante/pages/index/home_est"), 500);
 }
 
 function setURl(element){

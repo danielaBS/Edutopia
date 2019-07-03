@@ -48,7 +48,7 @@ div a{
   }
 
 #navbar{
-  z-index: 1000;
+  z-index: 1;
   padding: 0 10%;
   height: 6vh;
   box-shadow: 0 -5px 10px -5px rgba(0, 0, 7, 0.8);
@@ -66,7 +66,7 @@ div a{
   display: block;
   color: rgba(255,255,255, 0.8);
   text-align: center;
-  padding: 1.12vh 16px;
+  padding: 1.14vh 16px;
   text-decoration: none;
 }
 
@@ -157,6 +157,44 @@ div a{
   padding: 20px 0;
 }
 
+#intro {
+  margin: 20px auto;
+}
+
+#personajeIntro{
+  position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+  padding: 27px;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+
+#personajeIntro:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+#personajeIntro > div {
+  border-radius: 10px;
+  background-color: lightpink;
+	width: 1000px;
+  height: auto;
+	position: relative;
+	margin: 40px;
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #999);
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
+}
 
 .clases {
   margin: 2em 3em;
@@ -191,7 +229,7 @@ div a{
 .act {
   margin: 10px 0 0 60px;
   float: left;
-  z-index: -2;
+  z-index: 1;
   height: 10em;
   width: 55em;
   overflow: hidden;
@@ -203,7 +241,7 @@ div a{
 
 .date {
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   max-width: 10em;
   max-height: 10em;
   min-width: 8em;
@@ -222,7 +260,7 @@ div a{
   border-radius: 0 0 10px 0;
   float: left;
   margin: 20px 0 0 50em;
-  background-color: #F9875C;
+  background-color: #FF6600;
 }
 
 .date p, .fini p {
@@ -265,7 +303,7 @@ div a{
   margin: auto;
   width: 80%;
   height: auto;
-  background-color: #00004D;
+  background-color: #2474B5;
   overflow: hidden;
   padding: 10px;
 }
@@ -278,7 +316,7 @@ div a{
   margin: 50px 5px 100px;
   width: 300px;
   height: 150px;
-  background-color: rgb(140,192,231);
+  background-color: #2474B5;
   padding: 8px;
   overflow: visible;
   cursor: pointer;
@@ -415,20 +453,45 @@ div a{
 
 .right {
   bottom: 0;
-  position: relative;
   float: left;
-  z-index: -1;
+  z-index: 0;
   height: 70%;
   overflow: hidden;
+  display: flex;
+}
+
+.hide {
+  text-align: left;
+  display: inline-block;
+  width: 17%;
+  padding: 30px;
+  font-size: 20px;
+  cursor: pointer;
+  float: left;
+  border-bottom: 2px solid gray;
+}
+
+.show{
+  margin: 20px 0 0 0;
+}
+
+.noNav {
+  float: left;
+  height: auto;
+  padding: 10px 20px;
 }
 
 .actividadB {
+  background-color: lavender;
   padding: 20px 0 0 0;
-  z-index: 0;
   float: left;
   position: relative;
   width: auto;
   vertical-align: middle;
+}
+
+.actividadB input {
+  margin: 10px 0;
 }
 
 .items {
@@ -445,6 +508,41 @@ div a{
 .it {
   margin: 10px;
   float: left;
+}
+
+
+.active {
+  font-weight: bolder;
+}
+
+.scrollbar {
+	margin: 0 3px 0;
+	float: right;
+	height: 300px;
+	width: 100%;
+	overflow-y: scroll;
+	margin-bottom: 25px;
+}
+
+.force-overflow {
+	min-height: 450px;
+}
+
+#style-2::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-2::-webkit-scrollbar {
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#style-2::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #FF1A1A;
 }
 
 .canvas{
@@ -481,19 +579,4 @@ div a{
 
 .it a:hover{
   font-weight: bolder;
-}
-
-#hide {
-  margin: 20px 20% 0 0;
-  z-index: 0;
-  font-size: 30px;
-  cursor:pointer;
-  position: absolute;
-  float: left;
-  width: 30%;
-}
-
-#show{
-  margin: 20px 0 0 0;
-  color: black;
 }

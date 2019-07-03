@@ -1,5 +1,4 @@
-<div class ="home">
-  <!-- Modal -->
+<!-- Modal -->
   <div class="modal fade" id="personaje" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog .modal-dialog-centered  modal-lg" role="document">
       <div class="modal-content">
@@ -23,10 +22,24 @@
       </div>
     </div>
   </div>
-  <h2 id= "clase"> Estas son tus clases, <?php
-  echo $this->session->userdata['nombre'] . ":"; ?></h2>
-  <?php  foreach ($asignatura as $asignatura_item): ?>
-  <div onclick="setURl(this)"; style="cursor: pointer;" class="clases" id="<?php echo $asignatura_item['idAsignatura']?>">
+
+  <div id="perIN">
+    <a id="clicking" href="#personajeIntro"></a>
+    <a id="playVid"></a>
+    <div id="personajeIntro">
+      <div id="charIntro">
+      </div>
+    </div>
   </div>
-  <?php endforeach; ?>
-</div>
+
+  <div class ="home">
+    <div id= "intro">
+      <img src= "https://i.imgur.com/yMX9eDN.jpg" width="800">
+    </div>
+    <h2 id= "clase"> Estas son tus clases, <?php
+      echo $this->session->userdata['nombre'] . ":"; ?></h2>
+    <?php  foreach ($asignatura as $asignatura_item): ?>
+      <div onclick="setURl(this)"; style="cursor: pointer;" class="clases" id="<?php echo $asignatura_item['idAsignatura']?>">
+      </div>
+    <?php endforeach; ?>
+  </div>

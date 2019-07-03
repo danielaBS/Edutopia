@@ -35,7 +35,7 @@
     <a id="home" href="http://localhost/edutopia/estudiante/pages/index/home_est">Inicio - Clases</a>
   </li>
   <li class="nav-item">
-    <a href="#">Progreso</a>
+    <a href="http://localhost/edutopia/estudiante/pages/index/progreso">Progreso</a>
   </li>
   <li class="nav-item">
     <a id="ub"></a>
