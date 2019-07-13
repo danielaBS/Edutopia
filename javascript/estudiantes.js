@@ -1,4 +1,5 @@
 var classAct = false;
+var nameFile;
 
 window.onload = function setView(){
   var headerIMG= document.getElementById('headerIMG');
@@ -11,7 +12,7 @@ window.onload = function setView(){
   $('personajeIntro').hide();
 
   var url = window.location.pathname;
-  var nameFile = url.substring(url.lastIndexOf('/')+1);
+  nameFile = url.substring(url.lastIndexOf('/')+1);
   var title;
 
   var titulos = [
@@ -220,8 +221,31 @@ window.onscroll = function navBar(){
 
   if (window.pageYOffset >= 188) {
     navbar.classList.add("sticky");
+    if(nameFile === "actividadTipoB"){
+      $(".buts").css({
+        position: "fixed",
+        top: "7vh"
+      });
+
+      $(".left").css({
+        position: "sticky",
+        top: "5vh"
+      });
+
+
+    }
   } else {
     navbar.classList.remove("sticky");
+    if(nameFile === "actividadTipoB"){
+      $(".buts").css({
+        position: "absolute",
+        top: "32vh"
+      });
+
+      $(".left").css({
+        position: "",
+      });    
+    }
   }
 }
 

@@ -34,7 +34,7 @@
 
   <div class ="home">
     <div id= "intro">
-      <img src= "https://i.imgur.com/yMX9eDN.jpg" width="800">
+      <img src= "https://i.imgur.com/GhjVKXv.png" width="800">
     </div>
     <h2 id= "clase"> Estas son tus clases, <?php
       echo $this->session->userdata['nombre'] . ":"; ?></h2>

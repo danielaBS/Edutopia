@@ -23,45 +23,6 @@ function toastView(){
   }, 1000);
 }
 
-$(document).ready(function(){
-  $('.force-overflow').css("display", "none");
-  $('.left').css("display", "none");
-  $('.hide').css("display", "none");
-  $('.active').css("display", "block");
-
-  $('.noNav').bind('click', function(){
-    var clssSlctd = $(this).attr('class');
-    var hsClss = clssSlctd.split(" ");
-
-    $(".".concat(hsClss[0])).removeClass('active');
-    $(".left").css("display", "none");
-    $("#".concat(hsClss[1])).css("display", "block");
-    $(this).addClass('active');
-
-    document.getElementById(hsClss[1]).getElementsByClassName("it")[0].classList.add("active");
-    document.getElementById(hsClss[1]).getElementsByClassName("force-overflow")[0].style.display = "block";
-
-    $(".right").css("width", "70%");
-    $(".hide").hide();
-  });
-
-  $('.it').bind('click', function(){
-    var classSlctd = $(this).attr('class');
-    var hasClss = classSlctd.split(" ");
-
-    $(".force-overflow").css("display", "none");
-    $(".".concat(hasClss[0])).removeClass('active');
-    $(this).addClass('active');
-    $(".".concat(hasClss[1])).css("display", "block");
-  });
-
-  $(".leftNav").click(function(){
-    $(".left").css("display", "none");
-    $(".right").css("width", "100%");
-    $(".hide").show();
-  });
-});
-
 function openSong(element){
   var link = element.className;
   var res = link.split(" ");
@@ -73,7 +34,7 @@ function onPlay(idS){
   obj= {
     'link' : idS
   };
-  
+
   $.ajax({
       url: "http://localhost/edutopia/estudiante/pages/getMinSec",
       type: "POST",
