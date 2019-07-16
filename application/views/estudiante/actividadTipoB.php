@@ -48,36 +48,11 @@
     <div class="show">
       <span style="font-size:30px;cursor:pointer" class="leftNav text">&#9776; Texto</span>
     </div>
-    <div class="items">
-      <div class = "it title active">
-        <a>Títulos</a>
-      </div>
-      <div class = "it texto">
-        <a>Texto</a>
-      </div>
-      <div class = "it estilo">
-        <a>Estilos</a>
-      </div>
-    </div>
-    <div class="scrollbar" id="style-2">
-      <div class="force-overflow title active" id= "divDrag5" style="font-weight: normal !important" >
+    <div class="txt" id="style-2">
+      <div class="title active" id= "divDrag5" style="font-weight: normal !important" >
         <p>Color de la letra: </p><input type= "color" name= "color">
-        <p>Tamaño de la letra: </p><input type="range" min= "20" max= "28" name="font-size" value="20px">
-        <input type= "button" name= "normal" value="A">
-        <input type= "button" name= "cursiva" value="A">
-        <input type= "button" name= "negrilla" value="A">
-      </div>
-      <div class="force-overflow texto" id= "divDrag6">
-        <img src="https://i.pinimg.com/564x/4b/e2/7e/4be27e978aab988298afc1be40560cc0.jpg" width="300px" id= "imgDrag21">
-        <img src="https://i.pinimg.com/564x/4b/e2/7e/4be27e978aab988298afc1be40560cc0.jpg" width="300px" id= "imgDrag22">
-        <img src="https://i.pinimg.com/564x/4b/e2/7e/4be27e978aab988298afc1be40560cc0.jpg" width="300px" id= "imgDrag23">
-        <img src="https://i.pinimg.com/564x/4b/e2/7e/4be27e978aab988298afc1be40560cc0.jpg" width="300px" id= "imgDrag24">
-      </div>
-      <div class="force-overflow estilo" id= "divDrag7">
-        <img src="https://i.pinimg.com/564x/a2/23/0c/a2230c6185d34c3c50aadc631af6148b.jpg" width="300px" id= "imgDrag25">
-        <img src="https://i.pinimg.com/564x/a2/23/0c/a2230c6185d34c3c50aadc631af6148b.jpg" width="300px" id= "imgDrag26">
-        <img src="https://i.pinimg.com/564x/a2/23/0c/a2230c6185d34c3c50aadc631af6148b.jpg" width="300px" id= "imgDrag27">
-        <img src="https://i.pinimg.com/564x/a2/23/0c/a2230c6185d34c3c50aadc631af6148b.jpg" width="300px" id= "imgDrag28">
+        <br><br>
+        <input type= "button" name ="inp" value= "Cuadro de texto" id="txtBub"></input>
       </div>
     </div>
   </div>
@@ -121,9 +96,9 @@
   </div>
   <div class= "right sto active" id= "divDrop" style="font-weight: normal !important">
     <div class = "actividadB">
-      <input class="txtEnt" type="text" size="50" required id="titulo" value="Mi primera historia"></input>
+      <input class="txtEnt" type="text" required id="titulo" value="Mi primera historia"></input>
       <br>
-      <textarea class="txtEnt" name="message" rows="10" cols="65" id="texto" required>Da click para empezar a escribir.</textarea>
+      <textarea class="txtEnt" name="message" required>Da click para empezar a escribir.</textarea>
       <br>
       <button id="imgs"><span class="fas fa-plus-circle"></span> Agregar imagen</button>
       <br>
