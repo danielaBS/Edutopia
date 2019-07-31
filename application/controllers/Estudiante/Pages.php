@@ -106,7 +106,6 @@ class Pages extends CI_Controller {
      foreach ($sust as $key) {
        echo $key. " ";
      }
-
   }
 
   public function guardarActSession(){

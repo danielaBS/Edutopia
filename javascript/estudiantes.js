@@ -229,11 +229,10 @@ window.onscroll = function navBar(){
 
       $(".left").css({
         position: "sticky",
-        top: "5vh"
+        top: "5vh",
       });
-
-
     }
+    
   } else {
     navbar.classList.remove("sticky");
     if(nameFile === "actividadTipoB"){
@@ -244,7 +243,7 @@ window.onscroll = function navBar(){
 
       $(".left").css({
         position: "",
-      });    
+      });
     }
   }
 }

@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif !important;
+  font-family: 'Lato', sans-serif !important;
   text-align: center;
 }
 
@@ -395,7 +395,7 @@ div a{
   position: absolute;
   margin: 2% 12% 5%;
   padding: auto;
-  background-Color: skyblue;
+  background-Color: rgba(0,0,0,0.15);
 }
 
 #toastView {
@@ -421,7 +421,7 @@ div a{
   font-weight: 400;
   font-size: 20px;
   color: white;
-  background-color: salmon;
+  background-color:  #00004D;
   border-radius: 4px;
   border-color: rgba(0,0,0,0);
 }
@@ -460,6 +460,7 @@ div a{
 
 .left img {
   cursor: pointer;
+  margin: 3px auto;
 }
 
 .right {
@@ -496,6 +497,7 @@ div a{
   left: 0;
   transition: 0.5s;
   padding: 25px 2.8em;
+
 }
 
 .it {
@@ -521,12 +523,14 @@ div a{
 /* SCROLLBAR */
 
 .scrollbar {
-	margin: 0 3px 0;
+  box-shadow: 5px 10px 10px rgba(66,66,66,0.2);
+	margin: 10px 10px;
 	float: right;
-  height: 480px;
-	width: 100%;
+  height: 400px;
+	width: 96%;
 	overflow-y: scroll;
 	margin-bottom: 25px;
+  border-radius: 17px;
 }
 
 .force-overflow {
@@ -540,6 +544,7 @@ div a{
 }
 
 #style-2::-webkit-scrollbar {
+  border-radius: 5px;
 	width: 12px;
 	background-color: #F5F5F5;
 }
@@ -550,7 +555,12 @@ div a{
 	background-color: #FF1A1A;
 }
 
-/* LAYOUT ACTIVIDAD */
+/* LAYOUT ACTIVIDAD  */
+
+.txt {
+  width: 100%;
+  margin: 20px auto;
+}
 
 .actividadB {
   text-align: left;
@@ -564,15 +574,37 @@ div a{
   overflow: hidden;
 }
 
-.actividadB button{
-  float: left;
+.txtbtns {
+  display: inline-block;
+  width: 100%;
+}
+
+/* ACTIVIDAD HISTORIA */
+
+.droppable {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.lay button{
+  float: right;
   margin: 15px 0;
 }
 
-.txtEnt {
+.tit {
   margin: 10px 0;
   min-width: 70%;
   max-width: 100%;
+  min-height: 50px;
+  max-height: 60px;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.bod {
+  float: left;
+  margin: 10px 0;
+  width: 100%;
   min-height: 50px;
   max-height: 300px;
   font-size: 20px;
@@ -582,19 +614,53 @@ div a{
 .drag {
   position: relative;
   margin: 10px auto;
-  width: 300px;
+  width: 250px;
   height: auto;
 }
 
-.dragged {
-	position: absolute;
-  width: 300px;
-  margin: auto;
+.delete {
+  top:0;
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+  border: none;
+  margin: 0 !important;
+  vertical-align: top;
+  transition: opacity .35s ease;
+  background-color: rgba(0,0,0,0);
+}
+
+.divIMG:hover .delete {
+  opacity: 1;
+}
+
+.ui-resizable-se {
+   bottom: 5px;
+ }
+
+.divIMG{
+  overflow: hidden;
+  position: absolute;
+  float: left;
+  width: 250px;
   height: auto;
 }
 
-.divBubble{
-    width: 200px;
+.dragged{
+  float: left;
+  margin: 0 1px 0 0;
+  width: inherit;
+  height: calc(inherit - 30px);
+}
+
+.divBubble {
+  float: left;
+  width: auto;
+  height: auto;
+}
+
+.divBubble:hover .delete {
+  opacity: 1;
 }
 
 .txtBubble {
@@ -641,13 +707,4 @@ div a{
 .buts button{
   float: left;
   margin: 10px;
-}
-
-.txt {
-  width: 100%;
-  margin: 20px auto;
-}
-
-.droppable {
-  float: left;
 }

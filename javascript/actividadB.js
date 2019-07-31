@@ -1,4 +1,5 @@
 var imgClick = false;
+var txtClick = false;
 
 //MOSTRAR MENÚ DE ELEMENTOS
 
@@ -80,30 +81,45 @@ $(document).ready(function(){
 
     if(imgClick === true){
       $("#imgs").before($('<div></div>').attr({'id': 'dropImgs'}).addClass("droppable"));
-      $("#imgs").before($('<textarea></textarea>').val('Da click para empezar a escribir.').addClass("txtEnt"));
+      $("#imgs").before($('<textarea></textarea>').val('Da click para empezar a escribir.').addClass("bod"));
       imgClick = false;
     }
 
-    $(".droppable").last().append($('<img>').attr({
-    }).addClass("draggable dragged"));
+    $(".droppable").last().append($('<div></div>').attr({
+    }).addClass("divIMG"));
 
-    $('.wrapup').on('click', '#txtBub', function(){
-      console.log("sd");
-      $(".droppable").last().append($('<div></div>').addClass("draggable divBubble"));
-      $(".divBubble").last().append($('<textarea></textarea>').addClass("draggable txtBubble"));
+    $(".divIMG").last().append($('<button>').html("<i class='fas fa-trash-alt'></i>").addClass("delete"));
 
-          $('.draggable').draggable({
-           containment: "parent"
-          });
+    $(".divIMG").last().append($('<img>').attr({
+    }).addClass("dragged"));
 
-    });
-
-    for(i=0; i<src.length; i++){
-      $(".draggable").eq(i).attr("src", src[i]);
-      $('.draggable').eq(i).draggable({
-       containment: "parent"
+    for(i=0; i< $(".dragged").length; i++){
+      $(".dragged").last().attr('src', src.pop()),
+      $(".divIMG").eq(i).resizable({
+        minHeight: 80,
+        minWidth: 80  ,
+        containment: "parent",
+        autoHide: "true",
       });
+      $(".divIMG").eq(i).draggable({containment: "parent"});
     }
+
+  });
+
+  $('.wrapup').on('click', '#txtBub', function(){
+    txtClick = true;
+    if($(".droppable").length === 0){
+      alert("Agrega una imagen primero.");
+    } else {
+      $(".droppable").last().append($('<div></div>').addClass("divBubble"));
+      $(".divBubble").last().append($('<button>').html("<i class='fas fa-trash-alt'></i>").addClass("delete"));
+      $(".divBubble").last().append($('<textarea></textarea>').addClass("txtBubble"));
+      $( ".divBubble" ).draggable({containment: "parent"});
+    }
+  });
+
+  $('.wrapup').on('click', '.delete', function(){
+    $(this).parent().remove();
   });
 
   // INPUT ElEMENTS
@@ -119,12 +135,11 @@ $(document).ready(function(){
       var col = $(this).val();
       elC.css("color", col);
     });
-
   });
 
-  $.fn.textWidth = function(text, font) {
-    console.log("ho");
+  //GET WIDTH ANG HEIGHT ON INPUT
 
+  $.fn.textWidth = function(text, font) {
       if (!$.fn.textWidth.fakeEl) $.fn.textWidth.fakeEl = $('<span>').hide().appendTo(document.body);
       $.fn.textWidth.fakeEl.text(text || this.val() || this.text() || this.attr('placeholder')).css('font', font || this.css('font'));
       return $.fn.textWidth.fakeEl.width();
@@ -136,7 +151,23 @@ $(document).ready(function(){
       return $.fn.textHeight.fakeEl.height();
   };
 
-  $('.actividadB').on('input', '.txtEnt', '.txtBubble', function() {
+  //RESIZE ELEMENTOS AUTOMATICAMENTE
+
+  $('.actividadB').on('input', '.tit', function() {
+      var inputWidth = $(this).textWidth();
+      $(this).css({
+          width: inputWidth
+      })
+  }).trigger('input');
+
+  $('.actividadB').on('input', '.bod', function() {
+      var inputHeight = $(this).textHeight();
+      $(this).css({
+          height: inputHeight
+      })
+  }).trigger('input');
+
+  $('.actividadB').on('input', '.txtBubble', function() {
       var inputWidth = $(this).textWidth();
       var inputHeight = $(this).textHeight();
       $(this).css({
@@ -149,12 +180,10 @@ $(document).ready(function(){
 
   function inputWidth(elem, minW, maxW) {
       elem = $(this);
-      console.log(elem)
   }
 
   function inputHeight(elem, minH, maxH) {
       elem = $(this);
-      console.log(elem)
   }
 });
 
