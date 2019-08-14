@@ -48,6 +48,12 @@ Class Asignatura_model extends CI_Model {
       }
     }
 
+    public function getActHistoria($asig, $grado){
+      $query = $this->db->query("SELECT * FROM historiaactc WHERE idAsigHis='$asig' AND idGradHist='$grado'");
+      $array = $query->result_array();
+      return $array;
+    }
+
     public function guardarActSession(){
       $query = $this->db->insert('historias',
        array(

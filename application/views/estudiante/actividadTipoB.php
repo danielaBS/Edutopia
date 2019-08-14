@@ -76,10 +76,7 @@
         <p class="tx com noActive">Cómic</p><img src= "https://support.bookcreator.com/hc/en-us/article_attachments/205058749/example-comic.jpg" width="200px"  class= "op com">
       </div>
       <div class="force-overflow viñ" id= "divDrag9">
-        <img src="https://i.pinimg.com/564x/91/bc/c1/91bcc1771e680d79f2e43a6f9a086402.jpg" width="300px">
-        <img src="https://i.pinimg.com/564x/91/bc/c1/91bcc1771e680d79f2e43a6f9a086402.jpg" width="300px">
-        <img src="https://i.pinimg.com/564x/91/bc/c1/91bcc1771e680d79f2e43a6f9a086402.jpg" width="300px">
-        <img src="https://i.pinimg.com/564x/91/bc/c1/91bcc1771e680d79f2e43a6f9a086402.jpg" width="300px">
+        <img src="https://image.freepik.com/vector-gratis/conjunto-globos-dialogo-vinetas-comic_23-2147568638.jpg" width="300px">
       </div>
     </div>
   </div>

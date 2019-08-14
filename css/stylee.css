@@ -119,7 +119,7 @@ div a{
   overflow: hidden;
   width: 50px;
   float: right;
-  margin: 0.7rem 1rem;
+  margin: 0.6rem 1rem;
 }
 
 /* Sticky Navigation Bar */
@@ -707,4 +707,38 @@ div a{
 .buts button{
   float: left;
   margin: 10px;
+}
+
+/* ACTIVIDAD COMIC */
+
+.comicCanvas{
+  background-color: blue;
+}
+
+/* ACTIVIDAD C */
+
+.actC{
+  width: 80%;
+  margin: 0 10%;
+  overflow: hidden;
+}
+
+.planLector {
+  padding: 10px;
+  text-align: justify;
+  overflow: hidden;
+  float: left;
+  background-color: darksalmon;
+  margin: 5% 0;
+  height: 400px;
+  width: 55%;
+
+}
+
+.preguntas {
+  margin: 5% 0 5% 5%;
+  float: left;
+  background-color: skyblue;
+  height: 400px;
+  width: 40%;
 }

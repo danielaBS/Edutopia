@@ -82,7 +82,7 @@ window.onload = function setView(){
 
             }, 9000);
 
-          }else if (res=="do" && nameFile !== "actividadTipoA" && nameFile !== "actividadTipoB" && nameFile !== "cancion"){
+          }else if (res=="do" && nameFile !== "actividadTipoA" && nameFile !== "actividadTipoB" && nameFile !== "cancion" && nameFile !== "actividadTipoC"){
             chrDiv.style.display = "block";
             if(nameFile === "home_est"){
               imgChar[0].src = "https://i.imgur.com/83uoeWy.png";
@@ -232,7 +232,7 @@ window.onscroll = function navBar(){
         top: "5vh",
       });
     }
-    
+
   } else {
     navbar.classList.remove("sticky");
     if(nameFile === "actividadTipoB"){
