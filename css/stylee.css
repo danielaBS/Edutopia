@@ -724,21 +724,31 @@ div a{
 }
 
 .planLector {
-  padding: 10px;
+  padding: 12px;
   text-align: justify;
-  overflow: hidden;
   float: left;
-  background-color: darksalmon;
-  margin: 5% 0;
+  border-color: #00004D;
+  border-style: dotted;
+  border-width: 2px 0 0;
+  margin: 0 0 5% 0;
   height: 400px;
-  width: 55%;
+  width: 50%;
 
 }
 
 .preguntas {
-  margin: 5% 0 5% 5%;
+  margin: 0 0 5% 5%;
   float: left;
   background-color: skyblue;
   height: 400px;
-  width: 40%;
+  width: 45%;
+}
+
+.textAreaC {
+  margin: 5px;
+  float: left;
+}
+
+.textAreaC textarea {
+  border-radius: 6px;
 }
