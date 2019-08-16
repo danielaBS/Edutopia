@@ -96,6 +96,8 @@ $words = array();
         array_push($words, explode('.', $text[$i]));
     }
 
+    /*
+
     foreach ($words as $key){
       foreach ($key as $l){
         array_push($result, $pos->tag(explode(' ', $l)));
@@ -115,6 +117,7 @@ $words = array();
         }
       }
     }
+    */
     ?>
     </div>
   </div>
