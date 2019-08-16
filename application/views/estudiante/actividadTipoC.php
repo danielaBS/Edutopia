@@ -88,25 +88,34 @@ $words = array();
     </div>
     <?php
     $totalWords = 0;
-
+    $result = array();
+    $class = array();
+    $tag = array();
 
     for($i=0; $i<sizeof($text);$i++){
         array_push($words, explode('.', $text[$i]));
     }
 
-    $result = $pos->tag(explode(' ', $words[0][0]));
-
-    foreach ($result as $key){
-      foreach ($key as $k){
-        foreach ($k as $l){
-          echo $l."<br>";
-        }
+    foreach ($words as $key){
+      foreach ($key as $l){
+        array_push($result, $pos->tag(explode(' ', $l)));
       }
     }
 
+    foreach ($result as $key){
+      foreach ($key as $l){
+        foreach ($l as $y) {
+          foreach ($y as $x => $z) {
+            if(is_integer($x/2)){
+                array_push($class, $z);
+            }else{
+                array_push($tag, $z);
+            }
+          }
+        }
+      }
+    }
     ?>
     </div>
-
   </div>
-
 </div>

@@ -324,6 +324,7 @@ div a{
   padding: 8px;
   overflow: visible;
   cursor: pointer;
+
 }
 
 .songs {
@@ -355,6 +356,10 @@ div a{
 }
 
 .opciones {
+  border-color: rgba(0,0,0,0.1);
+  border-style: dotted;
+  border-width: 2px 0 0 2px;
+  box-shadow: 5px 10px 10px rgba(66,66,66,0.2);
   margin: 0 0 0 40px;
   width:35%;
   height: 365px;
@@ -390,12 +395,13 @@ div a{
 }
 
 #preguntas {
-  border-radius: 0 20px;
   width: 76%;
   position: absolute;
-  margin: 2% 12% 5%;
+  margin: 1.5% 12% 5%;
   padding: auto;
-  background-Color: rgba(0,0,0,0.15);
+  border-color: #00004D;
+  border-style: dotted;
+  border-width: 2px 0 0;
 }
 
 #toastView {
