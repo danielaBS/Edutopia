@@ -8,13 +8,6 @@ $client->setDeveloperKey("AIzaSyAQ5ThIN7jXkd1FKqs-63eRItK2jr8vv1k");
 // Get the API client and construct the service object.
 $service = new Google_Service_Sheets($client);
 
-
-require  '../Edutopia/nltk/PHP-Stanford-NLP-master/autoload.php';
-  $pos = new \StanfordNLP\POSTagger(
-  '../Edutopia/nltk/stanford-postagger/models/spanish.tagger',
-  '../Edutopia/nltk/stanford-postagger/stanford-postagger.jar'
-);
-
 $asig= $this->session->userdata('idASig');
 $grado= $this->session->userdata('grado');
 
@@ -67,58 +60,50 @@ $words = array();
         }
       }?></p>
     </div>
-    <div class ="preguntas">
-      <h3 style="margin:20px">¡Lee con atención!</h3>
-      <div style="text-align:left; margin: 20px 40px;">
-        <p style ="margin:0">Escribe en la casilla que corresponde todos los verbos y sustantivos que hayas encontrado en el texto.</p>
-      </div>
-      <div style= "display: inline-block">
-        <div class= "textAreaC" style="text-align:left">
-          <p>Verbos<p>
-          <textarea rows="4" cols="30" name= "verbos" placeholder="Clic aquí par empezar..."></textarea>
+    <form method="post" id="formC">
+      <div class ="preguntas">
+        <h3 style="margin:20px">¡Lee con atención!</h3>
+        <div style="text-align:left; margin: 20px 40px;">
+          <p style ="margin:0">Escribe en la casilla que corresponde todos los verbos y sustantivos que hayas encontrado en el texto.</p>
         </div>
-        <div class= "textAreaC" style="text-align:left">
-          <p>Sustantivos<p>
-          <textarea rows="4" cols="30" name= "sustantivos" placeholder="Clic aquí par empezar..."></textarea>
-        </div>
+          <div style= "display: inline-block">
+            <div class= "textAreaC" style="text-align:left">
+              <p>Verbos<p>
+              <textarea rows="4" cols="30"id= "verbosC" name= "verbosC" placeholder="Clic aquí par empezar..."></textarea>
+            </div>
+            <div class= "textAreaC" style="text-align:left">
+              <p>Sustantivos<p>
+              <textarea rows="4" cols="30" id="sustantivosC" name= "sustantivosC" placeholder="Clic aquí par empezar..."></textarea>
+            </div>
+          </div>
       </div>
-    </div>
-    <div>
-      <input class="btns" style="margin: 4px 0 0 0;" type= "submit" name="submit" value="Siguiente" id="send" onclick="actCSave()"></input><p id="resultado"></p>
-    </div>
+      <br>
+      <div style="width:100%; height:100px; overflow:hidden; float: left; margin: 10px 0 0; text-align:center">
+        <input class="btns" style="margin: 0;" type= "button" value="Enviar" onclick="actividadCSave()"></input><p id="resultado"></p>
+      </div>
+    </form>
     <?php
-    $totalWords = 0;
-    $result = array();
-    $class = array();
-    $tag = array();
-
-    for($i=0; $i<sizeof($text);$i++){
-        array_push($words, explode('.', $text[$i]));
-    }
-
-    /*
-
-    foreach ($words as $key){
-      foreach ($key as $l){
-        array_push($result, $pos->tag(explode(' ', $l)));
-      }
-    }
-
-    foreach ($result as $key){
-      foreach ($key as $l){
-        foreach ($l as $y) {
-          foreach ($y as $x => $z) {
-            if(is_integer($x/2)){
-                array_push($class, $z);
-            }else{
-                array_push($tag, $z);
-            }
-          }
-        }
-      }
-    }
-    */
+    $textFormat = json_encode($text);
     ?>
+    </div>
+    <div id="loader" class="hidLoad lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    <div id="results">
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+var obj = JSON.parse('<?= $textFormat; ?>');
+function actividadCSave(){
+  var verb = $("#verbosC").val();
+  var sust = $("#sustantivosC").val();
+  $("#loader").removeClass("hidLoad");
+  $.post("http://localhost/edutopia/submit", { verbo: verb, sustantivo: sust, palabra: obj},
+    function(data) {
+    $('#results').html(data);
+    $('#formC')[0].reset();
+    $("#loader").addClass("hidLoad");
+  });
+
+}
+</script>
