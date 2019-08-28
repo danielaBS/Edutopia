@@ -27,7 +27,7 @@ div a{
  /* CHOOSE CHARACTER */
  /* HIDE RADIO */
 
- [type=radio] {
+ #personaje [type=radio] {
    position: absolute;
    opacity: 0;
    width: 0;
@@ -107,7 +107,7 @@ div a{
   box-shadow: 0px 10px 15px 0px #888888;
   text-align: center;
   padding: 0;
-  position: absolute; top:5.8vh;
+  position: absolute; top:5.75vh;
 }
 
 #navbar .nav-item{
@@ -115,11 +115,15 @@ div a{
   float: left;
 }
 
+#navbar .nav-link{
+  padding: 0.4rem;
+}
+
 .logout {
   overflow: hidden;
   width: 50px;
   float: right;
-  margin: 0.6rem 1rem;
+  margin: 0.5rem 1rem;
 }
 
 /* Sticky Navigation Bar */
@@ -761,6 +765,10 @@ div a{
   border-radius: 6px;
 }
 
+
+
+ /* LOADER */
+
 .lds-ellipsis {
   display: inline-block;
   position: relative;
@@ -816,7 +824,25 @@ div a{
     transform: translate(19px, 0);
   }
 }
+ .hidLoad {
+   display: none;
+ }
 
-.hidLoad {
-  display: none;
-}
+ /* ACTIVIDAD D Cultura Y Paz */
+
+ .opcionesCyP {
+   padding: 10px;
+   width: 850px;
+   display: inline-block;
+   text-align: justify;
+ }
+
+ .opcionesCyP input{
+   margin: 0px 10px;
+ }
+
+ #problemática {
+   margin: 40px auto;
+   height: auto;
+   width: 850px;
+ }

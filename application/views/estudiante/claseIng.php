@@ -1,9 +1,3 @@
-<?php
-$asign=  array(
-  'clase' => '2'
-);
-$this->session->set_userdata($asign);
-?>
 <div class="home">
   <?php  foreach ($actividad as $actividad_item): ?>
   <div onclick = "setURl(this)" style="cursor: pointer;" class="actividades" id="<?php echo $actividad_item['actividadLink']?>">

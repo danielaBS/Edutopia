@@ -13,6 +13,8 @@ class Pages extends CI_Controller {
 
       $this->load->helper('url_helper');
       $this->load->helper('directory');
+      $this->load->helper('path');
+
     }
 
     public function index($page = 'home_est') {
@@ -109,9 +111,8 @@ class Pages extends CI_Controller {
   }
 
   public function guardarActSession(){
-    $titulo = $this->input->post('titulo');
-    $texto = $this->input->post('texto');
-    $this->asignatura_model->guardarActSession();
+    $porcentaje = $this->input->post('porcentaje');
+    $this->asignatura_model->guardarActSession($porcentaje);
 
   }
 

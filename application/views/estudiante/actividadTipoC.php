@@ -1,4 +1,9 @@
 <?php
+$acti=  array(
+  'idAct' => '3'
+);
+$this->session->set_userdata($acti);
+
 require  '../Edutopia/vendor/autoload.php';
 
 $client = new Google_Client();
@@ -83,7 +88,7 @@ $words = array();
       </div>
     </form>
     <?php
-    $textFormat = json_encode($text);
+    $textFormat = json_encode($text);    
     ?>
     </div>
     <div id="loader" class="hidLoad lds-ellipsis"><div></div><div></div><div></div><div></div></div>
@@ -104,6 +109,5 @@ function actividadCSave(){
     $('#formC')[0].reset();
     $("#loader").addClass("hidLoad");
   });
-
 }
 </script>

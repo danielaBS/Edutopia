@@ -54,11 +54,12 @@ Class Asignatura_model extends CI_Model {
       return $array;
     }
 
-    public function guardarActSession(){
-      $query = $this->db->insert('historias',
+    public function guardarActSession($porcentaje){
+      $query = $this->db->insert('session',
        array(
-      'título' => $titulo,
-      'texto' => $texto
+      'idAct' => $this->session->userdata('idAct'),
+      'idEst' => $this->session->userdata('id'),
+      'porcentaje' => $porcentaje
       ));
       echo json_encode($query);
     }

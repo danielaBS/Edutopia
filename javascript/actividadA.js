@@ -139,7 +139,7 @@ function clicked(){
     save.addEventListener("click", function (){
 
       obj= {
-        'link' : idS
+        'porcentaje' : prcnt
       };
 
       $.ajax({

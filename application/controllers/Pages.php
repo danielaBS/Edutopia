@@ -12,6 +12,8 @@ class Pages extends CI_Controller {
 
         $this->load->view('pages/' . $page, $data);
         $this->load->library('session');
+        $this->load->helper('path');
+
     }
 
 }

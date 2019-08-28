@@ -1,3 +1,9 @@
+<?php
+$acti=  array(
+  'idAct' => '2'
+);
+$this->session->set_userdata($acti);
+?>
 <div class="wrapup">
   <div class="left" id="ele">
     <div class="show">

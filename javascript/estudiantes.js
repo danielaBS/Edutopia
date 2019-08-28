@@ -19,9 +19,11 @@ window.onload = function setView(){
     ["actividadTipoA", "Actividad A"],
     ["actividadTipoB", "Actividad B"],
     ["actividadTipoC", "Actividad C"],
+    ["actividadTipoD", "Actividad A - Cultura y Paz"],
     ["claseEsp", "Español"],
     ["claseIng", "Inglés"],
     ["cancion", "Actividad A - Canciones"],
+    ["culturaYpaz", "Cultura y Paz"],
   ];
 
   var urlLOG = window.location.href;
@@ -111,7 +113,7 @@ window.onload = function setView(){
         }
       });
 
-  if(nameFile === "actividadTipoA" || nameFile === "actividadTipoB" || nameFile === "actividadTipoC" || nameFile === "claseEsp" || nameFile === "claseIng" || nameFile === "cancion"){
+  if(nameFile === "actividadTipoA" || nameFile === "actividadTipoB" || nameFile === "actividadTipoC" || nameFile === "claseEsp" || nameFile === "claseIng" || nameFile === "cancion" || nameFile === "culturaYpaz" || nameFile === "actividadTipoD"){
 
     here.style.display = "block";
     here.classList.add("current");
@@ -126,7 +128,7 @@ window.onload = function setView(){
 
   here.innerHTML = title;
 
-  if(nameFile==="claseEsp" || nameFile==="claseIng"){
+  if(nameFile==="claseEsp" || nameFile==="claseIng" || nameFile ==="culturaYpaz"){
 
     classAct = true;
 
@@ -371,7 +373,7 @@ function setURl(element){
       obj= {
         'idAsig': '3'
       };
-      window.location.assign("http://localhost/edutopia/estudiante/pages/index/cultura-y-paz");
+      window.location.assign("http://localhost/edutopia/estudiante/pages/index/culturaYpaz");
     }
     $.ajax({
         url: "http://localhost/edutopia/estudiante/pages/setId",
