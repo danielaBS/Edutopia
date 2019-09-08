@@ -22,6 +22,7 @@
     <script type="text/javascript" src="<?php echo base_url() . '/javascript/actividadA.js'; ?>" ></script>
     <script type="text/javascript" src="<?php echo base_url() . '/javascript/actividadB.js'; ?>" ></script>
     <script type="text/javascript" src="<?php echo base_url() . '/javascript/actividadC.js'; ?>" ></script>
+    <script type="text/javascript" src="<?php echo base_url() . '/javascript/actividadD.js'; ?>" ></script>
 </head>
 <div class="headerIMG" id="headerIMG">
   <img class="img" src="https://i.imgur.com/yyRuMzt.png">
@@ -30,7 +31,7 @@
 <div id="navbar">
   <li class="nav-item dropdown" style="float:right">
     <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <img src="https://i.imgur.com/JPQBdJi.png" height="25">
+      <img src="https://i.imgur.com/JPQBdJi.png" height="27">
     </a>
     <div class="dropdown-menu dropdown-menu dropdown-menu-right">
       <a class="dropdown-item" href="#">Modificar contraseña</a>
@@ -41,7 +42,7 @@
     <a id="home" href="http://localhost/edutopia/estudiante/pages/index/home_est">Inicio - Clases</a>
   </li>
   <li class="nav-item">
-    <a href="http://localhost/edutopia/estudiante/pages/index/progreso">Progreso</a>
+    <a id= "progres" href="http://localhost/edutopia/estudiante/pages/index/progreso">Progreso</a>
   </li>
   <li class="nav-item">
     <a id="ub"></a>

@@ -72,5 +72,12 @@ Class Asignatura_model extends CI_Model {
       ));
       echo json_encode($query);
     }
+
+    public function getPoints($idEst){
+      $query = $this->db->query("SELECT * FROM session WHERE idEst='$idEst'");
+      $array = $query->result_array();
+      return $array;
+    }
   }
+
 ?>

@@ -53,7 +53,7 @@ div a{
 #navbar{
   z-index: 1;
   padding: 0 10%;
-  height: 6vh;
+  height: 5.9vh;
   box-shadow: 0 -5px 10px -5px rgba(0, 0, 7, 0.8);
   background-color: #F9875C;
 }
@@ -69,7 +69,7 @@ div a{
   display: block;
   color: rgba(255,255,255, 0.8);
   text-align: center;
-  padding: 1.14vh 16px;
+  padding: 1.3vh 16px;
   text-decoration: none;
 }
 
@@ -116,14 +116,15 @@ div a{
 }
 
 #navbar .nav-link{
-  padding: 0.4rem;
+  padding: 0.54rem;
 }
 
 .logout {
   overflow: hidden;
   width: 50px;
   float: right;
-  margin: 0.5rem 1rem;
+  margin: 0.6rem 1rem;
+  padding-top: 0.5rem;
 }
 
 /* Sticky Navigation Bar */
@@ -138,7 +139,6 @@ div a{
 }
 
 .sticky + .content {
-  padding-top: 60px;
 }
 
 /* Header IMG */
@@ -309,11 +309,11 @@ div a{
 
 .tutorial {
   margin: auto;
-  width: 80%;
+  width: 75%;
   height: auto;
   background-color: #2474B5;
   overflow: hidden;
-  padding: 10px;
+  padding: 10px 20px;
 }
 
 .tutorial iframe {
@@ -347,6 +347,7 @@ div a{
 }
 
 .tutInfo {
+  margin: 0 0 0 30px;
   float:left;
   width: 490px;
   height: 393.75px;
@@ -355,7 +356,7 @@ div a{
 
 .tutInfo p {
   margin:auto;
-  padding: 10px 10px;
+  padding: 20px 10px;
   font-size: 25px;
 }
 
@@ -846,3 +847,8 @@ div a{
    height: auto;
    width: 850px;
  }
+
+#aviso{
+  font-size: 25px;
+  color: #00004D;
+}

@@ -84,7 +84,7 @@ window.onload = function setView(){
 
             }, 9000);
 
-          }else if (res=="do" && nameFile !== "actividadTipoA" && nameFile !== "actividadTipoB" && nameFile !== "cancion" && nameFile !== "actividadTipoC"){
+          }else if (res=="do" && nameFile !== "actividadTipoA" && nameFile !== "actividadTipoB" && nameFile !== "cancion" && nameFile !== "actividadTipoC" && nameFile !== "actividadTipoD"){
             chrDiv.style.display = "block";
             if(nameFile === "home_est"){
               imgChar[0].src = "https://i.imgur.com/83uoeWy.png";
@@ -185,6 +185,8 @@ window.onload = function setView(){
             }
     });
 
+  }else if(nameFile === "progreso"){
+    document.getElementById("progres").classList.add("current");
   }
 
   var idS = urlLOG.substring(urlLOG.lastIndexOf('/')+1, urlLOG.lastIndexOf('?'));
@@ -261,7 +263,7 @@ function setChar(){
       };
 
       var txt;
-      if (confirm("¿EStás seguro que quieres escoger este personaje?")) {
+      if (confirm("¿Estás seguro que quieres escoger este personaje?")) {
 
         $.ajax({
           url: "http://localhost/edutopia/estudiante/pages/setChar",
