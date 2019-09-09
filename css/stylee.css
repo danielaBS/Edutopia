@@ -852,3 +852,162 @@ div a{
   font-size: 25px;
   color: #00004D;
 }
+
+/* PROGRESO */
+
+.pf{
+  background-color: rgba(255,215,106,0.4);
+  border: 4px dotted rgba(0,0,77,0.5);
+  border-radius: 10px 0;
+  margin: 5px 0 5% 14%;
+  padding: 20px;
+  overflow: hidden;
+  left:0;
+  width: auto;
+  height: auto;
+  display: inline-block;
+  float: left;
+}
+
+.blocked{
+  background-color: rgba(255,215,106,0.4);
+  border: 4px dotted rgba(0,0,77,0.5);
+  border-radius: 10px 0;
+  margin: 5px 0 5% 2%;
+  padding: 20px;
+  overflow: hidden;
+  left:0;
+  width: auto;
+  height: auto;
+  display: inline-block;
+  float: left;
+}
+
+.infoPer{
+  font-size: 30px;
+  color: white !important;
+  position: absolute;
+  z-index: 100;
+}
+.blur{
+  padding: 140px 0;
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 10px 0;
+  width: 600px;
+  height: 372px;
+  z-index: 0;
+  position: absolute;
+  right: inherit;
+}
+.leftPF {
+  width: 200px;
+  text-align: center;
+  float: left;
+  margin-right: 40px;
+}
+
+.statsbars {
+  float: left;
+}
+
+.photo {
+  display: inline-block;
+  margin: 0 0 15px 0;
+}
+
+.stat{
+  border-radius: 8px;
+  display: inline-block;
+  width:180px;
+  height: 17px;
+  background-color: salmon;
+}
+
+.statin{
+  float: left;
+  border-radius: 8px;
+  display: inline-block;
+  width:160px;
+  height: 17px;
+  background-color: #FF1A1A;
+}
+
+.statin2{
+  float: left;
+  border-radius: 8px;
+  display: inline-block;
+  width:130px;
+  height: 17px;
+  background-color: #FF1A1A;
+}
+
+.stat span{
+  margin: 7px auto;
+}
+
+.pfInfo {
+  margin: 20px 0;
+  width: 300px;
+  text-align: left;
+  float: left;
+}
+
+pre {
+  display: block;
+  font-family: monospace;
+  white-space: pre;
+  font-family: 'Lato', sans-serif !important;
+  margin: 12px 0;
+  padding: 0;
+}
+
+.recuerdos {
+  padding: 5px auto;
+  overflow: hidden;
+  width: auto;
+  height: auto;
+  margin: 10px;
+  text-align: center;
+}
+
+.recuerdos iframe{
+  float: left;
+  margin: 14px;
+}
+
+.actData p{
+  font-size: 25px;
+}
+
+.carousel {
+  margin: 2% 0 5% 0;
+  padding: 10px 0 0 6%;
+  height:auto;
+  width:100%;
+  display: flex;
+}
+
+.recuerdos:hover {
+  background-color: rgba(0,0,0,0.2);
+}
+
+.arrow {
+  padding: 3.8rem 0 0 0;
+  vertical-align: middle;
+  width:80px;
+}
+
+.arleft{
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.arrow img{
+  cursor:pointer;
+  display: inline-block;
+}
+
+.recuerdos {
+  display: inline-block;
+  float:left;
+}

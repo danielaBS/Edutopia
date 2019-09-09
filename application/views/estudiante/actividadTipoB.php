@@ -78,8 +78,8 @@ $this->session->set_userdata($acti);
     </div>
     <div class="scrollbar" id="style-2">
       <div class="force-overflow lay active" id= "divDrag8" style="font-weight: normal !important">
-        <p class="tx sto active">Hitoria con imágenes</p><img src= "https://cdn3.wpbeginner.com/wp-content/uploads/2014/10/broken-img-alt-text.jpg" width="200px" class= "op sto active">
-        <p class="tx com noActive">Cómic</p><img src= "https://support.bookcreator.com/hc/en-us/article_attachments/205058749/example-comic.jpg" width="200px"  class= "op com">
+        <p class="tx sto active">Hitoria con imágenes</p><img src= "https://i.imgur.com/dXe4S5U.png" width="200px" class= "op sto active">
+        <p class="tx com noActive">Cómic</p><img src= "https://image.freepik.com/vector-gratis/fondo-plantilla-colorido-pagina-cinco-comic-vacio_1017-11427.jpg" width="200px"  class= "op com">
       </div>
       <div class="force-overflow viñ" id= "divDrag9">
         <img src="https://image.freepik.com/vector-gratis/conjunto-globos-dialogo-vinetas-comic_23-2147568638.jpg" width="300px">

@@ -78,6 +78,18 @@ Class Asignatura_model extends CI_Model {
       $array = $query->result_array();
       return $array;
     }
+
+    public function getRecuerdos($idEst){
+      $query = $this->db->query("SELECT * FROM recuerdos WHERE idEstud='$idEst'");
+      $array = $query->result_array();
+      return $array;
+    }
+
+    public function getActividades(){
+      $query = $this->db->query("SELECT * FROM actividad");
+      $array = $query->result_array();
+      return $array;
+    }
   }
 
 ?>
