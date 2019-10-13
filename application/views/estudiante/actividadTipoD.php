@@ -3,7 +3,7 @@
   <h5>Da clic en el siguiente vídeo antes de iniciar la actividad.</h5>
   <br>
   <div class= "tutorial" id= "tut">
-    <iframe width="700" height="393.75" src="https://www.youtube.com/embed/EA68KUb4e7Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="700" height="393.75" src="https://www.youtube.com/embed/Z32Bx1_fkag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <div class= "tutInfo">
       <img src="https://i.imgur.com/5R9SE2W.png" width="200px" style="margin: 30px 0">
       <p> Una vez termines de ver el tutorial, deslizate hacía abajo y empieza con la actividad.</p>
