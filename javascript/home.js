@@ -213,6 +213,7 @@ window.onload = function changeView() {
           } else {
             alert("Datos incorrectos")
           }
+          console.log(res);
         }
       });
     } else {

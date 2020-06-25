@@ -1,9 +1,16 @@
+<head>
+    <script src="https://github.com/devongovett/pdfkit/releases/download/v0.10.0/pdfkit.standalone.js"></script>
+    <script src="https://github.com/devongovett/blob-stream/releases/download/v0.1.3/blob-stream.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() . '/javascript/savetoPDF.js'; ?>" ></script>
+
+</head>
 <?php
 $acti=  array(
   'idAct' => '2'
 );
 $this->session->set_userdata($acti);
 ?>
+<p id ="mensaje"></p>
 <div class="wrapup">
   <div class="left" id="ele">
     <div class="show">
@@ -88,13 +95,13 @@ $this->session->set_userdata($acti);
   </div>
   <div class= "buts">
     <button>Tutorial</button>
-    <button>Guardar</button>
+    <button onclick="mensajeput()">Guardar</button>
   </div>
   <div class= "right sto active" id= "divDrop" style="font-weight: normal !important">
     <div class = "actividadB">
-      <input class="txtEnt tit" type="text" required id="titulo" value="Mi primera historia"></input>
+      <input class="txtEnt tit" type="text" required id="titulo" placeholder="Mi primera historia"></input>
       <div class= "txxbtns">
-        <textarea class="txtEnt bod" name="message" required>Da click para empezar a escribir.</textarea>
+        <textarea class="txtEnt bod" name="message" id=texto placeholder="Da click para empezar a escribir" required></textarea>
         <button id="imgs"><span class="fas fa-plus-circle"></span> Agregar imagen</button>
       </div>
     </div>
@@ -108,3 +115,5 @@ $this->session->set_userdata($acti);
     </div>
   </div>
 </div>
+<div>PDF Output <button onclick="download()">Download</button></div>
+<iframe width="100%" height="800px"></iframe>

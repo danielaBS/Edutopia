@@ -136,7 +136,7 @@ Recuerdos:  <?php echo sizeof($rec); ?>/10</pre><p style="font-size:18px;">Reali
 </div>
 <div class="carousel">
   <div class="arrow arleft">
-    <img src="https://and.gov.co/static/djangocms_admin_style/fonts/src/arrow-right.svg" width="80px">
+    <img src="<?php echo base_url() . '/images/angle-right-solid.svg' ?>" width="20px">
   </div>
   <div class="recuerdos">
     <iframe width="300" height="168" src="https://www.youtube.com/embed/U3vX8g46Knw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -145,7 +145,7 @@ Recuerdos:  <?php echo sizeof($rec); ?>/10</pre><p style="font-size:18px;">Reali
     <iframe width="300" height="168" src="https://www.youtube.com/embed/U3vX8g46Knw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   <div class="arrow">
-    <img src="https://and.gov.co/static/djangocms_admin_style/fonts/src/arrow-right.svg" width="80px">
+    <img src="<?php echo base_url() . '/images/angle-right-solid.svg' ?>" width="20px">
   </div>
 </div>
 </div>

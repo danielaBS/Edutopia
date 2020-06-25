@@ -1,4 +1,7 @@
 <div class="home">
+  <?php
+    $est = $this->session->userdata("id");
+  ?>
   <?php  foreach ($actividad as $actividad_item): ?>
   <div onclick = "setURl(this)" style="cursor: pointer;" class="actividades" id="<?php echo $actividad_item['actividadLink']?>">
     <div class="date">
@@ -14,7 +17,7 @@
       <span class= "keyword">Palabras clave:</span><p class= "info2"><?php echo $actividad_item['palabrasClave']?></p>
     </div>
     <?php
-    $status = $this->asignatura_model->getActStatus($actividad_item['idAct']);
+    $status = $this->asignatura_model->getActStatus($actividad_item['idAct'], $est);
     if ($status !== null && $status !== false){
     ?>
     <div class="fini" style="background-color: teal !important">

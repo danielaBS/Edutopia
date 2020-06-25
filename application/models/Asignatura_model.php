@@ -37,8 +37,8 @@ Class Asignatura_model extends CI_Model {
       return $array;
     }
 
-    public function getActStatus($idAct){
-      $query = $this->db->query("SELECT * FROM session WHERE idAct='$idAct'");
+    public function getActStatus($idAct, $idEst){
+      $query = $this->db->query("SELECT * FROM session WHERE idAct='$idAct' AND idEst='$idEst'");
       $array = $query->result_array();
       $stat = false;
       if( $array != null){

@@ -365,25 +365,41 @@ function setURl(element){
       obj= {
         'idAsig': '1'
       };
+      $.ajax({
+          url: "http://localhost/edutopia/estudiante/pages/setId",
+          type: "POST",
+          data: obj,
+          success: function (res) {
+              var len = res.length;
+            }
+      });
       window.location.assign("http://localhost/edutopia/estudiante/pages/index/claseEsp");
     }else if (linkAct === "2"){
       obj= {
         'idAsig': '2'
       };
+      $.ajax({
+          url: "http://localhost/edutopia/estudiante/pages/setId",
+          type: "POST",
+          data: obj,
+          success: function (res) {
+              var len = res.length;
+            }
+      });
       window.location.assign("http://localhost/edutopia/estudiante/pages/index/claseIng");
     }else if (linkAct === "3"){
       obj= {
         'idAsig': '3'
       };
+      $.ajax({
+          url: "http://localhost/edutopia/estudiante/pages/setId",
+          type: "POST",
+          data: obj,
+          success: function (res) {
+              var len = res.length;
+            }
+      });
       window.location.assign("http://localhost/edutopia/estudiante/pages/index/culturaYpaz");
     }
-    $.ajax({
-        url: "http://localhost/edutopia/estudiante/pages/setId",
-        type: "POST",
-        data: obj,
-        success: function (res) {
-            var len = res.length;
-          }
-    });
   }
 }

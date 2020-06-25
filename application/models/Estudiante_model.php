@@ -54,8 +54,8 @@ Class Estudiante_model extends CI_Model {
             if (isset($row) && $id === $row['identificacionEst']) {
               $log = true;
               echo json_encode($log);
+              echo $row['contraseñaEst'];
             }
-            echo $row['contraseñaEst'];
         }
     }
 

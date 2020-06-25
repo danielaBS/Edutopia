@@ -73,7 +73,7 @@ function actCPnext(){
     $('#aviso').html("Por favor selecciona una opción.");
   }
 }
-
+/*
 var instance = M.Carousel.init({
     fullWidth: true,
     indicators: true
@@ -85,3 +85,4 @@ var instance = M.Carousel.init({
     fullWidth: true,
     indicators: true
   });
+*/
