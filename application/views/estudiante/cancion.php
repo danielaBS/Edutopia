@@ -99,8 +99,8 @@ if (empty($values)) {
   <div id= "preguntas">
     <h3 style="margin:20px">Presta atención a la letra de la canción.</h3>
     <div style="text-align:left; margin: 20px 40px;">
-      <p style ="margin:0">1. Escribe en la casilla que corresponde todos los verbos que hayas encontrado hasta la parte de la canción que está <span style='font-weight:bold'>señalada</span>.</p>
-      <p style ="margin:0">2. Escribe en la casilla que corresponde todos los sustantivos que hayas encontrado hasta la parte de la canción que está <span style='font-weight:bold'>señalada</span>.</p>
+      <p style ="margin:0">1. Escribe en la casilla que corresponde todos los verbos que hayas encontrado separados por un espacio hasta la parte de la canción que está <span style='font-weight:bold'>señalada</span>.</p>
+      <p style ="margin:0">2. Escribe en la casilla que corresponde todos los sustantivos que hayas encontrado separados por un espacio hasta la parte de la canción que está <span style='font-weight:bold'>señalada</span>.</p>
     </div>
     <div class= "opciones">
       <div id="letra" style="margin:10px 0; text-align:left"><?php

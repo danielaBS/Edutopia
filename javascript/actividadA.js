@@ -80,7 +80,6 @@ function iniciarActividad(random){
   var index = suma.findIndex(findLines);
   var ps = letra.getElementsByTagName("p");
 
-
   if(ps[index].innerHTML == "<br>"){
     ps[index+1].style.fontWeight = "bold";
     verbos2 = verbos.slice(0, index+1);
@@ -95,6 +94,7 @@ function iniciarActividad(random){
     verbos2 = verbos2.filter(word => word != "0");
     sustantivos2 = sustantivos2.filter(word => word != "0");
   }
+  console.log(index + " " + ps[index].innerHTML + " " + random.toFixed(2) + " " + suma);
 }
 
 function clicked(){
@@ -151,8 +151,8 @@ function clicked(){
               var len = res.length;
             }
       });
+      document.getElementById("resultado").innerHTML= "¡Bien hecho! Has terminado con la actividad.";
 
-      console.log("terminado");
     });
   }
 }

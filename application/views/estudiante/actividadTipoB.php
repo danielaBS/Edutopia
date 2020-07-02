@@ -116,4 +116,8 @@ $this->session->set_userdata($acti);
   </div>
 </div>
 <div>PDF Output <button onclick="download()">Download</button></div>
-<iframe width="100%" height="800px"></iframe>
+<br>
+<br>
+<br>
+<br>
+<br>
