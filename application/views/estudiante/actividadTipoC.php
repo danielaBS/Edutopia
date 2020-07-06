@@ -37,6 +37,7 @@ $ran = random_int(0, 23 - 10);
 $text = array();
 $line = array();
 $words = array();
+
 ?>
 
 <div class="home">
