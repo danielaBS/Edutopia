@@ -20,7 +20,7 @@
     $status = $this->asignatura_model->getActStatus($actividad_item['idAct'], $est);
     if ($status !== null && $status !== false){
     ?>
-    <div class="fini" style="background-color: #2474B5 !important">
+    <div class="fini" style="background-color: teal !important">
       <img src="https://funermostra.feriavalencia.com/wp-content/uploads/2019/03/604a0cadf94914c7ee6c6e552e9b4487-icono-de-c-rculo-de-marca-de-verificaci-n-curvo-by-vexels.png" width="60%">
         <p class = "status">Completado</p>
     </div>

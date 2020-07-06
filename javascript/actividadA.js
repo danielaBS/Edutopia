@@ -43,6 +43,7 @@ function onPlay(idS){
       success: function (res) {
           var len = res.length;
           iniciarPre = res;
+          console.log(res);
         }
   });
 }

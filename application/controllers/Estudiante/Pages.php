@@ -84,6 +84,7 @@ class Pages extends CI_Controller {
 
    public function getMinSec(){
      echo $this->session->userdata['tiempoInicio'];
+     echo $this->session->userdata['tiempoFin'];
    }
 
    public function searchLine(){

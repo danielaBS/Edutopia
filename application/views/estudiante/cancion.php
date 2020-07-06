@@ -105,6 +105,7 @@ if (empty($values)) {
     <div class= "opciones">
       <div id="letra" style="margin:10px 0; text-align:left"><?php
       $this->session->set_userdata(array('tiempoInicio' => $sum[0]));
+      $this->session->set_userdata(array('tiempoFin' => array_key_last($sum)));
       foreach ($palabras as $key) {
         ?><p style="padding:0; margin:0"><?php
         echo($key);
