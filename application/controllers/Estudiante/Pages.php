@@ -114,7 +114,6 @@ class Pages extends CI_Controller {
   public function guardarActSession(){
     $porcentaje = $this->input->post('porcentaje');
     $this->asignatura_model->guardarActSession($porcentaje);
-
   }
 
   public function guardarHistoria(){

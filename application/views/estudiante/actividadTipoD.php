@@ -1,3 +1,9 @@
+<?php
+$acti=  array(
+  'idAct' => '6'
+);
+$this->session->set_userdata($acti);
+?>
 <div class="home">
   <img width="80" height="80" src= "https://cdn3.iconfinder.com/data/icons/business-finance-77/80/03_light_bulb_2-512.png">
   <h5>Da clic en el siguiente vídeo antes de iniciar la actividad.</h5>

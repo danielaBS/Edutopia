@@ -65,6 +65,20 @@ function actCPnext(){
 
       if(i>=6){
         $('#aviso').html("Completaste la actividad.");
+      var  obj= {
+          'porcentaje' : "100"
+        };
+
+        $.ajax({
+            url: "http://localhost/edutopia/estudiante/pages/guardarActSession",
+            type: "POST",
+            async: false,
+            data: obj,
+            success: function (res) {
+                var len = res.length;
+                console.log(res);
+              }
+        });
       }
     }else{
       $('#aviso').html("Parece que esa no es la respuesta más adecuada. Intentalo nuevamente.");
