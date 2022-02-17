@@ -98,7 +98,6 @@ window.onload = function changeView() {
       $.ajax({
         url: "http://agile-brook-84677.herokuapp.com/estudiante/pages/log",
         headers: {
-              "Content-type": "application/json",
               "Access-Control-Allow-Origin":"http://agile-brook-84677.herokuapp.com/"
         },
         type: "POST",
