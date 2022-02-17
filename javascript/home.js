@@ -27,7 +27,7 @@ window.onload = function changeView() {
   var formPassProf = document.getElementById('myFormProf');
 
   var isPressed = 1;
-	var urlRequests= "https://edutopiav1.herokuapp.com/";
+	var urlRequests= "https://edutopiav1.herokuapp.com/edutopia";
 
   bod.style.backgroundImage = "url('https://i.imgur.com/Po4JpNc.png')";
   pagEst.style.height = screen.height - screen.height / 4.1;
@@ -56,7 +56,7 @@ window.onload = function changeView() {
       btnNextProf.classList.add("hide");
       // AJAX code to POST data.
       $.ajax({
-        url: urlRequests+ "profesor/pages/log",
+        url: urlRequests+ "/profesor/pages/log",
         headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept" },
         type: "POST",
         data: obj,
@@ -98,7 +98,7 @@ window.onload = function changeView() {
       console.log(obj);
       // AJAX code to POST data.
       $.ajax({
-        url: urlRequests+ "estudiante/pages/log",
+        url: urlRequests+ "/estudiante/pages/log",
         headers: {
               "Content-type": "application/json",
               "Access-Control-Allow-Origin":"*"
