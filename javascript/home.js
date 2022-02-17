@@ -97,7 +97,7 @@ window.onload = function changeView() {
       // AJAX code to POST data.
       $.ajax({
         url: "https://agile-brook-84677.herokuapp.com/estudiante/pages/log",
-        headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept" },
+        headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept" },
         type: "POST",
         data: obj,
         success: function (res) {
@@ -161,7 +161,7 @@ window.onload = function changeView() {
       // AJAX code to POST data.
       $.ajax({
         url: "https://agile-brook-84677.herokuapp.com/profesor/pages/login2",
-        headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept" },
+        headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept" },
         type: "POST",
         data: obj,
         success: function (res) {
@@ -202,7 +202,7 @@ window.onload = function changeView() {
       // AJAX code to POST data.
       $.ajax({
         url: "https://agile-brook-84677.herokuapp.com/estudiante/pages/login2",
-        headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept" },
+        headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept" },
         type: "POST",
         data: obj,
         success: function (res) {
@@ -252,7 +252,7 @@ function definePasswdProf(){
 
       $.ajax({
           url: "https://agile-brook-84677.herokuapp.com/profesor/pages/modifUser",
-          headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept" },
+          headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept" },
           type: "POST",
           data: obj,
           success: function (res) {
@@ -291,7 +291,7 @@ function definePasswdEst(){
 
       $.ajax({
         url: "https://agile-brook-84677.herokuapp.com/estudiante/pages/modifUser",
-        headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept" },
+        headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept" },
         type: "POST",
         data: obj,
         success: function (res) {
