@@ -96,10 +96,10 @@ window.onload = function changeView() {
       btnNextEst.classList.add("hide");
       // AJAX code to POST data.
       $.ajax({
-        url: "https://agile-brook-84677.herokuapp.com/estudiante/pages/log",
+        url: "http://agile-brook-84677.herokuapp.com/estudiante/pages/log",
         headers: {
               "accept": "application/json",
-              "Access-Control-Allow-Origin":"https://agile-brook-84677.herokuapp.com/"
+              "Access-Control-Allow-Origin":"http://agile-brook-84677.herokuapp.com/"
         },
         type: "POST",
         data: obj,
