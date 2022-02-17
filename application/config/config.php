@@ -24,8 +24,10 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
   | a PHP script and you can easily do that on your own.
   |
  */
-$config['base_url'] = "https://agile-brook-84677.herokuapp.com/";
-
+$config['base_url'] = 'https://edutopiav1.herokuapp.com/';
+$config['index_page'] = 'views/pages/home.php';
+$config['uri_protocol'] = 'REQUEST_URI';
+$config['sess_save_path'] = sys_get_temp_dir();
 
 /*
   |--------------------------------------------------------------------------
