@@ -39,6 +39,7 @@ class Pages extends CI_Controller {
    public function log(){
      $idEst = $this->input->post('idEst');
      $userEst = $this->input->post('usuarioEst');
+	   console.log($idEst);
 
      $data['estudiante'] = $this->estudiante_model->get_student();
      $dataModel['usuario'] = $this->estudiante_model->get_student($idEst, $userEst);
