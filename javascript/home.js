@@ -163,7 +163,7 @@ window.onload = function changeView() {
     if (usuarioIngProf.length !== 0 && passIngProf.length !== 0 && idIngProf.length !==0) {
       // AJAX code to POST data.
       $.ajax({
-        url: "https://agile-brook-84677.herokuapp.com/profesor/pages/login2",
+        url: "http://agile-brook-84677.herokuapp.com/profesor/pages/login2",
         headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept" },
         type: "POST",
         data: obj,
@@ -175,9 +175,9 @@ window.onload = function changeView() {
           // Returns successful data submission message when the entered information is stored in database.
 
           if (string2 === "1true" && passIngProf === hash || passIngProf === string){
-            window.location = "https://agile-brook-84677.herokuapp.com/administrador/pages/index/home_admin";
+            window.location = "http://agile-brook-84677.herokuapp.com/administrador/pages/index/home_admin";
           }else if (string2 === "2true" && passIngProf === hash){
-            window.location = "https://agile-brook-84677.herokuapp.com/profesor/pages/index/home_prof";
+            window.location = "http://agile-brook-84677.herokuapp.com/profesor/pages/index/home_prof";
           }else{
             alert("Datos incorrectos")
           }
@@ -204,7 +204,7 @@ window.onload = function changeView() {
     if (usuarioIngEst.length !== 0 && passIngEst.length !== 0 && idIngEst.length !==0) {
       // AJAX code to POST data.
       $.ajax({
-        url: "https://agile-brook-84677.herokuapp.com/estudiante/pages/login2",
+        url: "http://agile-brook-84677.herokuapp.com/estudiante/pages/login2",
         headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept" },
         type: "POST",
         data: obj,
@@ -216,7 +216,7 @@ window.onload = function changeView() {
           // Returns successful data submission message when the entered information is stored in database.
 
           if (string2 === "true" && passIngEst === hash){
-            window.location = "https://agile-brook-84677.herokuapp.com/estudiante/pages/index/home_est";
+            window.location = "http://agile-brook-84677.herokuapp.com/estudiante/pages/index/home_est";
           } else {
             alert("Datos incorrectos")
           }
@@ -254,7 +254,7 @@ function definePasswdProf(){
       };
 
       $.ajax({
-          url: "https://agile-brook-84677.herokuapp.com/profesor/pages/modifUser",
+          url: "http://agile-brook-84677.herokuapp.com/profesor/pages/modifUser",
           headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept" },
           type: "POST",
           data: obj,
@@ -262,10 +262,10 @@ function definePasswdProf(){
                 // Returns successful data submission message when the entered information is stored in database.
               if (res === "1true"){
                 alert("La contraseña se ha guardado");
-                window.location = "https://agile-brook-84677.herokuapp.com/administrador/pages/index/home_admin";
+                window.location = "http://agile-brook-84677.herokuapp.com/administrador/pages/index/home_admin";
               } else if(res === "2true"){
                 alert("La contraseña se ha guardado");
-                window.location = "https://agile-brook-84677.herokuapp.com/profesor/pages/index/home_prof";
+                window.location = "http://agile-brook-84677.herokuapp.com/profesor/pages/index/home_prof";
               }
           }
       });
@@ -293,7 +293,7 @@ function definePasswdEst(){
       };
 
       $.ajax({
-        url: "https://agile-brook-84677.herokuapp.com/estudiante/pages/modifUser",
+        url: "http://agile-brook-84677.herokuapp.com/estudiante/pages/modifUser",
         headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept" },
         type: "POST",
         data: obj,
@@ -301,7 +301,7 @@ function definePasswdEst(){
           // Returns successful data submission message when the entered information is stored in database.
           if (res === "true"){
             alert("La contraseña se ha guardado");
-            var url = "https://agile-brook-84677.herokuapp.com/estudiante/pages/index/home_est";
+            var url = "http://agile-brook-84677.herokuapp.com/estudiante/pages/index/home_est";
             window.location = url;
           }
         }
