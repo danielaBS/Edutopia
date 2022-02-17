@@ -27,8 +27,7 @@ window.onload = function changeView() {
   var formPassProf = document.getElementById('myFormProf');
 
   var isPressed = 1;
-	
-	var urlRequests: "https://edutopiav1.herokuapp.com/";
+	var urlRequests= "https://edutopiav1.herokuapp.com/";
 
   bod.style.backgroundImage = "url('https://i.imgur.com/Po4JpNc.png')";
   pagEst.style.height = screen.height - screen.height / 4.1;
