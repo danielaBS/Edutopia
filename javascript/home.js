@@ -56,7 +56,7 @@ window.onload = function changeView() {
       // AJAX code to POST data.
       $.ajax({
         url: "https://agile-brook-84677.herokuapp.com/profesor/pages/log",
-        headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept" },
+        headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept" },
         type: "POST",
         data: obj,
         success: function (res) {
