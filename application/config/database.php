@@ -76,10 +76,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
     'dsn' => '',
-    'hostname' => 'localhost',
-    'username' => 'ed',
-    'password' => '1234',
-    'database' => 'edutopia',
+    'hostname' => 'us-cdbr-east-05.cleardb.net',
+    'username' => 'b5206de2334e58',
+    'password' => '0ea9d3f0',
+    'database' => 'heroku_df1721d2d09430d',
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
     'pconnect' => FALSE,
