@@ -55,7 +55,7 @@ window.onload = function changeView() {
       btnNextProf.classList.add("hide");
       // AJAX code to POST data.
       $.ajax({
-        url: "http://localhost/edutopia/profesor/pages/log",
+        url: "https://agile-brook-84677.herokuapp.com/profesor/pages/log",
         type: "POST",
         data: obj,
         success: function (res) {
@@ -95,7 +95,7 @@ window.onload = function changeView() {
       btnNextEst.classList.add("hide");
       // AJAX code to POST data.
       $.ajax({
-        url: "http://localhost/edutopia/estudiante/pages/log",
+        url: "https://agile-brook-84677.herokuapp.com/estudiante/pages/log",
         type: "POST",
         data: obj,
         success: function (res) {
@@ -158,7 +158,7 @@ window.onload = function changeView() {
     if (usuarioIngProf.length !== 0 && passIngProf.length !== 0 && idIngProf.length !==0) {
       // AJAX code to POST data.
       $.ajax({
-        url: "http://localhost/edutopia/profesor/pages/login2",
+        url: "https://agile-brook-84677.herokuapp.com/profesor/pages/login2",
         type: "POST",
         data: obj,
         success: function (res) {
@@ -198,7 +198,7 @@ window.onload = function changeView() {
     if (usuarioIngEst.length !== 0 && passIngEst.length !== 0 && idIngEst.length !==0) {
       // AJAX code to POST data.
       $.ajax({
-        url: "http://localhost/edutopia/estudiante/pages/login2",
+        url: "https://agile-brook-84677.herokuapp.com/estudiante/pages/login2",
         type: "POST",
         data: obj,
         success: function (res) {
