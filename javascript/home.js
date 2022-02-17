@@ -56,7 +56,7 @@ window.onload = function changeView() {
       // AJAX code to POST data.
       $.ajax({
         url: "https://agile-brook-84677.herokuapp.com/profesor/pages/log",
-        headers: {  'Access-Control-Allow-Origin': 'http://The web site allowed to access' },
+        headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept" },
         type: "POST",
         data: obj,
         success: function (res) {
@@ -97,7 +97,7 @@ window.onload = function changeView() {
       // AJAX code to POST data.
       $.ajax({
         url: "https://agile-brook-84677.herokuapp.com/estudiante/pages/log",
-        headers: {  'Access-Control-Allow-Origin': 'http://The web site allowed to access' },
+        headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept" },
         type: "POST",
         data: obj,
         success: function (res) {
@@ -161,7 +161,7 @@ window.onload = function changeView() {
       // AJAX code to POST data.
       $.ajax({
         url: "https://agile-brook-84677.herokuapp.com/profesor/pages/login2",
-        headers: {  'Access-Control-Allow-Origin': 'http://The web site allowed to access' },
+        headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept" },
         type: "POST",
         data: obj,
         success: function (res) {
@@ -172,9 +172,9 @@ window.onload = function changeView() {
           // Returns successful data submission message when the entered information is stored in database.
 
           if (string2 === "1true" && passIngProf === hash || passIngProf === string){
-            window.location = "http://localhost/edutopia/administrador/pages/index/home_admin";
+            window.location = "https://agile-brook-84677.herokuapp.com/administrador/pages/index/home_admin";
           }else if (string2 === "2true" && passIngProf === hash){
-            window.location = "http://localhost/edutopia/profesor/pages/index/home_prof";
+            window.location = "https://agile-brook-84677.herokuapp.com/profesor/pages/index/home_prof";
           }else{
             alert("Datos incorrectos")
           }
@@ -202,7 +202,7 @@ window.onload = function changeView() {
       // AJAX code to POST data.
       $.ajax({
         url: "https://agile-brook-84677.herokuapp.com/estudiante/pages/login2",
-        headers: {  'Access-Control-Allow-Origin': 'http://The web site allowed to access' },
+        headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept" },
         type: "POST",
         data: obj,
         success: function (res) {
@@ -213,7 +213,7 @@ window.onload = function changeView() {
           // Returns successful data submission message when the entered information is stored in database.
 
           if (string2 === "true" && passIngEst === hash){
-            window.location = "http://localhost/edutopia/estudiante/pages/index/home_est";
+            window.location = "https://agile-brook-84677.herokuapp.com/estudiante/pages/index/home_est";
           } else {
             alert("Datos incorrectos")
           }
@@ -251,17 +251,18 @@ function definePasswdProf(){
       };
 
       $.ajax({
-          url: "http://localhost/edutopia/profesor/pages/modifUser",
+          url: "https://agile-brook-84677.herokuapp.com/profesor/pages/modifUser",
+          headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept" },
           type: "POST",
           data: obj,
           success: function (res) {
                 // Returns successful data submission message when the entered information is stored in database.
               if (res === "1true"){
                 alert("La contraseña se ha guardado");
-                window.location = "http://localhost/edutopia/administrador/pages/index/home_admin";
+                window.location = "https://agile-brook-84677.herokuapp.com/administrador/pages/index/home_admin";
               } else if(res === "2true"){
                 alert("La contraseña se ha guardado");
-                window.location = "http://localhost/edutopia/profesor/pages/index/home_prof";
+                window.location = "https://agile-brook-84677.herokuapp.com/profesor/pages/index/home_prof";
               }
           }
       });
@@ -289,14 +290,15 @@ function definePasswdEst(){
       };
 
       $.ajax({
-        url: "http://localhost/edutopia/estudiante/pages/modifUser",
+        url: "https://agile-brook-84677.herokuapp.com/estudiante/pages/modifUser",
+        headers: {  'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept" },
         type: "POST",
         data: obj,
         success: function (res) {
           // Returns successful data submission message when the entered information is stored in database.
           if (res === "true"){
             alert("La contraseña se ha guardado");
-            var url = "http://localhost/edutopia/estudiante/pages/index/home_est";
+            var url = "https://agile-brook-84677.herokuapp.com/estudiante/pages/index/home_est";
             window.location = url;
           }
         }
