@@ -24,7 +24,7 @@ class Pages extends CI_Controller {
       }
 
       $data['asignatura'] = $this->asignatura_model->getStudentAsig($this->session->userdata('grado'));
-      $data['asignatura_item'] = $this->asignatura_model->getStudentAsig($this->session->userdata('grado'));
+      $data['asignatura_item'] = $this->asignatura_model->getStudentAsig($this->session->userdata('grado'));      
 
       $data['actividad'] = $this->asignatura_model->getActInfo($this->session->userdata('idASig'));
       $data['actividad_item'] = $this->asignatura_model->getActInfo($this->session->userdata('idASig'));

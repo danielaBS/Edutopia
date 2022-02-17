@@ -44,7 +44,7 @@ $words = array();
   <img width="80" height="80" src= "https://cdn3.iconfinder.com/data/icons/business-finance-77/80/03_light_bulb_2-512.png">
   <h5>Da clic en el siguiente vídeo antes de iniciar la actividad.</h5>
   <br>
-  <div class= "tutorial" id= "tut">
+  <div class= "tutorial d-flex justify-content-center" id= "tut">
     <iframe width="700" height="393.75" src="https://www.youtube.com/embed/Z32Bx1_fkag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <div class= "tutInfo">
       <img src="https://i.imgur.com/5R9SE2W.png" width="200px" style="margin: 30px 0">

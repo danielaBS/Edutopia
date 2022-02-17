@@ -93,29 +93,29 @@ $this->session->set_userdata($acti);
       </div>
     </div>
   </div>
-  <div class= "buts">
-    <button>Tutorial</button>
-    <button onclick="mensajeput()">Guardar</button>
+  <div class= "d-flex justify-content-center buts ">
+    <button class="btns historia">Tutorial</button>
+    <button class="btns historia" onclick="mensajeput()">Guardar</button>
   </div>
   <div class= "right sto active" id= "divDrop" style="font-weight: normal !important">
     <div class = "actividadB">
       <input class="txtEnt tit" type="text" required id="titulo" placeholder="Mi primera historia"></input>
       <div class= "txxbtns">
         <textarea class="txtEnt bod" name="message" id=texto placeholder="Da click para empezar a escribir" required></textarea>
-        <button id="imgs"><span class="fas fa-plus-circle"></span> Agregar imagen</button>
+        <button id="imgs" class="btns" style="padding:5px 0"><span class="fas fa-plus-circle"></span> Agregar imagen</button>
       </div>
     </div>
   </div>
   <div class= "right com ">
     <div class = "actividadB">
       <h2>Crea tu comic</h2>
-      <p>Aquí puedes poner en práctica todo lo aprendido en clase y crear tu propia historia.</p>
+      <p">Aquí puedes poner en práctica todo lo aprendido en clase y crear tu propia historia.</p>
       <div class="comicCanvas">
       </div>
     </div>
   </div>
 </div>
-<div>PDF Output <button onclick="download()">Download</button></div>
+<!--<div>PDF Output <button onclick="download()">Download</button></div>-->
 <br>
 <br>
 <br>

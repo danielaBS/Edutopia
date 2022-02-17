@@ -12,7 +12,7 @@ $this->session->set_userdata($acti);
   shuffle($canciones);
   ?>
   <br>
-  <div class= "tutorial" id= "tut">
+  <div class= "tutorial d-flex justify-content-center" id= "tut">
     <iframe width="700" height="393.75" src="https://www.youtube.com/embed/Z32Bx1_fkag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <div class= "tutInfo">
       <img src="https://i.imgur.com/5R9SE2W.png" width="200px" style="margin: 30px 0">

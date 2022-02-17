@@ -1,15 +1,15 @@
-<div class="home">
+<div class="home d-flex justify-content-center align-items-center flex-column">
   <?php
     $est = $this->session->userdata("id");
   ?>
   <?php  foreach ($actividad as $actividad_item): ?>
-  <div onclick = "setURl(this)" style="cursor: pointer;" class="actividades" id="<?php echo $actividad_item['actividadLink']?>">
-    <div class="date">
-      <img src="<?php echo $actividad_item['imgLink'] ?>" width="60%">
-      <p>Semana
+  <div onclick = "setURl(this)" style="cursor: pointer;" class="d-flex justify-content-center actividades" id="<?php echo $actividad_item['actividadLink']?>">
+  <div class="date col-md-3 d-flex align-items-center justify-content-center flex-column">
+      <img src="<?php echo $actividad_item['imgLink'] ?>" width="45%">
+      <p class="status">Semana
         2</p>
     </div>
-    <div class="act">
+    <div class="act col-md-6">
       <p class="info titulo">Actividad <?php echo $actividad_item['idAct'] . ": " . $actividad_item['nombreAct']?></p><br>
       <p class="info">
         <?php echo $actividad_item['descripción']?>
@@ -17,16 +17,16 @@
       <span class= "keyword">Palabras clave:</span><p class= "info2"><?php echo $actividad_item['palabrasClave']?></p>
     </div>
     <?php
-    $status = $this->asignatura_model->getActStatus($actividad_item['idAct'], $est);
+    $status = $this->asignatura_model->getActStatus($actividad_item['idAct'], $est );
     if ($status !== null && $status !== false){
     ?>
-    <div class="fini" style="background-color: teal !important">
-      <img src="https://funermostra.feriavalencia.com/wp-content/uploads/2019/03/604a0cadf94914c7ee6c6e552e9b4487-icono-de-c-rculo-de-marca-de-verificaci-n-curvo-by-vexels.png" width="60%">
+    <div class="fini col-md-3 d-flex align-items-center justify-content-center flex-column" style="background-color: #fff !important">    
+    <img src="<?php echo base_url() . '/images/check-circle-solid.svg'; ?>" width="130px">
         <p class = "status">Completado</p>
     </div>
   <?php } else if ($status === false){ ?>
-    <div class="fini">
-      <img src="https://i.kym-cdn.com/entries/icons/facebook/000/011/743/metal-gear-alert.jpg" width="60%">
+    <div class="fini col-md-3 d-flex align-items-center justify-content-center flex-column">
+      <img src="<?php echo base_url() . '/images/exclamation-circle-solid.svg'; ?>" width="130px">
       <p class = "status">Pendiente</p>
     </div>
   <?php } ?>

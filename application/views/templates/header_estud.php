@@ -24,14 +24,12 @@
     <script type="text/javascript" src="<?php echo base_url() . '/javascript/actividadC.js'; ?>" ></script>
     <script type="text/javascript" src="<?php echo base_url() . '/javascript/actividadD.js'; ?>" ></script>
 </head>
-<div class="headerIMG" id="headerIMG">
-  <img class="img" src="https://i.imgur.com/yyRuMzt.png">
-</div>
+
 
 <div id="navbar">
   <li class="nav-item dropdown" style="float:right">
-    <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <img src="https://i.imgur.com/JPQBdJi.png" height="27">
+    <a class="nav-item dropdown-toggle mr-md-2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" hideToggle>
+      Menú
     </a>
     <div class="dropdown-menu dropdown-menu dropdown-menu-right">
       <a class="dropdown-item" href="#">Modificar contraseña</a>

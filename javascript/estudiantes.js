@@ -2,11 +2,9 @@ var classAct = false;
 var nameFile;
 
 window.onload = function setView(){
-  var headerIMG= document.getElementById('headerIMG');
-  headerIMG.style.backgroundImage = "url('https://i.imgur.com/Po4JpNc.png')";
+
 
   var here = document.getElementById('ub');
-  var headerIMG= document.getElementById('headerIMG');
 
   here.style.display = "none";
   $('personajeIntro').hide();
@@ -56,13 +54,11 @@ window.onload = function setView(){
             $(document).ready(function(){
                 $("#personaje").modal();
             }, 1000);
-          }else if (res==="un" && nameFile !== "actividadTipoA" && nameFile !== "actividadTipoB" && nameFile !== "cancion"){
+          }else if (res==="un" && nameFile !== "actividadTipoA" && nameFile !== "actividadTipoB" && nameFile !== "cancion" && nameFile !== "home_est" ){
             chrDiv.style.display = "block";
 
             if(nameFile === "home_est"){
               imgChar[0].src = "https://i.imgur.com/L0K7pKo.png";
-            }else if(nameFile === "claseEsp"){
-              imgChar[0].src = "https://i.imgur.com/2e4DJGR.png";
             }
 
             var i = 0;
@@ -84,7 +80,7 @@ window.onload = function setView(){
 
             }, 9000);
 
-          }else if (res=="do" && nameFile !== "actividadTipoA" && nameFile !== "actividadTipoB" && nameFile !== "cancion" && nameFile !== "actividadTipoC" && nameFile !== "actividadTipoD"){
+          }else if (res=="do" && nameFile !== "actividadTipoA" && nameFile !== "actividadTipoB" && nameFile !== "cancion" && nameFile !== "actividadTipoC" && nameFile !== "actividadTipoD" && nameFile !== "home_est" ){
             chrDiv.style.display = "block";
             if(nameFile === "home_est"){
               imgChar[0].src = "https://i.imgur.com/83uoeWy.png";
@@ -135,18 +131,11 @@ window.onload = function setView(){
 
     var dates = document.getElementsByClassName("date");
 
-    for(i=0; i<dates.length; i++){
-        dates[i].style.backgroundColor = "rgba(0,0,77,1.0)";
-    }
 
     var acts = document.getElementsByClassName("act");
 
     for(i=0; i<dates.length; i++){
-      if(Number.isInteger(i/2)){
-        acts[i].style.backgroundColor = "rgba(36,116,181,0.6)";
-      }else{
-        acts[i].style.backgroundColor = "rgba(140,192,231,0.6)";
-      }
+      acts[i].style.backgroundColor = "#fff";
     }
   }
 
@@ -161,9 +150,6 @@ window.onload = function setView(){
     var divEsp = document.getElementById("1");
     var divEng = document.getElementById("2");
     var divCyP = document.getElementById("3");
-    divEsp.style.backgroundImage= "url('https://i.imgur.com/h66JjYX.png')";
-    divEng.style.backgroundImage= "url('https://i.imgur.com/iXv4Yz8.png')";
-    divCyP.style.backgroundImage= "url('https://i.imgur.com/P4dcS2C.png')";
 
     tag1 = document.createElement('script');
 

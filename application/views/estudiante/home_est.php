@@ -15,7 +15,7 @@
             </label>
           </div>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer d-flex justify-content-center">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
           <button type="button" class="btn btn-primary" onclick="setChar()">Guardar</button>
         </div>
@@ -32,14 +32,34 @@
     </div>
   </div>
 
-  <div class ="home">
-    <div id= "intro">
-      <img src= "https://i.imgur.com/GhjVKXv.png" width="800">
+  <div class ="home d-flex align-items-center flex-column" >
+    <div class="row d-flex justify-content-center">
+      <h2 id= "clase"> Estas son tus clases, <?php echo $this->session->userdata['nombre'] . ":"; ?></h2>
     </div>
-    <h2 id= "clase"> Estas son tus clases, <?php
-      echo $this->session->userdata['nombre'] . ":"; ?></h2>
-    <?php  foreach ($asignatura as $asignatura_item): ?>
-      <div onclick="setURl(this)"; style="cursor: pointer;" class="clases" id="<?php echo $asignatura_item['idAsignatura']?>">
-      </div>
-    <?php endforeach; ?>
+    <div class="row d-flex justify-content-around">
+        <?php  foreach ($asignatura as $asignatura_item): ?>
+          <div onclick="setURl(this)"; style="cursor: pointer;" class="clases col-md-3 card" id="<?php echo $asignatura_item['idAsignatura']?>">          
+              <?php 
+              if( $asignatura_item['idAsignatura']=== "1"){
+                $titulo= "Semana 2: Actividad 1";
+                $url = 'https://i.imgur.com/h66JjYX.png';
+              } else if ($asignatura_item['idAsignatura']=== "2"){
+                $titulo= "Semana 2: Actividad 1";
+                $url = 'https://i.imgur.com/iXv4Yz8.png';
+              } else if ($asignatura_item['idAsignatura']=== "3"){
+                $titulo= "Semana 2: Actividad 2";
+                $url = 'https://i.imgur.com/P4dcS2C.png';
+              }
+              ?>
+            <div class="card-header" style="background-image:url('<?php echo $url ?>'); background-position: center; background-size: cover">            
+            </div>
+            <div class="card-content">
+              <p><?php 
+              echo $titulo;
+              ?></p>
+            </div>
+
+          </div>
+        <?php endforeach; ?>
+      </div>      
   </div>

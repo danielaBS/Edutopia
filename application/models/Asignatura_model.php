@@ -13,7 +13,7 @@ Class Asignatura_model extends CI_Model {
     }
 
     public function getNameAsig($idAsig){
-      $query = $this->db->query("SELECT * FROM asignaturas WHERE idAsignatura='$idAsig'");
+      $query = $this->db->query("SELECT nombreAsignatura FROM asignaturas WHERE idAsignatura='$idAsig'");
       $row = $query->row_array();
       return $row;
     }
