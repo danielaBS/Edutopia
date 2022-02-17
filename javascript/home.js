@@ -56,6 +56,7 @@ window.onload = function changeView() {
       // AJAX code to POST data.
       $.ajax({
         url: "https://agile-brook-84677.herokuapp.com/profesor/pages/log",
+        headers: {  'Access-Control-Allow-Origin': 'http://The web site allowed to access' },
         type: "POST",
         data: obj,
         success: function (res) {
@@ -96,6 +97,7 @@ window.onload = function changeView() {
       // AJAX code to POST data.
       $.ajax({
         url: "https://agile-brook-84677.herokuapp.com/estudiante/pages/log",
+        headers: {  'Access-Control-Allow-Origin': 'http://The web site allowed to access' },
         type: "POST",
         data: obj,
         success: function (res) {
@@ -159,6 +161,7 @@ window.onload = function changeView() {
       // AJAX code to POST data.
       $.ajax({
         url: "https://agile-brook-84677.herokuapp.com/profesor/pages/login2",
+        headers: {  'Access-Control-Allow-Origin': 'http://The web site allowed to access' },
         type: "POST",
         data: obj,
         success: function (res) {
@@ -199,6 +202,7 @@ window.onload = function changeView() {
       // AJAX code to POST data.
       $.ajax({
         url: "https://agile-brook-84677.herokuapp.com/estudiante/pages/login2",
+        headers: {  'Access-Control-Allow-Origin': 'http://The web site allowed to access' },
         type: "POST",
         data: obj,
         success: function (res) {
